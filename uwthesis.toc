@@ -1,0 +1,136 @@
+\contentsline {chapter}{\@textofLoF }{iii}
+\contentsline {chapter}{\@textofLoT }{xi}
+\contentsline {chapter}{\numberline {\@textofChapter \ 1:}Introduction}{1}
+\contentsline {chapter}{\numberline {\@textofChapter \ 2:}Theory}{4}
+\contentsline {section}{\numberline {2.1}Standard Model: Matter Particles}{4}
+\contentsline {section}{\numberline {2.2}Standard Model: Particle Interactions}{4}
+\contentsline {subsection}{\numberline {2.2.1}Cabibbo-Kobayashi-Maskawa Quark Mixing Matrix}{7}
+\contentsline {section}{\numberline {2.3}The Top Quark}{8}
+\contentsline {section}{\numberline {2.4}Electroweak Top Quark Production}{9}
+\contentsline {subsection}{\numberline {2.4.1}Motivation for Single Top}{11}
+\contentsline {subsection}{\numberline {2.4.2}Signal Event Generation}{14}
+\contentsline {subsubsection}{$s$-channel Generation Using CompHEP}{15}
+\contentsline {subsubsection}{$t$-channel Generation Using CompHEP and Pythia}{16}
+\contentsline {chapter}{\numberline {\@textofChapter \ 3:}Experimental Apparatus}{18}
+\contentsline {section}{\numberline {3.1}Fermilab Accelerator Complex}{18}
+\contentsline {subsection}{\numberline {3.1.1}Cockcroft-Walton}{18}
+\contentsline {subsection}{\numberline {3.1.2}LINAC}{20}
+\contentsline {subsection}{\numberline {3.1.3}Booster}{20}
+\contentsline {subsection}{\numberline {3.1.4}Main Injector}{21}
+\contentsline {subsection}{\numberline {3.1.5}Tevatron}{21}
+\contentsline {section}{\numberline {3.2}$\unhbox \voidb@x \hbox {$p\mathaccent "7016\relax {p}$}$\nobreakspace {}Collisions}{22}
+\contentsline {section}{\numberline {3.3}Coordinate System and Units Convention}{23}
+\contentsline {section}{\numberline {3.4}\unhbox \voidb@x \hbox {D\O }\nobreakspace {} Detector}{24}
+\contentsline {subsection}{\numberline {3.4.1}Tracking Detectors}{25}
+\contentsline {subsubsection}{Silicon Microstrip Tracker}{26}
+\contentsline {subsubsection}{Central Fiber Tracker}{27}
+\contentsline {subsection}{\numberline {3.4.2}Calorimetry}{29}
+\contentsline {subsection}{\numberline {3.4.3}Luminosity Monitor}{33}
+\contentsline {subsection}{\numberline {3.4.4}Muon Detector}{34}
+\contentsline {subsection}{\numberline {3.4.5}Trigger and Data Acquisition System}{36}
+\contentsline {chapter}{\numberline {\@textofChapter \ 4:}Event Reconstruction And Simulation}{40}
+\contentsline {section}{\numberline {4.1}Object Reconstruction}{40}
+\contentsline {subsection}{\numberline {4.1.1}Tracks}{41}
+\contentsline {subsubsection}{Track\nobreakspace {}Hit\nobreakspace {}Clustering}{41}
+\contentsline {subsubsection}{Histogramming Track Finding Method (HTF)}{42}
+\contentsline {subsubsection}{Alternative Algorithm Tracking (AA)}{42}
+\contentsline {subsection}{\numberline {4.1.2}Primary Interaction Vertex}{44}
+\contentsline {subsection}{\numberline {4.1.3}Electrons}{45}
+\contentsline {subsection}{\numberline {4.1.4}Muons}{46}
+\contentsline {subsection}{\numberline {4.1.5}Jets}{47}
+\contentsline {subsubsection}{Jet Energy Scale Correction}{48}
+\contentsline {subsection}{\numberline {4.1.6}Missing $E_{T}$}{52}
+\contentsline {subsection}{\numberline {4.1.7}$B$-Jets}{53}
+\contentsline {section}{\numberline {4.2}Monte Carlo Generation and Detector Simulation}{54}
+\contentsline {section}{\numberline {4.3}Trigger Simulation}{56}
+\contentsline {subsection}{\numberline {4.3.1}Event-Wide Trigger Probability}{56}
+\contentsline {subsection}{\numberline {4.3.2}Trigger Term Efficiency Measurement Methods}{57}
+\contentsline {section}{\numberline {4.4}Monte Carlo Corrections}{57}
+\contentsline {subsection}{\numberline {4.4.1}Muons}{58}
+\contentsline {subsection}{\numberline {4.4.2}Electrons}{61}
+\contentsline {subsection}{\numberline {4.4.3}Primary Interaction Vertex}{62}
+\contentsline {subsection}{\numberline {4.4.4}Jets}{63}
+\contentsline {subsection}{\numberline {4.4.5}$B$-jets}{64}
+\contentsline {chapter}{\numberline {\@textofChapter \ 5:}The Single Top Quark Dataset}{69}
+\contentsline {section}{\numberline {5.1}Previous Single Top Searches}{69}
+\contentsline {section}{\numberline {5.2}Analysis Measurement Strategy}{70}
+\contentsline {section}{\numberline {5.3}Triggers for Single Top Quark Events}{71}
+\contentsline {subsection}{\numberline {5.3.1}Electron Channel Trigger}{71}
+\contentsline {subsection}{\numberline {5.3.2}Muon Channel Trigger}{72}
+\contentsline {section}{\numberline {5.4}Reconstructed Object Selection}{75}
+\contentsline {subsection}{\numberline {5.4.1}Lepton Selection}{75}
+\contentsline {subsection}{\numberline {5.4.2}Jet Selection}{75}
+\contentsline {subsection}{\numberline {5.4.3}Missing $E_{T}$}{77}
+\contentsline {subsection}{\numberline {5.4.4}Vertex Selection}{78}
+\contentsline {subsection}{\numberline {5.4.5}b-Jet Selection}{78}
+\contentsline {subsection}{\numberline {5.4.6}Mis-measured event rejection}{78}
+\contentsline {subsection}{\numberline {5.4.7}Acceptance for Single Top Quark Events}{79}
+\contentsline {chapter}{\numberline {\@textofChapter \ 6:}Background Estimation}{81}
+\contentsline {section}{\numberline {6.1}Background Modeling}{81}
+\contentsline {subsection}{\numberline {6.1.1}Monte Carlo Modeling of W + Jets and $\unhbox \voidb@x \hbox {$t\mathaccent "7016\relax {t}$}$ Backgrounds}{84}
+\contentsline {subsubsection}{MLM Matching Scheme}{84}
+\contentsline {subsubsection}{$W$+Light Parton Sample}{85}
+\contentsline {subsubsection}{$W$+$c\mathaccent "7016\relax {c}$+Light Parton Sample}{85}
+\contentsline {subsubsection}{$W$+$b\mathaccent "7016\relax {b}$+Light Parton Sample}{86}
+\contentsline {subsubsection}{$\unhbox \voidb@x \hbox {$t\mathaccent "7016\relax {t}$} \rightarrow \ell + jets$+Light Parton Sample}{87}
+\contentsline {subsubsection}{$\unhbox \voidb@x \hbox {$t\mathaccent "7016\relax {t}$} \rightarrow \ell \ell $+Light Parton Sample}{87}
+\contentsline {subsection}{\numberline {6.1.2}Data-based Modeling of Multijet Background}{88}
+\contentsline {section}{\numberline {6.2}Background Normalization}{88}
+\contentsline {subsection}{\numberline {6.2.1}\unhbox \voidb@x \hbox {$t\mathaccent "7016\relax {t}$}\nobreakspace {}Normalization}{88}
+\contentsline {subsection}{\numberline {6.2.2}Matrix Method: Normalizing $W$+jets and Multijet Backgrounds}{89}
+\contentsline {subsubsection}{Multijet Efficiency: $\varepsilon _{\rm {Multijet}}$ }{90}
+\contentsline {subsubsection}{$W$+jets Efficiency: $\varepsilon _{\rm {W+jets}}$ }{91}
+\contentsline {subsection}{\numberline {6.2.3}Ratio of $W$+Heavy Flavor to $W$+Light Flavor}{91}
+\contentsline {section}{\numberline {6.3}Background Yields}{92}
+\contentsline {section}{\numberline {6.4}Comparison of Data with Expection}{95}
+\contentsline {chapter}{\numberline {\@textofChapter \ 7:}Matrix Element Analysis Method}{100}
+\contentsline {section}{\numberline {7.1}Motivation and Introduction to the Matrix Element Method}{100}
+\contentsline {section}{\numberline {7.2}Event Probability Density, P$_{S|B}$($\mathaccent "017E\relax {x}$)}{102}
+\contentsline {subsection}{\numberline {7.2.1}Differential Cross Section Definition}{102}
+\contentsline {subsection}{\numberline {7.2.2}Probability Normalization Constants}{112}
+\contentsline {subsection}{\numberline {7.2.3}Treatment of Combinatorial Background}{113}
+\contentsline {subsubsection}{Example of The Jet-Parton Weight Assignments}{114}
+\contentsline {section}{\numberline {7.3}Single Top Discriminant Performance}{115}
+\contentsline {subsection}{\numberline {7.3.1}Discriminant Definition}{115}
+\contentsline {subsection}{\numberline {7.3.2}One-Dimensional Discriminants}{116}
+\contentsline {subsection}{\numberline {7.3.3}Two-Dimensional Discriminants}{123}
+\contentsline {section}{\numberline {7.4}Cross-Check Samples}{126}
+\contentsline {section}{\numberline {7.5}Matrix Element Discriminants}{131}
+\contentsline {chapter}{\numberline {\@textofChapter \ 8:}Cross Section Determination Method}{135}
+\contentsline {section}{\numberline {8.1}Bayesian Posterior Density Function}{135}
+\contentsline {subsection}{\numberline {8.1.1}Prior Definition With and Without Systematic Uncertainties}{137}
+\contentsline {subsubsection}{Prior Without Systematics}{137}
+\contentsline {subsubsection}{Prior With Systematics}{138}
+\contentsline {subsection}{\numberline {8.1.2}Cross Section Extraction}{138}
+\contentsline {subsection}{\numberline {8.1.3}$s+t$-channel Cross Section Definition}{140}
+\contentsline {section}{\numberline {8.2}Systematic Uncertainties}{142}
+\contentsline {section}{\numberline {8.3}Ensemble Testing}{148}
+\contentsline {section}{\numberline {8.4}Expected Results}{151}
+\contentsline {chapter}{\numberline {\@textofChapter \ 9:}Results With Data}{154}
+\contentsline {section}{\numberline {9.1}Measured Cross Section}{154}
+\contentsline {section}{\numberline {9.2}Signal Significance and Standard Model Compatibility}{156}
+\contentsline {chapter}{\numberline {\@textofChapter \ 10:}Conclusion and Discussion}{160}
+\contentsline {chapter}{\@textofBIB }{163}
+\contentsline {chapter}{\numberline {\@textofAppendix \ A:}Differential Cross Section Derivation}{170}
+\contentsline {section}{\numberline {A.1}Probability Calculation}{170}
+\contentsline {subsection}{\numberline {A.1.1}Differential Cross Section at the Parton Level}{170}
+\contentsline {subsection}{\numberline {A.1.2}Evaluating the Hard Scatter Differential Cross Section}{171}
+\contentsline {subsection}{\numberline {A.1.3}Evaluating the Hadron-Hadron Differential Cross Section}{172}
+\contentsline {subsection}{\numberline {A.1.4}Relating Reconstructed Objects to Partons}{173}
+\contentsline {subsubsection}{Jets}{174}
+\contentsline {subsubsection}{Electrons}{174}
+\contentsline {subsubsection}{Muons}{175}
+\contentsline {subsection}{\numberline {A.1.5}Full Differential Cross Section and Normalization}{176}
+\contentsline {section}{\numberline {A.2}Integration Variable Remapping}{176}
+\contentsline {subsection}{\numberline {A.2.1}Introduction}{176}
+\contentsline {subsection}{\numberline {A.2.2}Sampling from a Breit-Wigner mass distribution}{177}
+\contentsline {subsection}{\numberline {A.2.3}Sampling from a Breit-Wigner $S_{cm}$ distribution}{178}
+\contentsline {subsection}{\numberline {A.2.4}Jacobian for random sampling of a Breit-Wigner distribution around the W mass squared, $s_{34}$}{179}
+\contentsline {subsection}{\numberline {A.2.5}Jacobian for random sampling of a Breit-Wigner distribution around the top mass squared, $s_{345}$}{181}
+\contentsline {subsection}{\numberline {A.2.6}Jacobian for random sampling of two Breit-Wigner distributions around the top mass squared, $s_{345}$ and W mass squared, $s_{34}$}{183}
+\contentsline {subsection}{\numberline {A.2.7}Sampling from a Polynomial $S_{cm}$ distribution}{183}
+\contentsline {subsection}{\numberline {A.2.8}Jacobian for random sampling of a polynomial distribution starting at $m_{pole}$}{184}
+\contentsline {chapter}{\numberline {\@textofAppendix \ B:}Discriminant Output Plots}{186}
+\contentsline {chapter}{\numberline {\@textofAppendix \ C:}Luminosity Calculation}{194}
+\contentsline {chapter}{\numberline {\@textofAppendix \ D:}Ensemble Generation Technique}{195}
+\contentsline {chapter}{\numberline {\@textofAppendix \ E:}Analysis Channel Systematics Uncertainties}{197}

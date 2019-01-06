@@ -1,0 +1,139 @@
+%---------------------------------------------------------------------
+%  Writeup of the improved search of Run II data for single top quark
+%  production at DZero.
+%  Started: Oct 2006
+%  Authors: The Single Top Working Group
+%---------------------------------------------------------------------
+%
+\appendix
+\section*{Appendix 3 --- Scaling the $W$+Jets Heavy Flavor Fraction}
+\label{appendix-wjets-scaling}
+
+The {\sc alpgen} leading order cross section calculations for
+$Wb\bar{b}$, $Wc\bar{c}$, and $Wjj$ have sizeable uncertainties and
+are very sensitive to the renormalization and factorization scales. In
+previous analyses, we used MCFM~\cite{MCFM} with the same {\sc alpgen}
+parton level cuts to estimate the NLO cross sections of $Wb\bar{b}$
+and $Wjj$, set the relative fraction of $Wb\bar{b}$ and $Wjj$ based on
+these numbers, and then normalized the overall $W$+jets sample to data
+based on the matrix method results. That gave us the best estimate,
+with uncertaintiess, of what fraction of events in the $W$+jets sample
+had heavy flavor jets. With the new matched {\sc alpgen} samples, {\sc
+alpgen} is actually run with no parton level cuts since the matching
+scheme takes care of avoiding divergences by clustering partons into
+parton-jets with certain cuts ($\pt>8$~GeV and $\Delta R>0.4$). For a
+description of the matching scheme, and the details of our production
+samples, see Ref.~\cite{FOMEcs}. Since MCFM and matched {\sc alpgen}
+do not agree in the LO cross section, it is difficult to use the MCFM
+NLO cross section to scale our {\sc alpgen} generated samples.
+
+As done in previous analyses, we scale the total $W$+jets leading
+order yield to data before $b$-tagging by means of the ``matrix
+method,'' as explained in detail in Section~\ref{matrix-method}.
+Table~\ref{mmwjets-factors} presents the scale factors from the matrix
+method needed to make the LO {\alpgen} $W$+jets yields match the
+data. This normalization is done for $Wb\bar{b}$, $Wc\bar{c}$, and
+$Wjj$ altogether.
+
+\vspace{0.05in}
+\begin{table}[!h!tbp]
+\begin{center}
+\begin{minipage}{3.5 in}
+\begin{ruledtabular}
+\begin{tabular}{l||cccc}
+\multicolumn{5}{c}{\hspace{0.4in}\underline{$W$+jets Matrix Method Normalization}}\vspace{0.1in} \\
+                 &  1 jet  &  2 jets &  3 jets &  4 jets  \\
+\hline
+Electron channel &   1.39  &   1.42  &   1.14  &   0.88   \\
+Muon channel     &   1.55  &   1.66  &   1.50  &   1.16
+\end{tabular}
+\end{ruledtabular}
+\vspace{-0.1 in}
+\caption[mmwjetsfactors]{Scale factors applied to the LO $W$+jets
+samples, to match the data from the matrix method normalization.}
+\label{mmwjets-factors}
+\end{minipage}
+\end{center}
+\end{table}
+
+Once the overall normalization to data is performed, we still need to
+correct the relative composition of $Wb\bar{b}$ and $Wc\bar{c}$ with
+respect to $Wjj$. We assume the same ratio applies for $Wb\bar{b}$ and
+$Wc\bar{c}$. We have used our data to measure this heavy flavor ratio
+in the form of a scale factor $\alpha$ such that:
+$$
+\alpha(Wb\bar{b}+Wc\bar{c})+Wjj+\ttbar+{\rm QCD = Data,}
+$$ where $Wb\bar{b}$ and $Wc\bar{c}$ are the yields as given by the
+{\alpgen} cross section. However, we should not normalize the
+background to the data in the signal region, so we have chosen a
+factor 1.5, and assigned a 30\% uncertainty to it, based on the
+results shown in Table~\ref{alpha-factors} for the zero-tag case. The
+one-jet bin can also be utilized to derive $\alpha$ but the result is
+more difficult to generalize to the signal region. The zero-tag sample
+is not used for the measurement, has ample statistics, and shows very
+similar sensitivity to the heavy flavor ratio as the signal
+region. The zero-tag sample contains about 10\% (20\%) $Wc\bar{c}$ in
+the 1jet (2jet) bin. The $Wb\bar{b}$ fraction here is much
+smaller. But the sum of $Wc\bar{c} + Wb\bar{b}$ is large enough to be
+able to measure the relative heavy flavor scale factor.
+
+\clearpage
+
+\begin{table}[!h!tbp]
+\begin{center}
+\begin{minipage}{4.5 in}
+\begin{ruledtabular}
+\begin{tabular}{l||cccc}
+\multicolumn{5}{c} {\hspace{0.5in}\underline{Scale Factor $\alpha$ to Match Heavy Flavor Fraction to Data}}\vspace{0.1in} \\
+                 &     1 jet      &      2 jets     &      3 jets     &       4 jets     \\
+\hline
+% these numbers are Yann's alphas, but multiplied by 1.5, so they should be close to 1.5:
+Electron Channel  &                 &                 &                 &                  \\
+~~0 tags          & 1.53 $\pm$ 0.10 & 1.48 $\pm$ 0.10 & 1.50 $\pm$ 0.20 &  1.72 $\pm$ 0.40 \\
+~~1 tag           & 1.29 $\pm$ 0.10 & 1.58 $\pm$ 0.10 & 1.40 $\pm$ 0.20 &  0.69 $\pm$ 0.60 \\
+~~2 tags          &       ---       & 1.71 $\pm$ 0.40 & 2.92 $\pm$ 1.20 & -2.91 $\pm$ 3.50 \\
+Muon Channel      &                 &                 &                 &                  \\
+~~0 tags          & 1.54 $\pm$ 0.10 & 1.50 $\pm$ 0.10 & 1.52 $\pm$ 0.10 &  1.38 $\pm$ 0.20 \\
+~~1 tag           & 1.11 $\pm$ 0.10 & 1.52 $\pm$ 0.10 & 1.32 $\pm$ 0.20 &  1.86 $\pm$ 0.50 \\
+~~2 tags          &       ---       & 1.40 $\pm$ 0.40 & 2.46 $\pm$ 0.90 &  3.78 $\pm$ 2.80
+% These numbers are the alphas (when 1.5 is applied), so they should be close to 1
+%$\mu$+jets 0 tag & 1.03 $\pm$ 0.1 & 1.00 $\pm$ 0.1&  1.01 $\pm$ 0.1 & 0.92 $\pm$ 0.2 \\
+%$\mu$+jets 1 tag & 0.74 $\pm$ 0.1 & 1.01 $\pm$ 0.1&  0.88 $\pm$ 0.2 & 1.24 $\pm$ 0.5 \\
+%$\mu$+jets 2 tag & ---            & 0.93 $\pm$ 0.4&  1.64 $\pm$ 0.9 & 2.52 $\pm$ 2.8 \\ \hline
+%$e$+jets 0 tag   & 1.02 $\pm$ 0.1 & 0.99 $\pm$ 0.1&  1.00 $\pm$ 0.2 & 1.15 $\pm$ 0.4 \\
+%$e$+jets 1 tag   & 0.86 $\pm$ 0.1 & 1.05 $\pm$ 0.1&  0.93 $\pm$ 0.2 & 0.46 $\pm$ 0.6 \\
+%$e$+jets 2 tag   & ---            & 1.14 $\pm$ 0.4&  1.95 $\pm$ 1.2 &-1.94 $\pm$ 3.5 \\
+\end{tabular}
+\end{ruledtabular}
+\vspace{-0.1 in}
+\caption[alphafactors]{Scale factor $\alpha$ for the $Wb\bar{b}$ and
+$Wc\bar{c}$ yields to match the data in each jet bin, for 0 tag, 1
+tag, and 2 tag samples. The uncertainties are statistical only.}
+\label{alpha-factors}
+\end{minipage}
+\end{center}
+\end{table}
+
+% (The following may well be true, but let's not promise it
+% publically in case we do not have time to do it!)
+%
+% We intend to cross check this scaling and its uncertainty by
+% measuring the same $\alpha$ factor in our signal region using a
+% sample with low discriminant output value from the multivariate
+% analysis that will not be used in the final measurement.
+
+Figure~\ref{fig:alphaseqzerotag} shows graphically the values of
+$\alpha$ in the zero tag sample for electrons and muons in each jet
+bin (eight numbers in total).
+
+\begin{figure}[!h!tbp]
+\includegraphics[width=0.6\textwidth]
+{figures/alpha-from-eqzerotag-sample}
+\vspace{-0.1in}
+\begin{minipage}{4in}
+\caption[tag]{The values of $\alpha$ in the zero tag sample for
+electron and muon channel in each jet multiplicity. The eight values
+can be read in Table.~\ref{alpha-factors}.}
+\label{fig:alphaseqzerotag}
+\end{minipage}
+\end{figure}

@@ -1,0 +1,960 @@
+%---------------------------------------------------------------------
+%  Writeup of the latest and  greatest search of Run II data for
+%  single top quark production at DZero.
+%  Started 08/31/06
+%  Continued 10/14/06
+%  Authors: The Single Top Working Group
+%
+%---------------------------------------------------------------------
+%
+\documentclass[aps]{revtex4}
+
+% Allow figures to be included
+\usepackage{graphicx}
+
+% Allow type to be colored (68 colors)
+\usepackage[usenames]{color}
+
+% Allow rotation of tables, figures, pages
+\usepackage{rotating}
+
+% Add a gray bar to the margin for new text
+\usepackage{changebar}
+
+% Allow sub figures
+\usepackage{subfigure}
+
+% Fix too narrow margins
+\paperheight 11 in
+\paperwidth 8.5 in
+\textwidth 6.5 in
+\oddsidemargin 0 pt
+\marginparsep 0 pt
+\marginparwidth 0 pt
+\voffset 0 in
+\hoffset 0 in
+
+% Fix hard-to-follow section numbering
+\renewcommand{\thesection}
+{\Large\arabic{section}}
+\renewcommand{\thesubsection}
+{\large\arabic{section}.\large\arabic{subsection}}
+\renewcommand{\thesubsubsection}
+{\arabic{section}.\arabic{subsection}.\arabic{subsubsection}}
+\renewcommand{\theparagraph}
+{\arabic{section}.\arabic{subsection}.\arabic{subsubsection}.\arabic{paragraph}}
+
+% Change the table numbering from roman to arabic
+\renewcommand{\thetable}{\arabic{table}}
+
+% Fix problems with font changes after a reference to a section 
+\let\LaTEXref\ref
+\renewcommand{\ref}[1]
+{{\LaTEXref{#1}}}
+
+% Make section titles size match text size
+\makeatletter
+\renewcommand{\section}{\@startsection
+	{section}%
+	{1}%
+	{0pt}%
+	{-\baselineskip}%
+	{1.0\baselineskip}%
+	{\center\bfseries\Large\rmfamily\scshape}}%
+\renewcommand{\subsection}{\@startsection
+	{subsection}%
+	{2}%
+	{0pt}%
+	{-\baselineskip}%
+	{1.0\baselineskip}%
+	{\center\bfseries\large\rmfamily}}%
+\renewcommand{\subsubsection}{\@startsection
+	{subsubsection}%
+	{3}%
+	{0pt}%
+	{-\baselineskip}%
+	{1.0\baselineskip}%
+	{\center\itshape\large\rmfamily}}%
+\renewcommand{\paragraph}{\@startsection
+	{paragraph}%
+	{4}%
+	{0pt}%
+	{-\baselineskip}%
+	{1.0\baselineskip}%
+	{\center\itshape\rmfamily}}%
+
+% Fix references to sections
+\renewcommand{\p@subsection}{}
+\renewcommand{\p@subsubsection}{}
+\renewcommand{\p@paragraph}{}
+\renewcommand{\p@subparagraph}{}
+
+\makeatother
+
+% Put page number at bottom of page
+\pagestyle{plain}
+
+% Avoid too much hyphenation at the ends of lines
+\lefthyphenmin=6
+\righthyphenmin=6
+
+% Allow a figure to occupy most of a column without being
+% placed on a separate page that includes no text
+\renewcommand{\topfraction}      {0.95}
+\renewcommand{\bottomfraction}   {0.95}
+\renewcommand{\floatpagefraction}{0.95}
+\renewcommand{\textfraction}     {0.05}
+
+% Tighten up the itemized lists
+\newenvironment{myitemize}{\begin{itemize}
+                \setlength{\itemsep}{-1 pt}}{\end{itemize}}
+
+% Define some abbreviations
+\newcommand{\dzero}     {D\O}
+\newcommand{\met}       {\mbox{$\not\!\!E_T$}}
+\newcommand{\pt}        {\mbox{$p_{\rm T}$}}
+\newcommand{\deta}      {\mbox{$\eta^{\rm det}$}}
+\newcommand{\meta}      {\mbox{$\left|\eta\right|$}}
+\newcommand{\mdeta}     {\mbox{$\left|\eta^{\rm det}\right|$}}
+\newcommand{\rar}       {\rightarrow}
+\newcommand{\rargap}    {\mbox{ $\rightarrow$ }}
+\newcommand{\tbbar}     {\mbox{$tb$}}
+\newcommand{\tqbbar}    {\mbox{$tqb$}}
+\newcommand{\ttbar}     {\mbox{$t\bar{t}$}}
+\newcommand{\bbbar}     {\mbox{$b\bar{b}$}}
+\newcommand{\ccbar}     {\mbox{$c\bar{c}$}}
+\newcommand{\qqbar}     {\mbox{$q\bar{q}$}}
+\newcommand{\ppbar}     {\mbox{$p\bar{p}$}}
+\newcommand{\lepjets}   {\mbox{$t\bar{t} \rightarrow \ell$+jets}}
+\newcommand{\dilepton}  {\mbox{$t\bar{t} \rightarrow \ell$+$\ell$}}
+\newcommand{\comphep}   {\sc{c}\rm{omp}\sc{hep}}
+\newcommand{\singletop} {\sc{s}\rm{ingle}\sc{t}\rm{op}}
+\newcommand{\herwig}    {\sc{herwig}}
+\newcommand{\pythia}    {\sc{pythia}}
+\newcommand{\alpgen}    {\sc{alpgen}}
+\newcommand{\tauola}    {\sc{tauola}}
+\newcommand{\evtgen}    {\sc{e}\rm{vt}\sc{g}\rm{en}}
+\newcommand{\reco}      {\sc{reco}}
+\newcommand{\pderiv}[2]{\frac{\partial #1}{\partial #2}}
+%---------------------------------------------------------------------
+%---------------------------------------------------------------------
+\begin{document}
+
+\begin{table}
+\begin{flushleft}
+\begin{minipage}{5.5 in}
+\begin{tabular}{lr}
+{\leftline{\includegraphics[scale=0.3]{figures/d0logo}}}
+& \hspace{-0.5in}{\large{\dzero} Note 5285} \\
+%{\large For Top Group and EB review}
+& \hspace{-0.5in}{\large November 28, 2006} \\
+%{\large Comments to d0-run2eb-024@fnal.gov,}
+& \hspace{-0.5in}{\large Version 1.3} \\
+%{\large Ar\'{a}n~Garc\'{\i}a-Bellido, and Ann~Heinson} & \\
+%{\large {\color{red}{Deadline: Friday, November 10, 2006}}} & \\
+\end{tabular}
+\end{minipage}
+\end{flushleft}
+\end{table}
+
+\title{\LARGE{Search for Single Top Quark Production\\
+in 1~fb$^{-1}$ of Data}\\
+\vspace{0 in}}
+
+%--------
+%  Secret title is something like ``New Mode of Top Quark Production
+%  Observed at the Tevatron''
+%--------
+
+\author{\large{
+E.~Aguil\'{o},$^{2}$
+P.~Baringer$^{10}$
+A.~Bean,$^{10}$
+C.~Belanger-Champagne,$^{11}$
+J.A.~Benitez,$^{12}$
+E.E.~Boos,$^{13}$
+R.~Brock,$^{12}$
+V.~Bunichev, $^{13}$
+K.~Chan,$^{2}$
+L.~Christofek,$^{4}$
+Y.~Coadou,$^{17}$
+L.V.~Dudko,$^{13}$
+M.~Erdmann,$^{1}$
+T.~Gadfort,$^{18}$
+A.~Garc\'{\i}a-Bellido,$^{18}$
+C.~Gerber,$^{9}$
+D.~Gillberg,$^{17}$
+G.~Gutierrez,$^{7}$
+P.~Gutierrez,$^{14}$
+A.P.~Heinson,$^{5}$
+U.~Heintz,$^{3}$
+S.~Herrin,$^{16}$
+S.~Jabeen,$^{3}$
+S.~Jain,$^{14}$
+A.~Juste,$^{7}$
+S.~Kappler,$^{1}$
+D.~Kau,$^{8}$
+G.~Kertzscher,$^{11}$
+M.~Kirsch,$^{1}$
+L.~Li,$^{5}$
+J.~Mitrevski,$^{6}$
+R.~Moore,$^{2}$
+M.~Narain,$^{3,4}$
+D.~O'Neil,$^{17}$
+M.~Pangilinan,$^{3}$
+J.~Parsons,$^{6}$
+M.~Perfilov,$^{13}$
+C.~Potter,$^{11}$
+H.B.~Prosper,$^{8}$
+R.~Schwienhorst,$^{12}$
+E.~Shabalina,$^{9}$
+J.~Steggemann,$^{1}$
+T.~Tim,$^{9}$
+C.~Tully,$^{15}$
+M.~Vetterli,$^{17}$
+B.~Vachon,$^{11}$
+G.~Watts,$^{18}$
+M.~Weber$^{7}$
+}}
+
+\affiliation{\large{\vspace*{0.1in}
+$^{1}$RWTH Aachen University\\
+$^{2}$University of Alberta\\
+$^{3}$Boston University\\
+$^{4}$Brown University\\
+$^{5}$University of California, Riverside\\
+$^{6}$Columbia University\\
+$^{7}$Fermi National Accelerator Laboratory\\
+$^{8}$Florida State University\\
+$^{9}$University of Illinois, Chicago\\
+$^{10}$University of Kansas\\
+$^{11}$McGill University\\
+$^{12}$Michigan State University\\
+$^{13}$Moscow State University\\
+$^{14}$University of Oklahoma\\
+$^{15}$Princeton University\\
+$^{16}$Rice University\\
+$^{17}$Simon Fraser University\\
+$^{18}$University of Washington
+}}
+
+\begin{abstract}
+{\large{We present the results of a search for single top quark
+production in nearly 1~fb$^{-1}$ of Run II data. We select
+single-top-like data events and separate them from backgrounds using
+three different analysis methods. We use the signal acceptance,
+background, and observed data in each discriminant output bin to
+measure the single top quark cross section:
+$$
+\begin{array}{lll}
+\sigma\left({\ppbar}{\rargap}tb+tqb+X\right)
+& = 4.9 ^{+1.4}_{-1.4}~{\rm pb} & {\rm (Decision~trees)}\\
+& = 4.6 ^{+1.8}_{-1.5}~{\rm pb} & {\rm (Matrix~elements)}\\
+& = 5.0 ^{+1.9}_{-1.9}~{\rm pb} & {\rm (Bayesian~neural~networks)}
+\end{array}
+$$
+The probability for the background to have fluctuated up to give at
+least the cross section measured in the decision tree analysis is
+$0.033\%$, which corresponds to a Gaussian equivalent significance of
+$3.4\sigma$.
+}}
+
+\end{abstract}
+
+\maketitle
+
+%---------------------------------------------------------------------
+%---------------------------------------------------------------------
+%---------------------------------------------------------------------
+%---------------------------------------------------------------------
+%\clearpage
+\tableofcontents
+\vfill\eject
+
+\large{
+
+%---------------------------------------------------------------------
+%---------------------------------------------------------------------
+% Overview of single top and the analysis and description of changes
+% with respect to the previous one
+\clearpage
+\input{introductionF06}
+
+%---------------------------------------------------------------------
+%---------------------------------------------------------------------
+% Descriptions of the data and MC samples, integrated lumis, triggers?
+% and sample sizes
+\clearpage
+\input{initialsamplesF06}
+
+%---------------------------------------------------------------------
+%---------------------------------------------------------------------
+% Object ID
+\clearpage
+\input{objectidentificationF06}
+
+%---------------------------------------------------------------------
+%---------------------------------------------------------------------
+% Selection cuts
+\clearpage
+\input{selectioncutsF06}
+
+%---------------------------------------------------------------------
+%---------------------------------------------------------------------
+% Event numbers
+\clearpage
+\input{eventnumbersF06}
+
+%---------------------------------------------------------------------
+%---------------------------------------------------------------------
+% How we measure the backgrounds
+\clearpage
+\input{backgroundmethodsF06}
+
+%---------------------------------------------------------------------
+%---------------------------------------------------------------------
+% Signal acceptances
+\clearpage
+\input{acceptancesF06}
+
+%---------------------------------------------------------------------
+%---------------------------------------------------------------------
+% Event yields
+\clearpage
+\input{eventyieldsF06}
+
+%---------------------------------------------------------------------
+%---------------------------------------------------------------------
+% Summary of systematic uncertainties
+\clearpage
+\input{systematicsF06}
+
+%---------------------------------------------------------------------
+%---------------------------------------------------------------------
+% Statistical analysis, fitting, and results
+% for the boosted decision trees analysis
+\clearpage
+\input{results_DT_F06}
+
+%---------------------------------------------------------------------
+%---------------------------------------------------------------------
+% Statistical analysis, fitting, and results
+% for the matrix elements analysis
+\clearpage
+\input{results_ME_F06}
+
+%---------------------------------------------------------------------
+%---------------------------------------------------------------------
+% Statistical analysis, fitting, and results
+% for the MLPfit neural networks analysis
+%\clearpage
+%\input{results_NN_F06}
+
+%---------------------------------------------------------------------
+%---------------------------------------------------------------------
+% Statistical analysis, fitting, and results
+% for the Bayesian networks analysis
+\clearpage
+\input{results_BN_F06}
+
+%---------------------------------------------------------------------
+%---------------------------------------------------------------------
+% Conclusions (summary for those in a hurry)
+\clearpage
+\input{conclusionsF06}
+
+%---------------------------------------------------------------------
+%---------------------------------------------------------------------
+%---------------------------------------------------------------------
+%---------------------------------------------------------------------
+%% Description of triggers                  # 1
+\clearpage
+\input{appendix_triggers}
+
+%---------------------------------------------------------------------
+%---------------------------------------------------------------------
+%% Lepton isolation efficiencies            # 2
+\clearpage
+\input{appendix_epssig_epsqcd}
+
+%---------------------------------------------------------------------
+%---------------------------------------------------------------------
+%% Ratio of Wbb and Wcc to Wjj              # 3
+\clearpage
+\input{appendix_wjetsscaling}
+
+%---------------------------------------------------------------------
+%---------------------------------------------------------------------
+%% All about b tagging                      # 4
+\clearpage
+\input{appendix_btagging}
+
+%---------------------------------------------------------------------
+%---------------------------------------------------------------------
+%% Plots after selection                    # 5
+\clearpage
+\input{appendix_selectionplots}
+
+%---------------------------------------------------------------------
+%---------------------------------------------------------------------
+% Many tables of systematic uncertainties   # 6
+\clearpage
+\input{appendix_systematicstables}
+
+%---------------------------------------------------------------------
+%---------------------------------------------------------------------
+%% Cross check samples                      # 7
+\clearpage
+\input{appendix_crosschecks}
+
+%---------------------------------------------------------------------
+%---------------------------------------------------------------------
+%% Cross check samples                      # 8
+\clearpage
+\input{appendix_ensembles}
+
+%---------------------------------------------------------------------
+%---------------------------------------------------------------------
+%% How we optimized the discriminants       # 9
+\clearpage
+\input{appendix_optimization}
+
+%---------------------------------------------------------------------
+%---------------------------------------------------------------------
+%% How we measure the signal significance   # 10
+\clearpage
+\input{appendix_significance}
+
+%---------------------------------------------------------------------
+}
+%---------------------------------------------------------------------
+%---------------------------------------------------------------------
+\clearpage
+\bibliographystyle{unsrt}
+\begin{thebibliography}{99.}
+\label{bibliography}
+
+\vspace{-0.15in}
+
+\bibitem{ttbar-xsec-1}
+N.~Kidonakis and R.~Vogt,
+``Next-to-Next-to-Leading Order Soft Gluon Corrections in Top Quark
+Hadroproduction,''
+Phys.\ Rev.\ D~{\bf 68}, 114014 (2003).
+
+\bibitem{ttbar-xsec-2}
+M.~Cacciari {\it et al.},
+``The {\ttbar} Cross Section at 1.8~TeV and 1.96~TeV: A Study of
+the Systematics Due to Parton Densities and Scale Dependence,''
+J.\ High~Energy~Phys.~{\bf 0404}, 068 (2004).
+
+\bibitem{singletop-xsec-1}
+M.C.~Smith and S.~Willenbrock,
+``QCD and Yukawa Corrections to Single-Top-Quark Production
+via ${\qqbar}{\rar}{\tbbar}$,''
+Phys.\ Rev.\ D~{\bf 54}, 6696 (1996).
+
+\bibitem{singletop-xsec-2}
+A.P.~Heinson, A.S.~Belyaev, and E.E. Boos,
+``Single Top Quarks at the Fermilab Tevatron,''
+Phys.\ Rev.\ D~{\bf 56}, 3114 (1997).
+
+\bibitem{singletop-xsec-3}
+T.~Stelzer, Z.~Sullivan and S.~Willenbrock,
+``Single-Top-Quark Production via W-Gluon Fusion at
+Next-to-Leading Order,''
+Phys.\ Rev.\ D~{\bf 56}, 5919 (1997).
+
+\bibitem{singletop-xsec-4}
+B.W.~Harris {\it et al.},
+``Fully Differential Single-Top-Quark Cross Section in Next-to-Leading
+Order QCD,''
+Phys.\ Rev.\ D~{\bf 66}, 054024 (2002).
+
+\bibitem{singletop-xsec-5}
+Z.~Sullivan,
+``Understanding Single-Top-Quark Production and Jets at Hadron
+Colliders,''
+Phys.\ Rev.\ D~{\bf 70}, 114012 (2004).
+
+\bibitem{singletop-xsec-6}
+Q.-H.~Cao, R.~Schwienhorst, and C.-P.~Yuan,
+``Next-to-Leading Order Corrections to Single Top Quark Production
+and Decay at the Tevatron: 1: s-Channel Process,''
+Phys.\ Rev.\ D~{\bf 71}, 054023 (2005).
+
+\bibitem{singletop-xsec-7}
+Q.-H.~Cao {\it et al.},
+``Next-to-Leading Order Corrections to Single Top Quark Production
+and Decay at the Tevatron: 2. t-Channel Process,''
+Phys.\ Rev.\ D~{\bf 72}, 094027 (2005).
+
+\bibitem{singletop-xsec-8}
+N.~Kidonakis,
+``Single Top Production at the Tevatron: Threshold Resummation and
+Finite-Order Soft Gluon Corrections,''
+hep-ph/0609287.
+
+\bibitem{run1-d0-prd}
+B.~Abbott {\it et al.},
+Search for Electroweak Production of Single Top Quarks in {\ppbar}
+Collisions,''
+Phys.\ Rev.\ D~{\bf 63}, 031101 (2001).
+
+\bibitem{run1-d0-plb}
+V.M.~Abazov {\it et al.},
+``Search for Single Top Quark Production at {\dzero} Using Neural
+Networks,''
+Phys.\ Lett.\ {\bf B 517}, 282 (2001).
+
+\bibitem{run2-d0-160}
+The Single Top Working Group,
+``Search for Single Top Quark Production at {\dzero} in Run~II,''
+{\dzero}~Note~4398 (2004).
+
+\bibitem{run2-d0-230}
+The Single Top Working Group,
+``Improved Search for Single Top Quark Production,''
+{\dzero}~Note~4670 (2005).
+
+\bibitem{run2-d0-plb}
+V.M.~Abazov {\it et al.},
+``Search for Single Top Quark Production in {\ppbar} Collisions at
+$\sqrt{s} = 1.96$~TeV,''
+Phys.\ Lett.\ {\bf B 622}, 265 (2005).
+
+\bibitem{run2-d0-prd}
+V.M.~Abazov {\it et al.},
+``Multivariate Searches for Single Top Quark Production with the
+{\dzero} Detector,''
+submitted to Phys.\ Rev.\ D, hep-ex/0604020.
+
+\bibitem{run2-d0-370}
+B.~Cl\'{e}ment and D.~Gel\'{e},
+``Search for Single Top Quark Production Using Likelihood
+Discriminants,''
+{\dzero}~Note~4825 (2005).
+
+\bibitem{dissertations-d0}
+{\dzero} Ph.D. dissertations on single top quark physics:\\
+J.~McDonald, Florida State University, May 1999;\\
+L.~Dudko, Moscow State University, September 2001;\\
+E.~Busato, University of Paris VI, April 2005;\\
+M.~Agelou, University of Paris VI, May 2005;\\
+S.~Jabeen, University of Kansas, January 2006;\\
+B.~Cl\'{e}ment, IReS de Strasbourg, April 2006;\\
+P.~Perea, University of California, Riverside, June 2006.
+
+\bibitem{run1-cdf-1}
+D.~Acosta {\it et al.},
+``Search for Single Top Quark Production in {\ppbar} Collisions at
+$\sqrt{s} = 1.8$~TeV,''
+Phys.\ Rev.\ D~{\bf 65}, 091102 (2002).
+
+\bibitem{run1-cdf-2}
+D.~Acosta {\it et al.},
+``Optimized Search for Single Top Quark Production at the Fermilab
+Tevatron,''
+Phys.\ Rev.\ D~{\bf 69}, 053003 (2004).
+
+\bibitem{run2-cdf-162}
+D.~Acosta {\it et al.},
+Search for Electroweak Single-Top-Quark Production in {\ppbar}
+Collisions at $\sqrt{s} = 1.96$~TeV,''
+Phys.\ Rev.\ D~{\bf 71}, 012005 (2005).
+
+\bibitem{run2-cdf-bnn-700}
+The CDF Collaboration,
+``Single Top Quark Search with 0.7~fb$^{-1}$,''
+CDF~Conference~Note~8185, (2006).
+
+\bibitem{run2-cdf-me-955}
+The CDF Collaboration,\\
+\texttt{http://www-cdf.fnal.gov/physics/new/top/2006/SingleTop/ME\_1FB/}.
+
+\bibitem{run2-cdf-lhood-955}
+The CDF Collaboration,\\
+``Multivariate Likelihood Search for Single-Top-Quark Production with
+1~fb$^{-1}$,''
+CDF~Conference~Note~8585, (2006),\\
+\texttt{http://www-cdf.fnal.gov/physics/new/top/2006/SingleTop/LF\_1FB/public\_page.html}.
+
+\bibitem{dissertations-cdf}
+CDF Ph.D. dissertations on single top quark physics:\\
+T.~Kikuchi, Tsukuba University, March 2000;\\
+S.~Wolinski, University of Michigan, 2002;\\
+C.~Ciobanu, Ohio State University, August 2002;\\
+B.~Stelzer, University of Toronto, May 2005;\\
+T.~Walter, University of Karlsruhe, June 2005;\\
+Y.~Kemp, University of Karlsruhe, February 2006.
+
+\bibitem{d0note4958} 
+B.~Casey {\it et al.},
+``Determination of the Effective Inelastic {\ppbar} Cross Section
+for the {\dzero} Luminosity Measurement Using Upgraded Readout
+Electronics,''
+{\dzero}~Note~4958 (2005).
+
+\bibitem{d0note5139}  
+G.~Snow {\it et al.},
+``Adjustments to the Measured Integrated Luminosity in Run IIa,''
+{\dzero}~Note~5139 (2006).
+
+\bibitem{datasample} 
+M.~Weber {\it et al.},
+``{\dzero}~Top Analysis and Data Sample for the Fall Conferences
+2006,''
+{\dzero}~Note in preparation.
+
+\bibitem{csg}
+Common Samples Group webpage for p17 data:
+\texttt{http://www-d0.fnal.gov/Run2Physics/cs/skimming/fixPass2p170903.html}
+
+\bibitem{comphep}
+E.E.~Boos {\it et al.},
+``Method for Simulating Electroweak Top-Quark Production Events in
+the NLO Approximation: SingleTop Generator,''
+Phys.\ Atom.\ Nucl.~{\bf 69}, 1317 (2006).
+
+\bibitem{cteq}
+J.~Pumplin {\it et al.},
+``New Generation of Parton Distributions with Uncertainties from
+Global QCD Analysis,''
+J.\ High~Energy~Phys.~{\bf 0207}, 012 (2002). We used version CTEQ6L1.
+
+\bibitem{pythia}
+T.~Sj\"{o}strand {\it et al.},
+``PYTHIA 6.2: Physics and Manual,''
+hep-ph/0108264. We used version~6.323.
+
+\bibitem{tauola}
+S.~Jadach {\it et al.},
+``The Tau Decay Library TAUOLA: version 2.4,''
+Comput.\ Phys.\ Commun.~{\bf 76}, 361 (1993). We used version~2.5.
+
+\bibitem{evtgen}
+D.J.~Lange,
+``The EvtGen Particle Decay Simulation Package,''
+Nucl.\ Instrum.\ Meth.~{\bf A 462}, 152 (2001). We used
+version~00.00.17.
+
+\bibitem{alpgen}
+M.L.~Mangano {\it et al.},
+``ALPGEN, a Generator for Hard Multiparton Processes in Hadronic
+Collisions,''
+J.\ High~Energy~Phys.~{\bf 0307}, 001 (2003). We used {\alpgen}
+version~2.05.
+
+\bibitem{jetmatching}
+S.~H\"{o}che {\it et al.},
+``Matching Parton Showers and Matrix Elements,''
+hep-ph/0602031.
+
+\bibitem{MCprocessing}
+D.~Gillberg,
+``Heavy Flavour Removal and Determination of Weighting Factors for
+{\alpgen} $W$+jets Monte Carlo,''
+{\dzero}~Note~5129 (2006).
+
+\bibitem{mm_explained}
+E.~Barberis {\it et. al.},
+``The Matrix Method and its Error Calculation,''
+{\dzero}~Note~4564 (2004).
+
+\bibitem{adaptivepv}
+A.~Schwartzman and C.~Tully,
+``Primary Vertex Reconstruction by Means of Adaptive Vertex Fitting,''
+{\dzero}~Note~4918 (2005).
+
+\bibitem{emcert}
+J.~Hays {\it et al.},
+``Single Electron Efficiencies in p17 Data and Monte-Carlo using
+p18.05.00 d0correct,''
+{\dzero}~Note~5105 (2006).
+
+\bibitem{elike} 
+J.~Kozminski {\it et al.}, 
+``The Electron Likelihood in p14,'' 
+{\dzero}~Note~4449 (2003).
+
+\bibitem{muon_cert} 
+T.~Gadfort {\it et al.}, 
+``Muon Identification Certification for p17 Data,''
+{\dzero}~Note~5157 (2006).
+
+\bibitem{p17jetid}
+Jet ID Group webpage:
+\texttt{http://www-d0.fnal.gov/phys\_id/jets/jetid.html};\\
+A.~Harel,
+``Jet ID Optimization,''
+{\dzero}~Note~4919 (2006).
+
+\bibitem{T42} 
+J.-R. Vlimant {\it et al.},
+``Technical Description of the T42 Algorithm for Calorimeter
+Noise Suppression,'' 
+{\dzero}~Note~4146 (2003).
+
+\bibitem{run2jets} 
+G.~Blazey {\it et al.},
+``Run II Jet Physics,''
+{\dzero}~Note~3750 (2000).
+
+\bibitem{cert_jes}
+``Preliminary p17 JES for Data and MC (JetCorr v07-01-02),''\\
+\texttt{http://www-d0.fnal.gov/phys\_id/jes/d0\_private/certified/certified\_jes.html}.
+
+\bibitem{jssr}
+The method is described for p14 in:\\
+N.~Makovec and J.-F.~Grivaz,
+``Shifting, Smearing and Removing Simulated Jets,''
+{\dzero}~Note~4914 (2005).\\
+Application of the method in p17 can be seen here:\\
+C.~Ochando, 
+``SSR in p17,'' {\dzero}~p17 Higgs Workshop, May 17-18, 2006,\\
+\texttt{http://www-d0.hef.kun.nl//fullAgenda.php?ida=a06904\&fid=32}.
+
+\bibitem{nntagger_cert}
+M.~Anastasoaie, S.~Robinson, and T.~Scanlon
+``Performance of the NN $b$-Tagging Tool on p17 Data,''
+{\dzero}~Note~5213 (2006).
+
+\bibitem{dataquality}
+Data Quality Group web page:\\
+\texttt{http://www-d0.fnal.gov/computing/data\_quality/d0\_private/forusers.html}.
+We have used the recommended tags: \texttt{caf\_dq v02-01-01}, with
+\texttt{dq\_defs v2006-05-04}. A new \texttt{dq\-defs v2006-10-10} has
+been recently released to include the cable swap data, but the used
+tag covers our dataset.
+
+\bibitem{beamshifts}
+H.~Schellman, ``The Longitudinal Shape of the Luminous Region at
+{\dzero},'' {\dzero}~Note~5142 (2006).
+
+\bibitem{matrix-method}
+R.~Schwienhorst and E.~Perez,
+``Uncertainty Calculation for Combined $W$+jets and QCD Backgrounds
+in Analyses with $W$+Jets Signatures,''
+{\dzero}~Note~4597 (2004).
+
+\bibitem{ellis-wbb}
+R.K.~Ellis and S.~Veseli,
+``Strong Radiative Corrections to $Wb\bar{b}$ Production in {\ppbar}
+Collisions,''
+Phys.\ Rev.\ D {\bf 60}, 011501 (1999).
+
+\bibitem{cordero-wbb}
+NLO QCD Corrections to $W$ Boson Production with a Massive $b$-Quark
+Jet Pair at the Tevatron {\ppbar} Collider,''
+F.~Febres Cordero, L.~Reina, and D.~Wackeroth,
+Phys.\ Rev.\ D~{\bf 74}, 034007 (2006).
+
+\bibitem{willenbrock-wb}
+S.~Willenbrock,
+``$Wjj$ -- two $b$ or not two $b$,''
+presentation in the Top Group meeting, October 6, 2006:
+\texttt{http://www-d0.hef.kun.nl//fullAgenda.php?ida=a061740}.
+
+\bibitem{dt-note-910}
+The Single Top Working Group,
+``Using Boosted Decision Trees to Search for Single Top Quarks in
+1~fb$^{-1}$ of Data,''
+{\dzero}~Note~5286 (2006).
+
+\bibitem{me-note-910}
+The Single Top Working Group,
+``Search for Single Top Quark Production using the Matrix Element
+Analysis Technique in 1~fb$^{-1}$ of Data,''
+{\dzero}~Note~5287 (2006).
+
+\bibitem{bnn-note-910}
+The Single Top Working Group,
+``Using Bayesian Neural Networks to Search for Single Top Quarks in
+1~fb$^{-1}$ of Data,''
+{\dzero}~Note~5288 (2006).
+
+\bibitem {caf_trigger}
+Caf\_trigger webpage:
+\texttt{http://www.phys.ualberta.ca/~kwchan/d0/caf\_trigger/readme.html}.
+
+\bibitem {top_trigger_web}
+Top Group's trigger webpage:
+\texttt{http://www-d0.fnal.gov/Run2Physics/top/d0\_private/wg/triggers/}.
+
+\bibitem{d0_note_4512}
+M.~Angelou {\it et al.},
+``Top Trigger Efficiency Measurements and the ``top\_trigger''
+Package,''
+{\dzero}~Note~4512 (2004).
+
+\bibitem{d0_note_4978}
+L.~Christofek,
+``Text and Trigger Tables for Publications for the Top Group,''
+{\dzero}~Note~4978 (2006).
+
+\bibitem{d0_note_4882}
+L.~Christofek {\it et al.},
+``Probability Calculation for Multi-Object Trigger Configurations
+for the Top Quark Physics Group,''
+{\dzero}~Note~4882 (2005).
+
+\bibitem{MCFM}
+J.M. Campbell,
+``$W/Z+{\bbbar}$/Jets at NLO using the Monte Carlo MCFM,''
+in the proceedings of the 36th Rencontres de Moriond on QCD and
+Hadronic Interactions, Les Arcs, France, (March 2001), hep-ph/0105226.
+
+\bibitem{FOMEcs}
+M.~Begel, L.~Christofek, and E.~Shabalina,
+``Determination of the Weighting Factors for {\sc alpgen} Monte
+Carlo Signal and Background Samples,''
+{\dzero}~Note~5016 (2006).
+
+\bibitem{d0note5123}
+S.~Jain {\it et al.},
+``Computing Limits Using a Bayesian Approach in the Package
+\texttt{top\_statistics},''
+{\dzero}~Note~5123 (2006).
+
+\bibitem{d0note5260}
+H.B.~Prosper, S. Jain,
+``Analysis Optimization using Bayes Factors,''
+{\dzero}~Note~5260 (2006).
+
+\bibitem{Fisher}  
+S.E.~Fienberg and D.V.~Hinkley, eds.,
+``R.A.~Fisher: An Appreciation,''
+Lecture Notes on Statistics, Volume 1, Springer Verlag (1990);\\
+G.~Cowan,
+``Statistical Data Analysis,''
+Oxford (1998);\\
+R.J.~Barlow,
+``Statistics: A Guide to the use of Statistical Methods in the
+Physical Sciences,''
+The Manchester Physics Series, John Wiley and Sons, New York (1989).
+
+\bibitem{d0note5258}
+H.B.~Prosper and S.~Jain,
+``Defining p-Value with Systematic Effects, and Using Spectral
+Distributions,''
+{\dzero}~Note~5258 (2006).
+
+\end{thebibliography}
+
+%---------------------------------------------------------------------
+%---------------------------------------------------------------------
+%---------------------------------------------------------------------
+
+\end{document}
+
+
+%%% Changes since v0.5 that was given to the EB on 10/20/06
+%%% (only listing those that will be of interest to the EB or us,
+%%% not LaTeX and layout fixes
+
+% Steve Herrin moved from Washington U to Rice U.
+%
+% ttbar cross section uncertainty changed from 7% (a mistake) to 18%.
+%
+% Added the Febres Cordero reference for Wbb.
+%
+% Added a data-background differences table to the cross-check
+% samples appendix.
+%
+% Updated the S:B ratios and signal percentages in figures 2 and 3
+% to match the final numbers, and merged the e and mu tables for
+% simplicity.
+%
+% The following changes were made in response to Darien's comments
+% (as EB chair) 10.23.06:
+%
+% Added two sentences to the top of section 6.2 on backgrounds to
+% describe the use of the orthogonal data samples to model the
+% multijet backgrounds.
+%
+% Added a sentence to the end of the text in sectin 4 on event yields
+% to explain that the values in the tables are rounded to integers
+% and thus the sums of the components do not equal excatly the
+% values given for the sums.
+%
+% Corrected the definition of mu1ptxatxx in the triggers appendix.
+%
+% Beautified the trigger turn-on curve plots and the eps_sig electron
+% plots so they are legible when small in the document.
+%
+% Added a table of the percentages of each yield that are b-tagged
+% to the event yields section.
+% 
+% Added a figure showing the color key for most of our plots
+%
+% Fixed the table graphic showing fractiosn of signal events and
+% S:B ratios so the color scheme matches the key!
+%
+% Added a definition of taggability to the appendix describing how
+% we test the taggability rate functions. (Someone knowledgeable
+% should check it is up-to-date.)
+% 
+% Added plots of MET vs. MTW for the orthogonal samples to show
+% that there is practically no W content in them, and explained why
+% it matters.
+% 
+% Made sure the muon channel tables have 5jets and not 5+jets as
+% column captions.
+% 
+% Added the beginning and end run numbers to the initial data
+% samples section.
+% 
+% Added a table of summed yields with the combined uncertainties.
+% 
+% Added a table of the data-(background+SM) differences as factors
+% of the uncertainty on the background+signals, and commented out
+% the table where the differences were shown as percentages
+% (not so useful)
+%
+% Added a comparison of the tagged fractions of signal now with NN
+% tagger compared to what we had with the SVT tagger in the 230 ipb
+% analysis.
+%
+% Added W transverse mass plots for 0,1,2 tags, 1,2,3,4 jets for e
+% and mu as an appendix. These are subsets of the pretagged plots in
+% the backgrounds section.
+%
+% Tidied up the plots and tables in the epsion_signal epsilon_qcd
+% appendix. Found that the muon eps_qcd numbers are wrong for
+% separate triggers (=el). Jorge to fix this.
+%
+% Laid out systematics tables in appendix slightly differently
+% and added channel to page caption to make it easier to follow
+% them.
+%
+% Revamped the eps_signal and eps_qcd plots, and made the text,
+% plots  and table for each fit on one page for easy reading.
+%
+% Revamped the taggability and TRF plots.
+%
+% Added uncertainties to epsion_real-l.
+%
+% Change the appendix order so we can comment out missing ones
+% without renumbering the stats ones.
+% 
+% Made tiny corrections to yield uncertainties with the corrected
+% values (muon trigger 3->6%, ttbar xsec 7->18%, and a couple of
+% others), and updated by one digit one of the differences numbers
+% (1.0->0.9 sigma
+%
+% Replaced table of (data-backgd)/backgd with (data-backgd)/
+% sigma(backgd) for the cross check samples in the appendix
+%
+% Updated the table of systematics in the main note to show separate
+% trigger efficiencies and values for epsilon_qcd-e. Still waiting for
+% epsilcon_qcd-mu from Thomas.
+%
+% Split the S:B and percentage of acceptance figure into two files so
+% they can be put side-by-side in talks.
+%
+% Removed ``x10'' on the plot key in the introduction.
+%
+%
+%
+%
+

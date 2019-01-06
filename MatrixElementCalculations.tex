@@ -1,0 +1,924 @@
+\chapter{Differential Cross Section Derivation}
+%---------------------------------------------------------------------
+\section{Probability Calculation}
+\label{full}
+
+\subsection{Differential Cross Section at the Parton Level}
+
+The matrix element analysis technique reconstructs each event to the
+final state four-vectors to evaluate the signal and background leading
+order matrix element. The following sections derive the signal and
+background probabilities starting from the final state at the parton
+level and then relating these objects to the physical quantities
+measured in the detector. The following also assumes a lepton,
+neutrino, and two quarks in the final state.
+
+The probability density for a process to occur at a hadron-hadron
+collider is given as an integral of the hard-scatter differential
+cross section over all possible ways of producing the process from the
+quarks and gluons inside the hadron. This probability density, shown
+below, is a convolution of the hard scatter differential cross section
+with a parton distribution function for each of the two partons from
+the hadrons with an integral over all possible momentum fractions
+$x_{i}, x_{j}$ from each initial parton.
+\begin{equation}
+{\cal P}(\vec{y}) = \frac{1}{\sigma} \sum_{i,j}
+\int f_{i}(q_{1}, Q^{2})dq_{1}
+\times f_{j}(q_{2}, Q^{2})dq_{2}
+\times d\sigma_{hs,ij}(\vec{y})
+\end{equation}
+\noindent where the normalization constant $\sigma$ is defined as
+integral of the differential cross section over the initial- and
+final-state phase spac:
+\begin{equation}
+\label{ds}
+\sigma = \int  \sum_{i,j}
+\int f_{i}(q_{1}, Q^{2})dq_{1}
+\times f_{j}(q_{2}, Q^{2})dq_{2}
+\times \pderiv{\sigma_{hs,ij}(\vec{y})}{\vec{y}} d\vec{y}
+\end{equation}
+\noindent and finally, the hard-scatter differential cross section is
+defined as the product of the final state phase space factor, the
+square of the matrix element amplitude and an overall flux factor:
+\begin{equation}
+d\sigma_{hs} = \frac{(2\pi)^4}{4}
+\frac{{|\cal M|}^{2}}
+{\sqrt{(q_{1}q_{2})^2 - m_{1}^2 m_{2}^2}}
+\frac{d^{3}p_{1}}{(2\pi)^3 2E_{1}}
+\frac{d^{3}p_{2}}{(2\pi)^3 2E_{2}}
+\frac{d^{3}p_{\ell}}{(2\pi)^3 2E_{\ell}}
+\frac{d^{3}p_{\nu}}{(2\pi)^3 2E_{\nu}}
+\delta^{4}(q_{1}q_{2};p_{1},p_{2},p_{\ell},p_{\nu})
+\end{equation}
+
+
+\subsection{Evaluating the Hard Scatter Differential Cross Section}
+
+The following section evaluates the differential cross section shown
+in Eq.~\ref{ds} given a set of inital and final state four-vectors.
+
+The first assumption made is that all collisions occur along the beam
+axis with no net transverse momentum. This means the initial state
+four vectors can be written as
+\begin{equation}
+q_{1} = ( E_{beam} x_{1}, 0, 0, E_{beam} x_{1} )
+\end{equation}
+\begin{equation}
+q_{2} = ( E_{beam} x_{2}, 0, 0, -E_{beam} x_{2} )
+\end{equation}
+\noindent The next assumption is that all particle masses are known
+and are negligible compared to their energies and thus can be ignored
+for this calculation. The flux factor (shown below) in the hard
+scatter cross section can now be written in terms in the two momentum
+fractions of the incoming partons:
+\begin{equation}
+\frac{1}{\sqrt{(q_{1}q_{2})^2 - m_{1}^2m_{2}^2}} \rightarrow
+\frac{1}{\sqrt{(q_{1}q_{2})^2}} \rightarrow
+\frac{1}{2E_{beam}x_{1}x_{2}}
+\end{equation}
+\noindent For the remainder of the note, the following notation will
+be used to distinquish quarks, leptons, and neutrinos: $p_{\ell}$ is
+the momemtum of the lepton, $p_{1,2}$ is the momentum of the first and
+second final state partons, and $p_{\nu}$ is the neutrino
+momentum. Because the phase space is written in terms of rectangular
+coordinates, the next step towards the final differential cross
+section equation is to redefine the phase space factors in terms of
+spherical coordiniates. This is done for all final state particles
+except the neutrino for reasons that will be clear later in the
+document.
+\begin{eqnarray}
+d\Phi_{4} = 
+\frac{d^{3}p_{1}}{(2\pi)^3 2E_{1}}
+\frac{d^{3}p_{2}}{(2\pi)^3 2E_{2}}
+\frac{d^{3}p_{\ell}}{(2\pi)^3 2E_{\ell}}
+\frac{d^{3}p_{\nu}}{(2\pi)^3 2E_{\nu}} \delta^{4} 
+\rightarrow \\
+\frac{1}{16(2\pi)^{12}}
+\frac{|p_{1}|^{2}d|p_{1}|d\Omega_{1}}{E_{1}}
+\frac{|p_{2}|^{2}d|p_{2}|d\Omega_{2}}{E_{2}}
+\frac{|p_{\ell}|^{2}d|p_{\ell}|d\Omega_{\ell}}{E_{\ell}}
+\frac{d^{x}_{\nu} d^{y}_{\nu} d^{z}_{\nu}}{E_{\nu}}\delta^{4} 
+%\frac{d^{3}p_{1}}{(2\pi)^3 2E_{1}} \frac{d^{3}p_{2}}{(2\pi)^32E_{2}} \frac{d^{3}p_{\ell}}{(2\pi)^3 2E_{\ell}}
+%\frac{d^{3}p_{\nu}}{(2\pi)^3 2E_{\nu}} \delta^{4} \righarrow 
+%\frac{1}{16(2\pi)^{12}}
+\end{eqnarray}
+\noindent To summarize, the full hard scatter differential cross
+section is now
+\begin{equation}
+\label{dhs}
+d\sigma_{hs} = \frac{1}{128(2\pi)^{8}E_{beam}}
+\frac{{|\cal M|}^{2}}{2x_{1}x_{2}}
+\frac{|p_{1}|^{2}d|p_{1}|d\Omega_{1}}{E_{1}}
+\frac{|p_{2}|^{2}d|p_{2}|d\Omega_{2}}{E_{2}}
+\frac{|p_{\ell}|^{2}d|p_{\ell}|d\Omega_{\ell}}{E_{\ell}}
+\frac{d^{x}_{\nu} d^{y}_{\nu} d^{z}_{\nu}}{E_{\nu}} \delta^{4} 
+\end{equation} 
+
+
+\subsection{Evaluating the Hadron-Hadron Differential Cross Section}
+
+The next step to writing the full hadron-hadron differential cross
+section is to rewrite Eq.~\ref{dhs} such that any integration over the
+phase space will remove the four-dimensional delta function required
+for energy and momentum conservation. The delta function is currently
+written such that it will vanish only over integrations of total
+$p_{x}, p_{y}, p_{z}$, and $E$. Because there was an original
+assumption of no net transverse momentum in the collision, the total
+$p_{x}$ and $p_{y}$ can be solved for the neutrino transverse
+momentum.
+\begin{eqnarray}
+\sum_{i}P^{x}_{i} =
+p^{x}_{1} + p^{x}_{2} + p^{x}_{\ell} + p^{x}_{\nu} = 0
+\rightarrow p^{x}_{\nu} =
+- p^{x}_{1} - p^{x}_{2} - p^{x}_{\ell} \\
+\sum_{i}P^{y}_{i} =
+p^{y}_{1} + p^{y}_{2} + p^{y}_{\ell} + p^{y}_{\nu} = 0
+\rightarrow p^{y}_{\nu} =
+- p^{y}_{1} - p^{y}_{2} - p^{y}_{\ell}
+\end{eqnarray}
+\noindent The total $p_{z}$ and requirement can be rewritten in terms
+of the intial parton's momemtum fraction and the other final state
+partons' $z$ momenta and thus solve for the neutrino $p_{z}$:
+\begin{eqnarray}
+\nonumber
+\sum_{i}P^{z}_{i} =
+p^{z}_{1} + p^{z}_{2} + p^{z}_{\ell} + p^{z}_{\nu} -
+E_{beam}x_{1} + E_{beam}x_{2} = 0 \rightarrow \\
+p^{z}_{\nu} =
+- E_{beam}(x_{1} - x_{2}) - p^{z}_{1} - p^{z}_{2} - p^{z}_{\ell}
+\end{eqnarray}
+\noindent Finally, the total energy delta function implies the
+following:
+\begin{equation}
+E_{beam}x_{1} + E_{beam}x_{2} = E_{1} + E_{2} + E_{\ell} + E_{\nu}
+\end{equation}
+
+At this point, is it useful to rewrite the full differential cross
+section at the parton level:
+\begin{eqnarray}
+\nonumber
+d\sigma(\vec{y}) = \sum_{i,j} \int f_{i}(x_{1}, Q^{2})dx_{1}
+\times f_{j}(x_{2}, Q^{2})dx_{2}
+\times \frac{1}{128(2\pi)^{8}E_{beam}}
+\frac{{|\cal M|}^{2}}{2x_{1}x_{2}} \times \\
+\nonumber
+\frac{|p_{1}|^{2}d|p_{1}|d\Omega_{1}}{E_{1}}
+\frac{|p_{2}|^{2}d|p_{2}|d\Omega_{2}}{E_{2}}
+\frac{|p_{\ell}|^{2}d|p_{\ell}|d\Omega_{\ell}}{E_{\ell}}
+\frac{d^{x}_{\nu} d^{y}_{\nu} d^{z}_{\nu}}{E_{\nu}} \times \\
+\nonumber
+\delta(p^{x}_{\nu} + p^{x}_{1} + p^{x}_{2} + p^{x}_{\ell}) \times \\
+\nonumber
+\delta(p^{y}_{\nu} + p^{y}_{1} + p^{y}_{2} + p^{y}_{\ell}) \times \\
+\nonumber
+\delta(p^{z}_{\nu} + E_{beam}(x_{1} - x_{2}) + p^{z}_{1}
++ p^{z}_{2} + p^{z}_{\ell}) \times \\
+\delta(E_{beam}x_{1} + E_{beam}x_{2} - E_{1} - E_{2}
+- E_{\ell} - E_{\nu})
+\end{eqnarray}
+
+The next step is to rewrite the integrational variables, $x_{1}$ and
+$x_{2}$, in terms of the total energy and total $p_{z}$:
+\begin{eqnarray}
+\label{x1}
+x_{1} = \frac{E_{tot} + p^{z}_{tot}}{2E_{beam}} \\
+\label{x2}
+x_{2} = \frac{E_{tot} - p^{z}_{tot}}{2E_{beam}}
+\end{eqnarray}
+\noindent Now, the integration over $x_{1}$ and $x_{2}$ can be
+rewritten in terms of $E_{tot}$ and $p_{z}$:
+\begin{eqnarray}
+dx_{1}dx_{2} =
+\frac{1}{J(x_{1},x_{2};E_{tot},p^{z}_{tot})}dE_{tot}dp^{z}_{tot} \\
+J(x_{1},x_{2};E_{tot},p^{z}_{tot}) = 2E^{2}_{beam}
+\end{eqnarray}
+\noindent At this point the integration over the total energy and
+$p_{z}$ will constrain the two incoming partons' momentum fractions
+through Eq.~\ref{x1} and \ref{x2}.
+
+The full differential cross section at the parton level can now be
+written as
+\begin{eqnarray}
+\nonumber
+d\sigma(\vec{y}) = \sum_{i,j} \int f_{i}(x_{1}, Q^{2})
+\times 
+f_{j}(x_{2}, Q^{2}) \times \frac{1}{128(2\pi)^{8}E_{beam}}
+\frac{{|\cal M|}^{2}}{2x_{1}x_{2}} \times \\
+\nonumber
+\frac{|p_{1}|^{2}d|p_{1}|d\Omega_{1}}{E_{1}}
+\frac{|p_{2}|^{2}d|p_{2}|d\Omega_{2}}{E_{2}}
+\frac{|p_{\ell}|^{2}d|p_{\ell}|d\Omega_{\ell}}{E_{\ell}}
+\frac{d^{x}_{\nu} d^{y}_{\nu} d^{z}_{\nu}}{E_{\nu}} \times \\
+\int \frac{1}{2E^{2}_{beam}} dp^{z}_{tot}
+\end{eqnarray}
+\noindent where the implicit integration over the four dimensional
+delta function yields the following formulas for the neutrino four
+vector and the incoming partons' momentum fraction in terms of the
+remaining differential variables.
+\begin{eqnarray}
+p^{x}_{\nu} = - p^{x}_{1} - p^{x}_{2} - p^{x}_{\ell} \\
+p^{y}_{\nu} = - p^{y}_{1} - p^{y}_{2} - p^{y}_{\ell} \\
+p^{z}_{\nu} = - p^{z}_{tot} - p^{z}_{1} - p^{z}_{2} - p^{z}_{\ell} \\
+x_{1} = \frac{E_{1} + E_{2} + E_{\ell} + E_{\nu} + p^{z}_{tot}}
+{2E_{beam}} \\
+x_{2} = \frac{E_{1} + E_{2} + E_{\ell} + E_{\nu} - p^{z}_{tot}}
+{2E_{beam}}
+\end{eqnarray}
+
+
+\subsection{Relating Reconstructed Objects to Partons}
+
+The previous sections have calculated the differential cross section
+for a hadron-hadron collision producing a lepton, neutrino, and two
+partons in the final state. These particles are not exactly what is
+measured in the detector and thus it is necessary to relate
+quantities. To do this, the differential cross section is convoluted
+with a function, $W(\vec{x}, \vec{y})$, which is the probability of
+producing a final state, $\vec{y}$, and observed state, $\vec{x}$, in
+the detector. The resulting differential cross section is then
+integrated over the final state phase space, $d\vec{y}$:
+\begin{equation}
+\pderiv{\sigma^{'}(\vec{x})}{\vec{x}} =
+\int \pderiv{\sigma(\vec{y})}{\vec{y}} W(\vec{x}, \vec{y}) d\vec{y}
+\end{equation}
+\noindent where the function $W(\vec{x}, \vec{y})$ is assumed to be
+factorizable for each measured object:
+\begin{equation}
+W(\vec{x}, \vec{y}) = \prod_{i} W_{i}(\vec{x_{i}}, \vec{y_{i}})
+\end{equation}
+
+
+\subsubsection{Jets}
+
+The transfer function for jets measured in the calorimter is assumed
+to only be a function of the relative energy difference between the
+two objects and all angles are assumed to be well measured:
+\begin{equation}
+W_{jet}(\vec{x}_{jet}, \vec{y}_{parton}) = W(E_{jet} -
+E_{parton}) \times \delta(\Omega_{jet} - \Omega_{parton})
+\end{equation}
+\noindent where $W(E_{jet} - E_{parton})$ is parametrized using the
+following functional form:
+\begin{equation}
+W(E_{jet} - E_{parton}) = \frac{e^{-\frac{(E_{jet}
+- E_{parton} - p_{1})^{2}}{2p^{2}_{2}}} + p_{3}e^{-\frac{(E_{jet}
+- E_{parton} - p_{4})^{2}}{2p^{5}_{2}}}}{2\pi(p_{2} + p_{3}p_{5})}
+\end{equation}
+\noindent where $p_{i} = \alpha_{i} + \beta_{i} \times E_{parton}$.
+The five $\alpha$ and five $\beta$ parameters are determined by
+minimizing a likelihood formed by measuring the parton energy in Monte
+Carlo and the matched jet energy also in Monte Carlo. The parameters
+used for this analysis were determined in several regions of the
+calorimeter to account for the resolution differences in the detector.
+
+
+\subsubsection{Electrons}
+
+The transfer function for electrons is assumed to be
+solely a function of the reconstructed energy of the electron,
+$E_{reco}$, the parton energy of the electron, $E_{parton}$, and
+$\theta$, the production angle with respect to the beam axis:
+\begin{equation}
+W_{electron}(\vec{x}_{reco}, \vec{y}_{parton}) = W(E_{reco},
+E_{parton}, \theta) \times \delta(\Omega_{reco} - \Omega_{parton})
+\end{equation}
+\noindent where $W(E_{reco}, E_{parton}, \theta)$ is parametrized
+using the following functional form:
+\begin{eqnarray}
+W(E_{reco}, E_{parton}, \theta) & = &
+\frac{1}{2\pi\sigma}\mathrm{exp}
+[-\frac{(E_{reco} - E_{center})^{2}}{2\sigma^{2}}]\\
+E_{center} & = &
+1.0002 E_{parton} + 0.324\,{GeV}/c^2 \\
+\sigma & = &
+0.028 E_{center} \oplus \textrm{Sampling}(E_{center},
+\eta) E_{center} \oplus 0.4 \\
+\textrm{Sampling}(E, \theta) & = &
+\left[\frac{0.164}{\sqrt{E}} + \frac{0.122}{E}\right]
+\textrm{exp}\left[\frac{\textrm{p1}(E)}
+{\textrm{sin}\theta}-\textrm{p1}(E)\right] \\
+\textrm{p1}(E)& = & 1.35193 - \frac{2.09564}{E} - \frac{6.98578}{E^2}.
+\end{eqnarray}
+
+
+\subsubsection{Muons}
+
+The transfer function for muons is assumed to be a
+function of
+\begin{equation}
+\Delta\left( \frac{q}{p_t}\right) =
+\left( \frac{q}{p_t}\right)_{reco} -
+\left( \frac{q}{p_t}\right)_{parton}
+\end{equation}
+\noindent and of $\eta_\mathrm{CFT}$,
+\begin{equation}
+W_{muon}(\vec{x}_{reco}, \vec{y}_{parton}) =
+W\left(\Delta\left( \frac{q}{p_t}\right),
+\eta_\mathrm{CFT}\right) \times 
+\delta(\Omega_{reco} - \Omega_{parton})
+\end{equation}
+\noindent where $W\left(\Delta\left( \frac{q}{p_t}\right),
+\eta_\mathrm{CFT}\right)$ is parametrized using a single Gaussian:
+\begin{equation}
+W\left(\Delta\left( \frac{q}{p_t}\right), \eta_\mathrm{CFT}\right) = 
+\frac{1}{2\pi\sigma}\mathrm{exp}
+\left\{-\frac{\left[\Delta
+\left( \frac{q}{p_t} \right)\right]^2}
+{2\sigma^2}\right\}
+\end{equation}
+\begin{equation}
+\sigma  =  \left\{ 
+\begin{array} {c@{\quad:\quad}l} \sigma_o &
+|\eta_\mathrm{CFT}| \le \eta_o \\
+\sqrt{\sigma^2_o + [c(|\eta_\mathrm{CFT}| - \eta_o)]^2} &
+|\eta_\mathrm{CFT}| > \eta_o 
+\end{array} \right.
+\end{equation}
+
+\noindent There are three fitted parameters in the above equations:
+$\sigma_o$, $c$, and $\eta_o$, each of which is actually fitted by two
+sub-parameters:
+\begin{equation}
+par = par(0) + par(1) \cdot 1/p_t.
+\end{equation}
+\noindent Furthermore, these parameters are derived for four classes
+of events: those that were from before or after the 2004 shutdown,
+when the magnetic field strength changed, and in each run range, those
+that have an SMT hit and those that do not.
+
+As a simplification, we assume $q_{reco} = q_{parton}$, that is, we
+do not consider charge misidentification
+
+
+\subsection{Full Differential Cross Section and Normalization}
+
+The full differential cross section at the detector object level can
+now be written as
+\begin{eqnarray}
+\label{fullds}
+\nonumber
+\pderiv{\sigma^{'}(\vec{x})}{\vec{x}} =
+\int dp^{z}_{tot}dq_{1}dq_{2}dp_{\ell} \sum_{i,j}
+f_{i}(q_{1}, Q^{2}) \times f_{j}(q_{2}, Q^{2}) \\
+\times \frac{1}{256(2\pi)^{8}E^{3}_{beam}}
+\frac{{|\cal M|}^{2}}{2x_{1}x_{2}} \times
+\frac{p_{1}^{2}}{E_{1}} \frac{p_{2}^{2}}{E_{2}} 
+\frac{p_{\ell}^{2}}{E_{\ell}} \frac{1}{E_{\nu}}
+\times W_{Lepton}W_{Jet1}W_{Jet2}
+\end{eqnarray}
+\noindent The final step to evaluating the probability density is to
+properly normalize the differential cross section in
+Eq.~\ref{fullds}. This is done by integration of the differential
+cross section over all possible states in the detector. Since the
+event selection cuts will change the number events due to acceptance
+losses, this must be accounted for in the overall normalization (cross
+section) calculation. The total cross section is then written as
+\begin{eqnarray}
+\label{norm}
+\nonumber
+\sigma = \int \pderiv{\sigma^{'}(\vec{x})}{\vec{x}} d\vec{x} =
+\int d\vec{x}dp^{z}_{tot}dq_{1}dq_{2}dp_{\ell} \sum_{i,j}
+f_{i}(q_{1}, Q^{2}) \times f_{j}(q_{2}, Q^{2}) \\
+\times \frac{1}{256(2\pi)^{8}E^{3}_{beam}}
+\frac{{|\cal M|}^{2}}{2x_{1}x_{2}} \times
+\frac{p_{1}^{2}}{E_{1}} \frac{p_{2}^{2}}{E_{2}} 
+\frac{p_{\ell}^{2}}{E_{\ell}} \frac{1}{E_{\nu}}
+\times W_{Lepton}W_{Jet1}W_{Jet2} \times \Theta_{\rm{Cuts}}(\vec{x})
+\end{eqnarray}
+
+ \section{Integration Variable Remapping}
+
+\subsection{Introduction}
+This section will layout the jacobian needed for the 10 $\rar$ 10 remapping of
+variables for the parton level cross section. The base variables used are shown below.
+
+\begin{itemize}
+\item $p_{3}$: Absolute momentum of the lepton
+\item $p_{5}$: Absolute momentum of the first quark
+\item $p_{6}$: Absolute momentum of the second quark
+\item $p_{tot}^{z}$: Total $p_{z}$ of the system
+\item $cos(\theta_{3})$: Cosine($\theta$) of the lepton
+\item $\phi_{3}$: $\phi$ of the lepton
+\item $cos(\theta_{5})$: Cosine($\theta$) of the first quark
+\item $\phi_{5}$: $\phi$ of the first quark
+\item $cos(\theta_{6})$: Cosine($\theta$) of the second quark
+\item $\phi_{6}$: $\phi$ of the second quark
+\end{itemize}
+
+Other variables that are useful for the integration are
+\begin{itemize}
+\item $m_{34}$: Mass of the lepton and neutrino (W mass)
+\item $m_{345}$: Mass of the lepton, neutrino, and first quark (top mass)
+\item $m_{56}$: Mass of the first and second quark ($b\bar{b}$ mass)
+\end{itemize}
+
+Since some of these variables are sharp peaks (W and top masses), it is much
+better to sample from the expected distribution rather than make requirements of
+the invariant masses. The W and top masses are expected to follow a Breit-Wigner
+distribution shown below.
+
+\begin{equation}
+\sigma(M_{34}) = \frac{1}{\pi} \left[ \frac{\gamma}{(M_{34} - M_{W})^{2} +
+\gamma^{2}} \right]
+\end{equation}
+
+where $M_{34}$ is the mass of the lepton and neutrino. Similarly, the top mass
+has the following expected distribution.
+
+\begin{equation}
+\sigma(M_{345}) = \frac{1}{\pi} \left[ \frac{\gamma}{(M_{345} - M_{top})^{2} +
+\Gamma^{2}} \right]
+\end{equation}
+
+where  $M_{345}$ is the mass of the lepton, neutrino, and first quark.
+
+\subsection{Sampling from a Breit-Wigner mass distribution}
+
+Sampling from a Breit-Wigner distribution is done by selecting a random point
+between 0 and 1 from the cumulative distribution function of the BW
+function. The cumulative distribution function, of cdf, for the Breit-Wigner
+distribution is shown below.
+
+\begin{equation}
+\label{sample}
+\int \sigma(m;m_{0};\Gamma) = F(m;m_{0},\Gamma) = \frac{1}{\pi} \tan^{-1} \left[
+\frac{m-m_{0}}{\Gamma} \right] + \frac{1}{2}
+\end{equation}
+
+The value of F is taken as a random number between 0 and 1. After selecting a
+value of F, the next step is to solve for m. As a function of F, defined as u for
+the following, the mass is 
+
+
+\begin{equation}
+m = m_{0} + \Gamma \tan \left[ \pi(u - \frac{1}{2}) \right]
+\end{equation}
+
+\subsection{Sampling from a Breit-Wigner $S_{cm}$ distribution}
+
+In the previous example, a distribution was sampled using a random number
+uniformly distributed from 0 to 1. In, this example, a new random number is used
+that is uniformaly samples from 0 to 1, but the maximum and minimum values of
+the variable are taken into account in the Jacobian.
+
+The distribution of the variable $S_{cm}$ is the following
+
+\begin{equation}
+\label{defines}
+s = m_{0}^{2} + m_{0}\Gamma \tan \left[ m_{0} \Gamma r \right]
+\end{equation}
+
+where r is defined in terms of the random variable, u, that is uniformaly
+distributed between 0 and 1.
+
+\begin{equation}
+\label{rtou}
+r = (r_{max} - r_{min}) \times u + r_{min}
+\end{equation}
+
+where $r_{max}$ and $r_{min}$ are defined in terms of the variable $s_{cm}$.
+
+\begin{eqnarray}
+\label{definer}
+r = \frac{1}{m_{0}\Gamma} \tan \left[ \frac{s - m_{0}^{2}}{m_{0}\Gamma} \right] \\
+r_{min} = \frac{1}{m_{0}\Gamma} \tan \left[ \frac{s_{min} -
+m_{0}^{2}}{m_{0}\Gamma} \right] \\
+r_{max} = \frac{1}{m_{0}\Gamma} \tan \left[ \frac{s_{max} - m_{0}^{2}}{m_{0}\Gamma} \right]
+\end{eqnarray}
+
+
+
+\subsection{Jacobian for random sampling of a Breit-Wigner distribution around
+the W mass squared, $s_{34}$}
+
+The first case to consider is the Breit-Wigner sampling around the W mass
+$S_{34}$ distribution and replace the integration variable, $p_{3}$ or the
+lepton momentum.
+
+\begin{equation}
+\label{jacobian1}
+|J(p_{3}, u)| = \left| \pderiv{p_{3}}{u} \right| 
+\end{equation}
+
+Because u is redined in terms of the variable r, we can rewrite ~\ref{jacobian1}
+in terms of r instead of u.
+
+\begin{equation}
+\label{jacobian2}
+|J(p_{3}, u)| = \left| \pderiv{p_{3}}{u} \right| = \left| \pderiv{p_{3}}{r}
+\times \pderiv{r}{u} \right|
+\end{equation}
+
+And since the variable r is sampling the $S_{34}$ distribution it makes sense to
+define the Jacobian in terms of this variable instead of $p_{3}$.
+
+\begin{equation}
+\label{jacobian3}
+|J(p_{3}, u)| = \left| \pderiv{p_{3}}{r} \times \pderiv{r}{u} \right| = \left|
+\pderiv{p_{3}}{s_{34}} \times \pderiv{s_{34}}{r} \times \pderiv{r}{u} \right| =
+\left | \frac{\pderiv{s_{34}}{r} \times
+\pderiv{r}{u}}{\pderiv{s_{34}}{p_{3}}} \right |
+\end{equation}
+
+Equation ~\ref{jacobian3} has three components: $\pderiv{s_{34}}{r}$,
+$\pderiv{r}{u}$, and $\pderiv{s_{34}}{p_{3}}$. From equation ~\ref{rtou}, the
+partial derivative of r with respect to u is 
+
+\begin{equation}
+\label{drdu}
+\pderiv{r}{u} = r_{max} - r_{min} = \Delta r
+\end{equation}
+
+Next, the partial of $s_{34}$ with respect to r can be determined from equation
+~\ref{defines}.
+
+
+\begin{equation}
+\label{ds34dr}
+\pderiv{s_{34}}{r} = (m_{W} \Gamma_{W})^{2} \sec^{2} \left[m_{W} \Gamma_{W} r \right]
+\end{equation}
+
+Inserting the value of r(s) as defined in equation ~\ref{definer}, equation
+~\ref{ds34dr} can be re-written as
+
+\begin{equation}
+\label{ds34dr_2}
+\pderiv{s_{34}}{r} = (m_{W} \Gamma_{W})^{2} \sec^{2} \left[m_{W} \Gamma_{W} r \right] =
+(m_{W} \Gamma_{W})^{2} \sec^{2} \left[\arctan \left[ \frac{s_{34} - m_{W}^{2}}{m_{W}
+\Gamma_{W}}  \right] \right]
+\end{equation}
+
+Equation ~\ref{ds34dr_2} is solved by defining a right triangle where
+
+\begin{eqnarray}
+\nonumber
+\tan(\theta) = \frac{s_{34}-m_{W}^{2}}{m_{W}\Gamma_{W}} \\
+\cos(\theta) = \frac{1}{\sqrt{1+\left[ \frac{s_{34}-m_{W}^{2}}{m_{W}\Gamma_{W}}
+\right]^{2}}}
+\end{eqnarray}
+
+Using these definitions, equation ~\ref{ds34dr_2} is finally defined as
+
+\begin{equation}
+\label{ds34dr_3}
+\pderiv{s_{34}}{r} = (m_{W} \Gamma_{W})^{2} \sec^{2} \left[\arctan \left[ \frac{s_{34} - m_{W}^{2}}{m_{W}
+\Gamma_{W}}  \right] \right] = (m_{W}\Gamma_{W})^{2} + (s_{34} - m_{W}^{2})^{2}
+\end{equation}
+
+Finally, we need the partial derivative of $s_{34}$ with repect to
+$p_{3}$. First, we define $s_{34}$
+
+\begin{equation}
+\label{defines34}
+s_{34} = m_{3}^{2} + m_{4}^{2} + 2E_{3}E_{4} - 2p_{3}^{x}p_{4}^{x} - 2p_{3}^{y}p_{4}^{y} - 2p_{3}^{z}p_{4}^{z}
+\end{equation}
+
+Since the neutino four-vector is defined in terms of all the other particles in
+the event, we need to rewrite equation ~\ref{defines34} to expose all the
+dependences on $p_{3}$. For the following, it is assumed that the lepton and
+neutrino are massless meaning $E_{3} = p_{3}$. 
+
+\begin{eqnarray}
+\label{defines34_2}
+\nonumber
+s_{34} = 2p_{3}\sqrt{(-p_{3}^{x} -p_{5}^{x} -p_{6}^{x})^{2} + (-p_{3}^{y} -p_{5}^{y} -p_{6}^{y})^{2} + (p_{tot}^{z} -p_{3}^{z} -p_{5}^{z} -p_{6}^{z})^{2}} \\
+- 2p_{3}^{x}(-p_{3}^{x} -p_{5}^{x} -p_{6}^{x}) -
+2p_{3}^{y}(-p_{3}^{y} -p_{5}^{y} -p_{6}^{y}) - 2p_{3}^{z}(p_{tot}^{z} -p_{3}^{z} -p_{5}^{z} -p_{6}^{z})
+\end{eqnarray}
+
+After combining like terms, we can evaluate the partial derivative of $s_{34}$
+with respect to $p_{3}$ that yields the relatively
+simple formula
+
+\begin{equation}
+\label{ds34dp3}
+\pderiv{s_{34}}{p_{3}} = 2(p_{3} + p_{4})(1 - \hat{p_{3}} \cdot \hat{p_{4}})
+\end{equation}
+
+Finally, we can rewrite the Jacobian defined in ~\ref{jacobian3} as
+
+\begin{equation}
+\label{jacobian4}
+|J(p_{3}, u)| = \left | \frac{\pderiv{s_{34}}{r} \times
+\pderiv{r}{u}}{\pderiv{s_{34}}{p_{3}}} \right | = \frac{\Delta R \times \left[
+(m_{W}\Gamma_{W})^{2} + (s_{34} - m_{W}^{2})^{2} \right]}{2(p_{3} + p_{4})(1 - \hat{p_{3}} \cdot \hat{p_{4}})}
+\end{equation}
+
+In some cases, it is also common to replace the first quark momentum integration
+with the Breit-Wigner sampling variable. In that case, we need to evaluate
+
+\begin{equation}
+\label{jacobian_5}
+|J(p_{5}, u)| = \left | \frac{\pderiv{s_{34}}{r} \times
+\pderiv{r}{u}}{\pderiv{s_{34}}{p_{5}}} \right |
+\end{equation}
+
+For this substitution, we only need to evaluate the partial derivative of
+$s_{34}$ with respect to $p_{5}$. Assuming a massless quark, the result is
+
+\begin{equation}
+\label{ds34dp5}
+\pderiv{s_{34}}{p_{5}} = 2p_{3}(\hat{p_{3}} \cdot \hat{p_{5}} - \hat{p_{4}} \cdot \hat{p_{5}})
+\end{equation}
+
+Combining equation ~\ref{ds34dp5} with ~\ref{jacobian_5} yields
+
+\begin{equation}
+\label{jacobian_6}
+|J(p_{5}, u)| = \left | \frac{\pderiv{s_{34}}{r} \times
+\pderiv{r}{u}}{\pderiv{s_{34}}{p_{5}}} \right | = \frac{\Delta R \times \left[
+(m_{W}\Gamma_{W})^{2} + (s_{34} - m_{W}^{2})^{2} \right]}{2p_{3}(\hat{p_{3}} \cdot \hat{p_{5}} - \hat{p_{4}} \cdot \hat{p_{5}})}
+\end{equation}
+
+
+
+%
+%-----------------------------------------------------------------------
+%
+
+
+
+\subsection{Jacobian for random sampling of a Breit-Wigner distribution around
+the top mass squared, $s_{345}$}
+
+The next case to consider is the Breit-Wigner sampling around the top mass squared
+$S_{345}$ distribution and replace the integration variable, $p_{3}$ or the
+lepton momentum. As before, we need need to calculate the following
+
+\begin{equation}
+\label{jacobian_1}
+|J(p_{3}, u)| = \left| \pderiv{p_{3}}{r} \times \pderiv{r}{u} \right| = \left|
+\pderiv{p_{3}}{s_{345}} \times \pderiv{s_{345}}{r} \times \pderiv{r}{u} \right| =
+\left | \frac{\pderiv{s_{345}}{r} \times
+\pderiv{r}{u}}{\pderiv{s_{345}}{p_{3}}} \right |
+\end{equation}
+
+Equation ~\ref{jacobian_1} has three components: $\pderiv{s_{345}}{r}$,
+$\pderiv{r}{u}$, and $\pderiv{s_{345}}{p_{3}}$. We know $\pderiv{r}{u}$ from
+equation ~\ref{drdu} where $r_{min}$ and $r_{max}$ are defined by the $s_{345}$
+system instead of the $s_{34}$ system. We also know $\pderiv{s_{345}}{r}$ from ~\ref{ds34dr_3}
+where we replace $s_{34}$ with $s_{345}$.
+
+\begin{equation}
+\label{ds345dr}
+\pderiv{s_{345}}{r} = (m_{t}\Gamma_{t})^{2} + (s_{345} - m_{t}^{2})^{2}
+\end{equation}
+
+We do need the partial derivative of $s_{345}$ with repect to
+$p_{3}$. First, we define $s_{345}$
+
+\begin{eqnarray}
+\label{defines345}
+\nonumber
+s_{345} = m_{3}^{2} + m_{4}^{2} + m_{5}^{2} + 2E_{3}E_{4} + 2E_{3}E_{5} +
+2E_{4}E_{5} - \\
+2p_{3}^{x}p_{4}^{x} - 2p_{3}^{x}p_{5}^{x} - 2p_{4}^{x}p_{5}^{x} -
+2p_{3}^{y}p_{4}^{y} - 2p_{3}^{y}p_{5}^{y} - 2p_{4}^{y}p_{5}^{y} -
+2p_{3}^{z}p_{4}^{z} - 2p_{3}^{z}p_{5}^{z} - 2p_{4}^{z}p_{5}^{z}
+\end{eqnarray}
+
+As before, the neutino four-vector is defined in terms of all the other particles in
+the event so we need to rewrite equation ~\ref{defines345} to expose all the
+dependences on $p_{3}$. For the following, it is assumed that the lepton,
+neutrino, and quark are massless meaning $E_{3} = p_{3}$.
+
+\begin{eqnarray}
+\label{defines345_2}
+\nonumber
+s_{345} = 2p_{3}\sqrt{(-p_{3}^{x} -p_{5}^{x} -p_{6}^{x})^{2} + (-p_{3}^{y}
+-p_{5}^{y} -p_{6}^{y})^{2} + (p_{tot}^{z} -p_{3}^{z} -p_{5}^{z} -p_{6}^{z})^{2}}
++ \\
+\nonumber
+2p_{3}p_{5} + 2\sqrt{(-p_{3}^{x} -p_{5}^{x} -p_{6}^{x})^{2} + (-p_{3}^{y} -p_{5}^{y}
+-p_{6}^{y})^{2} + (p_{tot}^{z} -p_{3}^{z} -p_{5}^{z} -p_{6}^{z})^{2}}p_{5} - \\
+\nonumber
+2p_{3}^{x}(-p_{3}^{x} -p_{5}^{x} -p_{6}^{x}) - 2p_{3}^{x}p_{5}^{x} -
+2(-p_{3}^{x} -p_{5}^{x} -p_{6}^{x})p_{5}^{x} - \\
+\nonumber
+2p_{3}^{y}(-p_{3}^{y} -p_{5}^{y} -p_{6}^{y}) - 2p_{3}^{y}p_{5}^{y} -
+2(-p_{3}^{y} -p_{5}^{y} -p_{6}^{y})p_{5}^{y} - \\
+2p_{3}^{z}(-p_{3}^{z} -p_{5}^{z} -p_{6}^{z}) - 2p_{3}^{z}p_{5}^{z} - 2(-p_{3}^{z} -p_{5}^{z} -p_{6}^{z})p_{5}^{z}
+\end{eqnarray}
+
+After combining like terms, we can evaluate the partial derivative of $s_{345}$
+with respect to $p_{3}$ as
+
+\begin{equation}
+\label{ds345dp3}
+\pderiv{s_{345}}{p_{3}} = 2(p_{3} + p_{4} + p_{5})(1 - \hat{p_{3}} \cdot \hat{p_{4}})
+\end{equation}
+
+Finally, we can rewrite the Jacobian defined in ~\ref{jacobian_1} as
+
+\begin{equation}
+\label{jacobian_2}
+|J(p_{3}, u)| = \left | \frac{\pderiv{s_{345}}{r} \times
+\pderiv{r}{u}}{\pderiv{s_{345}}{p_{3}}} \right | = \frac{\Delta R \times \left[
+(m_{t}\Gamma_{t})^{2} + (s_{345} - m_{t}^{2})^{2} \right]}{2(p_{3} + p_{4} + p_{5})(1 - \hat{p_{3}} \cdot \hat{p_{4}})}
+\end{equation}
+
+
+Instead of replacing the lepton momentum integration variable, it is also common
+to replace the first quark momentum integration variable, $p_{5}$. In that case,
+we need to evaluate the following Jacobian.
+
+\begin{equation}
+\label{jacobian_3}
+|J(p_{5}, u)| = \left| \pderiv{p_{5}}{r} \times \pderiv{r}{u} \right| = \left|
+\pderiv{p_{5}}{s_{345}} \times \pderiv{s_{345}}{r} \times \pderiv{r}{u} \right| =
+\left | \frac{\pderiv{s_{345}}{r} \times
+\pderiv{r}{u}}{\pderiv{s_{345}}{p_{5}}} \right |
+\end{equation}
+
+The only difference is that partial derivative of $s_{345}$ with respect to
+$p_{5}$ instead of $p_{3}$. However, since $s_{345}$ is invariant under a change
+of $p_{3}$ and $p_{5}$ the partial derivatives must be equal. Thus, 
+
+\begin{equation}
+\label{jacobian_4}
+|J(p_{5}, u)| = \left | \frac{\pderiv{s_{345}}{r} \times
+\pderiv{r}{u}}{\pderiv{s_{345}}{p_{5}}} \right | = \frac{\Delta R \times \left[
+(m_{t}\Gamma_{t})^{2} + (s_{345} - m_{t}^{2})^{2} \right]}{2(p_{3} + p_{4} + p_{5})(1 - \hat{p_{4}} \cdot \hat{p_{5}})}
+\end{equation}
+
+
+
+
+
+%
+%-----------------------------------------------------------------------
+%
+
+
+\subsection{Jacobian for random sampling of two Breit-Wigner distributions around
+the top mass squared, $s_{345}$ and W mass squared, $s_{34}$}
+
+
+The next situation is to sample from a Breit-Wigner around the
+top mass squared and the W mass squared, or $s_{345}$ and $s_{34}$. It is common
+to replace the lepton momentum and first quark momentum integration variables
+with the two new variables. Since we are
+replacing two variables, we need to evaluate the following Jacobian
+
+\begin{equation}
+|J(p_{3}, p_{5} ; u_{1}, u_{2})| = \left| \begin{array}{cc}
+\pderiv{p_{3}}{u_{1}}	& \pderiv{p_{3}}{u_{2}} \\
+\pderiv{p_{5}}{u_{1}}	& \pderiv{p_{5}}{u_{2}} \\
+\end{array} \right|
+\end{equation}
+
+where $u_{1}$ and $u_{2}$ are the sampling variables around the top mass squared
+and W mass squared, respectively.
+
+We have already computed the partial derivatives for each of these cases
+in the previous two sections, thus the result is
+
+\begin{eqnarray}
+\nonumber
+|J(p_{3}, p_{5} ; u_{1}, u_{2})| = \left| \begin{array}{cc}
+\pderiv{p_{3}}{u_{1}}	& \pderiv{p_{3}}{u_{2}} \\
+\pderiv{p_{5}}{u_{1}}	& \pderiv{p_{5}}{u_{2}} \\
+\end{array} \right| = 
+\nonumber
+\left| \begin{array}{cc}
+\frac{\pderiv{s_{345}}{r} \times \pderiv{r}{u}}{\pderiv{s_{345}}{p_{3}}}	& \frac{\pderiv{s_{345}}{r} \times
+\pderiv{r}{u}}{\pderiv{s_{345}}{p_{5}}} \\
+\frac{\pderiv{s_{34}}{r} \times \pderiv{r}{u}}{\pderiv{s_{34}}{p_{3}}}	& \frac{\pderiv{s_{34}}{r} \times
+\pderiv{r}{u}}{\pderiv{s_{34}}{p_{5}}}
+\end{array} \right| = \\
+\left| \begin{array}{cc}
+\frac{\Delta R_{345} \times \left[
+(m_{t}\Gamma_{t})^{2} + (s_{345} - m_{t}^{2})^{2} \right]}{2(p_{3} + p_{4} + p_{5})(1 - \hat{p_{3}} \cdot \hat{p_{4}})}	& \frac{\Delta R_{34} \times \left[
+(m_{W}\Gamma_{W})^{2} + (s_{34} - m_{W}^{2})^{2} \right]}{2(p_{3} + p_{4})(1 -
+\hat{p_{3}} \cdot \hat{p_{4}})} \\
+\frac{\Delta R_{345} \times \left[
+(m_{t}\Gamma_{t})^{2} + (s_{345} - m_{t}^{2})^{2} \right]}{2(p_{3} + p_{4} + p_{5})(1 - \hat{p_{4}} \cdot \hat{p_{5}})}	& \frac{\Delta R_{34} \times \left[
+(m_{W}\Gamma_{W})^{2} + (s_{34} - m_{0}^{2})^{2} \right]}{2p_{3}(\hat{p_{3}} \cdot \hat{p_{5}} - \hat{p_{4}} \cdot \hat{p_{5}})}
+\end{array}
+\right|
+\end{eqnarray}
+
+
+\subsection{Sampling from a Polynomial $S_{cm}$ distribution}
+
+*** This is where I am taking a function from Aurelio and I can't seem to derive
+it on my own ***
+
+The distribution of the variable $S_{cm}$ according to a polynomial power
+distribution is
+
+\begin{equation}
+\label{defines_power}
+s = m_{0}^{2} + \left[ (1-\alpha)r \right]^{\frac{-1}{\alpha - 1}}
+\end{equation}
+
+where r is defined in terms of the random variable, u, that is uniformaly
+distributed between 0 and 1.
+
+\begin{equation}
+\label{rtou_power}
+r = (r_{max} - r_{min}) \times u + r_{min}
+\end{equation}
+
+where $r_{max}$ and $r_{min}$ are defined in terms of the variable $s_{cm}$.
+
+\begin{eqnarray}
+\label{definer_power}
+r = \frac{1}{1-\alpha} \times \left[ s - m_{0}^{2} \right]^{1-\alpha} \\
+r_{min} = \frac{1}{1-\alpha} \times \left[ s_{min} - m_{0}^{2}
+\right]^{1-\alpha} \\
+r_{max} = \frac{1}{1-\alpha} \times \left[ s_{max} - m_{0}^{2}
+\right]^{1-\alpha}
+\end{eqnarray}
+
+where alpha can not equal 1.
+
+
+\subsection{Jacobian for random sampling of a polynomial distribution
+starting at $m_{pole}$}
+
+The first case to consider is sampling around a falling polynomial distribution
+for the mass squared of two quarks in the event, $s_{56}$. We need to define the
+Jacobian with respect $p_{5}$ or $p_{6}$. Since $s_{56}$ is invariant under an
+interchange of particle 5 and 6, the Jacobian will be the same for each momentum
+integration. The following assume $p_{5}$ will be replaced with the variable,
+$u$, which is sampled from a polynomial distribution.
+
+\begin{equation}
+\label{jacobian_7}
+|J(p_{5}, u)| = \left| \pderiv{p_{5}}{u} \right| 
+\end{equation}
+
+Because u is redined in terms of the variable r, we can rewrite ~\ref{jacobian_7}
+in terms of r instead of u.
+
+\begin{equation}
+\label{jacobian_8}
+|J(p_{5}, u)| = \left| \pderiv{p_{5}}{u} \right| = \left| \pderiv{p_{5}}{r}
+\times \pderiv{r}{u} \right|
+\end{equation}
+
+And since the variable r is sampling the $S_{56}$ distribution it makes sense to
+define the Jacobian in terms of this variable instead of $p_{5}$.
+
+\begin{equation}
+\label{jacobian_9}
+|J(p_{5}, u)| = \left| \pderiv{p_{5}}{r} \times \pderiv{r}{u} \right| = \left|
+\pderiv{p_{5}}{s_{56}} \times \pderiv{s_{56}}{r} \times \pderiv{r}{u} \right| =
+\left | \frac{\pderiv{s_{56}}{r} \times
+\pderiv{r}{u}}{\pderiv{s_{56}}{p_{5}}} \right |
+\end{equation}
+
+Equation ~\ref{jacobian_9} has three components: $\pderiv{s_{56}}{r}$,
+$\pderiv{r}{u}$, and $\pderiv{s_{56}}{p_{5}}$. From equation ~\ref{rtou_power}, the
+partial derivative of r with respect to u is 
+
+\begin{equation}
+\label{drdu_power}
+\pderiv{r}{u} = r_{max} - r_{min} = \Delta R_{56}
+\end{equation}
+
+Next, the partial of $s_{56}$ with respect to r can be determined from equation ~\ref{defines_power}.
+
+\begin{equation}
+\label{ds56dr_power}
+\pderiv{s_{56}}{r} = \left[ r(1-\alpha) \right]^{\frac{\alpha}{1-\alpha}}
+\end{equation}
+
+Inserting the value of r(s) as defined in equation ~\ref{definer_power}, equation ~\ref{ds56dr_power} can be re-written as
+
+\begin{equation}
+\label{ds56dr_power2}
+\pderiv{s_{56}}{r} = \left[ s_{56} - m_{0}^{2} \right]^{\alpha}
+\end{equation}
+
+Finally, we need the partial derivative of $s_{56}$ with repect to $p_{5}$. First, we define $s_{56}$
+
+\begin{equation}
+\label{defines56_power}
+s_{56} = m_{5}^{2} + m_{6}^{2} + 2E_{5}E_{6} - 2p_{5}^{x}p_{6}^{x} - 2p_{5}^{y}p_{6}^{y} - 2p_{5}^{z}p_{6}^{z}
+\end{equation}
+
+we can evaluate the partial derivative of $s_{56}$ with respect to $p_{5}$.
+
+\begin{equation}
+\label{ds56dp5_power}
+\pderiv{s_{56}}{p_{5}} = 2p_{6}(1 - \hat{p_{5}} \cdot \hat{p_{6}})
+\end{equation}
+
+Finally, we can rewrite the Jacobian defined in ~\ref{jacobian_9} as
+
+\begin{equation}
+\label{jacobian_10}
+|J(p_{5}, u)| = \left | \frac{\pderiv{s_{56}}{r} \times
+\pderiv{r}{u}}{\pderiv{s_{56}}{p_{5}}} \right | = \frac{\Delta R_{56} \times \left[ s_{56}-m_{0}^{2} \right]^{\alpha}}{2p_{6}(1 - \hat{p_{5}} \cdot \hat{p_{6}})}
+\end{equation}
+
+and 
+
+\begin{equation}
+\label{jacobian_11}
+|J(p_{6}, u)| = \left | \frac{\pderiv{s_{56}}{r} \times
+\pderiv{r}{u}}{\pderiv{s_{56}}{p_{6}}} \right | = \frac{\Delta R_{56} \times \left[ s_{56}-m_{0}^{2} \right]^{\alpha}}{2p_{5}(1 - \hat{p_{5}} \cdot \hat{p_{6}})}
+\end{equation}
+

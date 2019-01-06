@@ -1,0 +1,371 @@
+%---------------------------------------------------------------------
+%  Writeup of the improved search of Run II data for single top quark
+%  production at DZero.
+%  Started: Oct 2006
+%  Authors: The Single Top Working Group
+%---------------------------------------------------------------------
+%
+\section{Event Selection and Yields}
+\label{selection-yields}
+
+\subsection{Selection Cuts}
+\label{selection-cuts}
+
+We apply a loose event selection to find $W$-like events containing an
+isolated lepton, missing transverse energy, and one to four jets with
+high transverse momentum. The samples after this selection, which we
+call ``pretagged,'' are dominated by $W$+jets events, with some
+{\ttbar} contribution which becomes more significant for higher jet
+multiplicities. To be able to extract single top events we also look
+for the presence of one or two $b$-tagged jets.
+
+Common selection for both electron and muon channels:
+\vspace{-0.08in}
+\begin{myitemize}
+\item Good quality (for data)
+\item Pass trigger: offline electrons and muons in the data are
+matched to the object that fired the appropriate trigger for that
+run period and triggerlist
+\item Good primary vertex: $|z_{\rm PV}| < 60$~cm with at least three
+tracks attached
+\item Missing transverse energy $15 < {\met} < 200$~GeV
+\item One, two, three or four jets with ${\pt} > 15$~GeV and
+$|\deta|<3.4$ 
+\item The leading jet is required to have ${\pt} > 25$~GeV and
+$|\deta| < 2.5$
+\item The second leading jet is required to have ${\pt} > 20$~GeV
+\item There can only be one or two noise jets
+\item Jet triangle cut $|\Delta\phi({\rm leading~jet,{\met}})|
+{\rm ~vs.~}{\met}$: from 1.5 to $\pi$~radians when ${\met} = 0$~GeV,
+and {\met} from 0 to 35~GeV when $|\Delta\phi| = \pi$~rad
+%\item At least one $b$-tagged jet
+\end{myitemize}
+
+The electron channel selection: 
+\vspace{-0.07in}
+\begin{myitemize}
+\item Only one tight electron with ${\pt} > 15$~GeV and $|\deta| < 1.1$
+\item No tight muon with ${\pt} > 18$~GeV and $|\deta| < 2.0$ 
+\item Electron coming from the primary vertex:
+$|\Delta z(e,{\rm PV})| < 1$~cm
+\item Electron triangle cuts $|\Delta\phi({\rm e,{\met}})|{\rm ~vs.~}
+{\met}$:
+   \vspace{-0.07in} 
+   \begin{myitemize}
+   \item from 2 to 0~rad when ${\met} = 0$~GeV, and {\met} from 0
+   to 40~GeV when $|\Delta\phi| = 0$~rad
+   \item from 1.5 to 0~rad when ${\met} = 0$~GeV, and {\met} from 0
+   to 50~GeV when $|\Delta\phi| = 0$~rad
+   \item  from 2 to $\pi$~rad when ${\met} = 0$~GeV, and {\met}
+   from 0 to 24~GeV when $|\Delta\phi| = \pi$~rad
+   \end{myitemize}
+\end{myitemize}
+
+The muon channel selection: 
+\vspace{-0.07in}
+\begin{myitemize}
+\item Only one tight muon with ${\pt} > 18$~GeV and $|\deta| < 2.0$ 
+\item No tight electron with ${\pt} > 15$~GeV and within $|\deta|
+< 2.5$
+\item Muon coming from the primary vertex: $|\Delta z(\mu,{\rm PV})|
+< 1$~cm
+\item Muon triangle cuts $|\Delta\phi(\mu,{\rm {\met}})|{\rm ~vs.~}
+{\met}$: 
+   \vspace{-0.07in}
+   \begin{myitemize}
+   \item  from 1.1 to 0~rad when ${\met} = 0$~GeV, and {\met}
+   from 0 to 80~GeV when $|\Delta\phi| = 0$~rad
+   \item  from 1.5 to 0~rad when ${\met} = 0$~GeV, and {\met}
+   from 0 to 50~GeV when $|\Delta\phi| = 0$~rad
+   \item from 2.5 to $\pi$~rad when ${\met} = 0$~GeV, and {\met}
+   from 0 to 30~GeV when $|\Delta\phi| = \pi$~rad
+   \end{myitemize}
+\end{myitemize}
+
+Orthogonal samples selection (for measuring the multijet backgrounds):
+\vspace{-0.07in}
+\begin{myitemize}
+\item All the same selection cuts as listed above except for the
+tight lepton requirements
+\item Electron channel --- only one loose-but-not-tight electron
+\item Muon channel --- only one loose-but-not-tight muon
+\end{myitemize}
+\vspace{-0.07in}
+The definitions of loose and tight electrons and muons are given in
+Sections~\ref{electron-id} and \ref{muon-id}.
+
+\noindent We also select two cross-check samples, see Appendix~6 for
+details.
+
+\clearpage
+
+\subsection{Numbers of Events After Selection}
+\label{event-numbers}
+
+Table~\ref{numbers-of-events} shows the numbers of events in the signal
+and background samples and in the data after applying the selection
+criteria. Table~\ref{pretag-yields} shows the yields calculated from
+these event samples for the nearly 1~fb$^{-1}$ datasets before
+$b$~tagging.
+
+\begin{table}[!h!tbp]
+\begin{center}
+\begin{minipage}{6.5 in}
+\begin{ruledtabular}
+\begin{tabular}{l||ccccc|ccccc}
+\multicolumn{11}{c}{\hspace{1in}\underline{Numbers of Events after Selection}} \vspace{0.1in}\\
+& \multicolumn{5}{c|}{Electron Channel} & \multicolumn{5}{c}{Muon Channel} \\
+                         & 1 jet & 2 jets & 3 jets & 4 jets & 5+ jets
+                         & 1 jet & 2 jets & 3 jets & 4 jets & 5+ jets \\
+\hline			                   
+Signal MC                &         &        &        &        &        &         &        &        &        &       \\
+~~$tb$                   &   6,908 & 19,465 &  9,127 &  2,483 &   595  &   3,878 & 12,852 &  6,458 &  1,809 &   401 \\
+~~$tqb$                  &   8,971 & 22,758 & 12,080 &  3,797 &  1,092 &   8,195 & 21,066 & 11,193 &  3,489 &   835 \\
+~~$tb$+$tqb$             &  15,879 & 42,223 & 21,207 &  6,280 &  1,687 &  12,073 & 33,918 & 17,651 &  5,298 & 1,236 \\
+Background MC            &         &        &        &        &        &         &        &        &        &       \\
+~~${\ttbar}{\rar}ll$	 &   7,671 & 29,537 & 26,042 & 12,068 &  5,396 &   5,509 & 24,595 & 21,803 &  9,788 & 3,442 \\
+~~${\ttbar}{\rar}l$+jets &     522 &  5,659 & 22,477 & 27,319 & 14,298 &     232 &  3,376 & 16,293 & 22,680 & 8,658 \\ 
+~~$Wb\bar{b}$            &  26,611 & 13,914 &  9,011 &  3,848 &  1,434 &  27,764 & 14,488 &  9,427 &  3,874 & 1,204 \\
+~~$Wc\bar{c}$            &  21,765 & 13,453 &  7,562 &  2,252 &    591 &  32,712 & 19,047 & 10,141 &  3,051 &   663 \\
+~~$Wjj$                  & 134,660 & 61,497 & 34,162 &  8,290 &  1,750 & 147,842 & 66,201 & 36,673 &  9,169 & 1,502 \\
+Pretag data              &         &        &        &        &        &         &        &        &        &       \\
+~~Multijets              &  11,565 &  6,993 &  4,043 &  1,317 &    431 &     897 &    658 &    462 &    151 &    48 \\
+~~Signal data            &  27,370 &  8,220 &  3,075 &    874 &    223 &  17,816 &  6,432 &  2,590 &    727 &   173 \\
+ZeroTag data             &         &        &        &        &        &         &        &        &        &       \\
+~~Multijets              &  11,319 &  6,659 &  3,802 &  1,210 &    390 &     866 &    604 &    409 &    128 &    36 \\
+~~Data                   &  26,925 &  7,833 &  2,831 &    752 &    178 &  17,527 &  6,122 &  2,378 &    599 &   125 \\
+OneTag data              &         &        &        &        &        &         &        &        &        &       \\
+~~Multijets              &     246 &    322 &    226 &     93 &     34 &      31 &     51 &     49 &     21 &     8 \\
+~~Signal data            &     445 &    357 &    207 &     97 &     35 &     289 &    287 &    179 &    100 &    38 \\
+TwoTags data             &         &        &        &        &        &         &        &        &        &       \\
+~~Multijets              &     --- &     12 &     15 &     14 &      7 &     --- &      3 &      4 &      1 &     4 \\
+~~Signal data            &     --- &     30 &     37 &     22 &     10 &     --- &     23 &     32 &     27 &    10 
+\end{tabular}
+\end{ruledtabular} 
+\vspace{-0.1in}
+\caption[numbersofevents]{Numbers of events for the electron and muon
+channels after selection. The signal samples detail the number of
+events coming from $\tau$ decays, $\tau\to\ell\nu$ where $\ell=e$ in
+the electron channel and $\ell=\mu$ in the muon channel.}
+\label{numbers-of-events}
+\end{minipage}
+\end{center}
+\end{table}
+
+
+\clearpage
+
+\subsection{Signal Acceptances}
+\label{signal-acceptances}
+% include MC background acceptances as well
+
+Table~\ref{acceptances} shows the precentage of each signal that
+remain after selection, and after $b$-tagged jets have been
+required. We can compare the acceptances obtained in this analysis
+with the published one~\cite{run2-d0-plb}. In that analysis, we kept
+2.6\% of the s-channel events before tagging (with 2--4 jets) in the
+electron channel and 2.5\% in the muon channel. In this analysis, we
+keep 2.8\% and 2.2\% in the electron and muon channels respectively
+(2--4 jets). In the t-channel, in the published analysis we kept 2.6\%
+and 2.4\% in the electron and muon channels, and now we are keeping
+2.5\% and 2.0\%. After $b$~tagging, before we kept 1.3\% of the
+electron events and 1.3\% of the muon events in the s-channel; we now
+keep 1.8\% and 1.4\% respectively. In the t-channel after $b$~tagging,
+we kept before 0.9\% in each of the electron and muon channels. We now
+keep 1.2\% and 0.9\% of these tagged events.  The higher acceptances
+now are from the use of the more efficient neural network $b$-tagging
+algorithm.
+
+We can also compare these acceptances to those obtained by CDF in
+their most recent analysis. For s-channel and t-channel combined,
+electron and muon channels combined, and events with exactly two jets
+with one or both $b$~tagged, they keep 1.4\% of the expected
+signal. For the same requirements, we also keep 1.4\% of the expected
+signal. In addition we have available to analyze the acceptances in
+the 1, 3, and 4-jets channels, which CDF have not yet included in
+their results.
+
+\vspace{0.2in}
+\begin{table}[!h!tbp]
+\begin{center}
+\begin{minipage}{6.5in}
+\begin{ruledtabular}
+\begin{tabular}{l||ccccc|ccccc}
+\multicolumn{11}{c}{\hspace{1in}\underline{Signal Acceptances}} \vspace{0.1in} \\
+& \multicolumn{5}{c|}{Electron Channel} & \multicolumn{5}{c}{Muon Channel} \\
+                     & 1 jet & 2 jets & 3 jets & 4 jets & 5+ jets
+                     & 1 jet & 2 jets & 3 jets & 4 jets & 5+ jets \\
+\hline
+Before $b$ tagging   &        &        &        &        &        &        &        &        &        &        \\
+~~$tb$               & 0.55\% & 1.77\% & 0.83\% & 0.23\% & 0.06\% & 0.33\% & 1.36\% & 0.69\% & 0.19\% & 0.05\% \\
+~~$tqb$              & 0.52\% & 1.49\% & 0.79\% & 0.25\% & 0.07\% & 0.36\% & 1.17\% & 0.64\% & 0.20\% & 0.05\% \\
+Zero $b$-tagged jets &        &        &        &        &        &        &        &        &        &        \\
+~~$tb$               & 0.32\% & 0.65\% & 0.31\% & 0.09\% & 0.02\% & 0.18\% & 0.48\% & 0.25\% & 0.07\% & 0.02\% \\
+~~$tqb$              & 0.34\% & 0.86\% & 0.41\% & 0.12\% & 0.03\% & 0.23\% & 0.66\% & 0.32\% & 0.09\% & 0.02\% \\
+One $b$-tagged jet   &        &        &        &        &        &        &        &        &        &        \\
+~~$tb$               & 0.24\% & 0.82\% & 0.39\% & 0.11\% & 0.03\% & 0.15\% & 0.64\% & 0.32\% & 0.09\% & 0.02\% \\
+~~$tqb$              & 0.18\% & 0.61\% & 0.34\% & 0.11\% & 0.03\% & 0.13\% & 0.50\% & 0.28\% & 0.09\% & 0.02\% \\
+Two $b$-tagged jets  &        &        &        &        &        &        &        &        &        &        \\
+~~$tb$               &  ---   & 0.29\% & 0.14\% & 0.04\% & 0.02\% &  ---   & 0.24\% & 0.12\% & 0.03\% & 0.01\% \\
+~~$tqb$              &  ---   & 0.02\% & 0.05\% & 0.02\% & 0.01\% &  ---   & 0.01\% & 0.04\% & 0.02\% & 0.01\%
+\end{tabular}
+\end{ruledtabular}
+\vspace{-0.1in}
+\caption[acceptances]{Acceptances after selection.}
+\label{acceptances}
+\end{minipage}
+\end{center}
+\end{table}
+
+\subsection{Event Yields}
+\label{event-yields}
+
+We use the term ``yield'' to mean the number of events of the signal
+or background in question predicted to be in the nearly 1~fb$^{-1}$ of
+data. Tables~\ref{pretag-yields}, \ref{zerotag-yields},
+\ref{onetag-yields}, and \ref{twotag-yields} show these yields for all
+signals and backgrounds divided by lepton flavor and jet
+multiplicity. Because the $W$+jets and multijet backgrounds are
+normalized to data before tagging, the sum of the backgrounds is
+expected to equal the number of events observed in the data, as seen
+in the first table.
+
+\vspace{0.2in}
+\begin{table}[!h!tbp]
+\begin{center}
+\begin{minipage}{6.5in}
+\begin{ruledtabular}
+\begin{tabular}{l||ccccc|ccccc}
+\multicolumn{11}{c}{\hspace{1in}\underline{Yields Before $b$-Tagging}} \vspace{0.1in} \\
+& \multicolumn{5}{c|}{Electron Channel} & \multicolumn{5}{c}{Muon Channel} \\
+                         & 1 jet & 2 jets & 3 jets & 4 jets & 5+ jets
+                         & 1 jet & 2 jets & 3 jets & 4 jets & 5+ jets \\
+\hline
+Signals                  &        &       &       &       &      &        &       &       &      &      \\
+~~$tb$                   &      4 &    14 &     7 &     2 &    0 &      3 &    10 &     5 &    1 &    0 \\
+~~$tqb$                  &      9 &    27 &    14 &     5 &    1 &      6 &    20 &    11 &    3 &    1 \\
+~~$tb$+$tqb$             &     14 &    41 &    21 &     6 &    2 &      9 &    31 &    16 &    5 &    1 \\
+Backgrounds              &        &       &       &       &      &        &       &       &      &      \\
+~~${\ttbar}{\rar}ll$     &      9 &    35 &    28 &    10 &    4 &      5 &    27 &    22 &    8 &    3 \\
+~~${\ttbar}{\rar}l$+jets &      2 &    26 &   103 &   128 &   67 &      1 &    14 &    71 &   99 &   43 \\
+~~$Wb\bar{b}$            &    659 &   358 &   149 &    42 &    5 &    431 &   312 &   161 &   47 &   10 \\
+~~$Wc\bar{c}$            &  1,592 &   931 &   389 &    93 &   10 &  1,405 & 1,028 &   523 &  131 &   21 \\
+~~$Wjj$                  & 23,417 & 5,437 & 1,546 &   343 &   51 & 15,476 & 4,723 & 1,591 &  385 &   85 \\
+~~Multijets              &  1,691 & 1,433 &   860 &   256 &   86 &    498 &   329 &   223 &   58 &   10 \\
+\hline
+Background Sum           & 27,370 & 8,220 & 3,075 &   874 &  223 & 17,816 & 6,434 & 2,592 &  727 &  172 \\
+\hline
+Data                     & 27,370 & 8,220 & 3,075 &   874 &  223 & 17,816 & 6,432 & 2,590 &  727 &  173 
+\end{tabular}
+\end{ruledtabular}
+\vspace{-0.1in}
+\caption[pretagyields]{Yields after selection and before $b$ tagging.}
+\label{pretag-yields}
+\end{minipage}
+\end{center}
+\end{table}
+
+\begin{table}[!h!tbp]
+\begin{center}
+\begin{minipage}{6.5in}
+\begin{ruledtabular}
+\begin{tabular}{l||ccccc|ccccc}
+\multicolumn{11}{c}{\hspace{1in}\underline{Yields with Zero $b$-Tagged Jets}} \vspace{0.1in} \\
+& \multicolumn{5}{c|}{Electron Channel} & \multicolumn{5}{c}{Muon Channel} \\
+                         & 1 jet & 2 jets & 3 jets & 4 jets & 5+ jets
+                         & 1 jet & 2 jets & 3 jets & 4 jets & 5+ jets \\
+\hline
+\hline
+Signals                  &        &       &       &       &      &        &       &       &      &       \\
+~~$tb$                   &      3 &     5 &     2 &     1 &    0 &     1 &     4 &     2 &     1 &     0 \\
+~~$tqb$                  &      6 &    16 &     7 &     2 &    1 &     4 &    11 &     6 &     2 &     0 \\
+~~$tb$+$tqb$             &      9 &    21 &    10 &     3 &    1 &     5 &    15 &     7 &     2 &     1 \\
+Backgrounds              &         &       &       &       &      &        &       &       &      &      \\
+~~${\ttbar}{\rar}ll$     &      5 &    14 &    11 &     4 &    1 &     3 &    10 &     8 &     3 &     1 \\
+~~${\ttbar}{\rar}l$+jets &      2 &    13 &    43 &    47 &   24 &     1 &     7 &    28 &    35 &    15 \\
+~~$Wb\bar{b}$            &    471 &   222 &    92 &    27 &    3 &   300 &   187 &    97 &    28 &     6 \\
+~~$Wc\bar{c}$            &  1,511 &   856 &   352 &    84 &    9 & 1,341 &   953 &   475 &   117 &    19 \\
+~~$Wjj$                  & 23,242 & 5,376 & 1,526 &   338 &   50 &15,351 & 4,665 & 1,569 &   379 &    84 \\
+~~Multijets              &  1,655 & 1,365 &   808 &   236 &   78 &   481 &   302 &   198 &    49 &     7 \\
+\hline
+Background Sum           & 26,886 & 7,845 & 2,832 &   735 &  165 &17,476 & 6,124 & 2,375 &   610 &   131 \\
+\hline
+Data                     & 26,925 & 7,833 & 2,831 &   752 &  178 &17,527 & 6,122 & 2,378 &   599 &   125
+\end{tabular}
+\end{ruledtabular}
+\vspace{-0.1in}
+\caption[zerotagyields]{Yields after selection for events with no $b$-tagged jets.}
+\label{zerotag-yields}
+\end{minipage}
+\end{center}
+\end{table}
+
+\begin{table}[!h!tbp]
+\begin{center}
+\begin{minipage}{6.5in}
+\begin{ruledtabular}
+\begin{tabular}{l||ccccc|ccccc}
+\multicolumn{11}{c}{\hspace{1in}\underline{Yields with One $b$-Tagged Jet}} \vspace{0.1in} \\
+& \multicolumn{5}{c|}{Electron Channel} & \multicolumn{5}{c}{Muon Channel} \\
+                         & 1 jet & 2 jets & 3 jets & 4 jets & 5+ jets
+                         & 1 jet & 2 jets & 3 jets & 4 jets & 5+ jets \\
+\hline
+Signals                  &      &       &      &      &      &      &      &      &      &      \\
+~~$tb$                   &    2 &     7 &    3 &    1 &    0 &    1 &    5 &    2 &    1 &    0 \\
+~~$tqb$                  &    3 &    11 &    6 &    2 &    1 &    2 &    9 &    5 &    2 &    0 \\
+~~$tb$+$tqb$             &    5 &    18 &    9 &    3 &    1 &    3 &   14 &    7 &    2 &    1 \\
+Backgrounds              &      &       &      &      &      &      &      &      &      &      \\
+~~${\ttbar}{\rar}ll$     &    4 &    16 &   13 &    5 &    2 &    2 &   13 &   10 &    4 &    1 \\
+~~${\ttbar}{\rar}l$+jets &    1 &    11 &   47 &   58 &   30 &    0 &    6 &   32 &   45 &   20 \\
+~~$Wb\bar{b}$            &  188 &   120 &   50 &   14 &    2 &  131 &  110 &   56 &   16 &    4 \\
+~~$Wc\bar{c}$            &   81 &    74 &   36 &    9 &    1 &   64 &   74 &   46 &   13 &    2 \\
+~~$Wjj$                  &  175 &    61 &   20 &    5 &    1 &  125 &   58 &   23 &    6 &    2 \\
+~~Multijets              &   36 &    66 &   48 &   18 &    7 &   17 &   26 &   24 &    8 &    2 \\
+\hline					       		    	    	  	  
+Background Sum           &  484 &   348 &  213 &  110 &   43 &  340 &  286 &  191 &   93 &   30 \\
+\hline					       		    	    	  	  
+Data                     &  445 &   357 &  207 &   97 &   35 &  289 &  287 &  179 &  100 &   38
+\end{tabular}
+\end{ruledtabular}
+\vspace{-0.1in}
+\caption[onetagyields]{Yields after selection for events with exactly one $b$-tagged jet.}
+\label{onetag-yields}
+\end{minipage}
+\end{center}
+\end{table}
+
+\begin{table}[!h!tbp]
+\begin{center}
+\begin{minipage}{6.5in}
+\begin{ruledtabular}
+\begin{tabular}{l||ccccc|ccccc}
+\multicolumn{11}{c}{\hspace{1in}\underline{Yields with Two $b$-Tagged Jets}} \vspace{0.1in} \\
+& \multicolumn{5}{c|}{Electron Channel} & \multicolumn{5}{c}{Muon Channel} \\
+                         & 1 jet & 2 jets & 3 jets & 4 jets & 5+ jets
+                         & 1 jet & 2 jets & 3 jets & 4 jets & 5+ jets \\
+\hline
+Signals                  &      &       &       &       &      &      &       &       &       &       \\
+~~$tb$                   &  --- &   2.3 &   1.1 &   0.3 &  0.1 &  --- &   1.9 &   0.9 &   0.3 &  0.1  \\
+~~$tqb$                  &  --- &   0.3 &   0.8 &   0.4 &  0.2 &  --- &   0.2 &   0.7 &   0.4 &  0.1  \\
+~~$tb$+$tqb$             &  --- &   2.6 &   1.9 &   0.7 &  0.2 &  --- &   2.1 &   1.6 &   0.6 &  0.2  \\
+Backgrounds              &      &       &       &       &      &      &       &       &       &       \\
+~~${\ttbar}{\rar}ll$     &  --- &   5.5 &   4.6 &   1.7 &  0.7 &  --- &   4.6 &   3.8 &   1.4 &  0.5  \\
+~~${\ttbar}{\rar}l$+jets &  --- &   1.7 &  13.6 &  21.8 & 11.7 &  --- &   1.0 &  10.2 &  18.0 &  8.1  \\
+~~$Wb\bar{b}$            &  --- &  16.2 &   6.8 &   1.8 &  0.3 &  --- &  15.3 &   8.2 &   2.3 &  0.6  \\
+~~$Wc\bar{c}$            &  --- &   1.6 &   1.1 &   0.4 &  0.1 &  --- &   1.6 &   1.5 &   0.5 &  0.1  \\
+~~$Wjj$                  &  --- &   0.1 &   0.1 &   0.0 &  0.0 &  --- &   0.1 &   0.1 &   0.0 &  0.0  \\
+~~Multijets              &  --- &   2.5 &   3.2 &   2.7 &  1.4 &  --- &   1.5 &   1.9 &   0.4 &  0.8  \\
+\hline 				       	       		      	     	     	     	     
+Background Sum           &  --- &  27.5 &  29.4 &  28.4 & 14.2 &  --- &  24.2 &  25.7 &  22.7 & 10.1  \\
+\hline			 	       	       		      	     	     	     	     
+Data                     &  --- &   30  &   37  &   22  &  10  &  --- &   23  &   32  &   27  &  10  
+\end{tabular}
+\end{ruledtabular}
+\vspace{-0.1in}
+\caption[twotagyields]{Yields after selection for events with exactly two $b$-tagged jets.}
+\label{twotag-yields}
+\end{minipage}
+\end{center}
+\end{table}
+
+

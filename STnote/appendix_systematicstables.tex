@@ -1,0 +1,504 @@
+%---------------------------------------------------------------------
+%  Writeup of the fall 2006 search of Run II data for single top quark
+%  production at DZero.
+%  Started Oct 2006
+%  Authors: The Single Top Working Group
+%---------------------------------------------------------------------
+%
+\appendix
+\section*{Appendix 6 --- Systematic Uncertainty Tables}
+\label{appendix-systematics}
+
+
+Tables~\ref{sys-error-CC-EqOneTag-EqOneJet}--\ref{sys-error-mu-EqTwoTag-EqFourJet}
+show the flat systematic uncertainties on the signal and background
+samples for the single-tagged and two double-tagged analyses. We also
+have two systematics sources that affect the shapes of the
+distributions, the jet energy scale uncertainty and the tag-rate
+functions uncertainty. These effects are not included in the tables.
+
+Here are some brief explanations of the terms listed in the
+tables. The tables can be used to see the correlation between the
+various samples and analysis channels for each uncertainty. A
+systematic uncertainty is assumed to be fully correlated between all
+signal or background samples within a given row in each table, and for
+rows with the same name in different tables. The exceptions to this
+are the systematic uncertainties on the theoretical cross sections
+used to normalize the MC backgrounds (except for the two {\ttbar}
+backgrounds), and the statistical uncertainty from the size of each MC
+sample.
+
+Note that owing to the normalization to data before $b$~tagging, the
+$Wb\bar{b}$, $Wc\bar{c}$, and $Wjj$ tagged yield estimates are not
+affected by any of the systematic uncertainties that affect the
+overall yield. The exception to this is $b$~tagging, which is applied
+after normalization. There is still an effect on the shapes of
+distributions from the uncertainty components that depend on event
+kinematics. For these shape-changing systematics (jet energy scale and
+tag-rate functions), we include the uncertainty in each bin of the
+binned likelihood fit.
+
+The row ``Matrix Method'' in each table includes not only the matrix
+method uncertainties but also the flavor composition uncertainty in
+the $W$+jets samples, which is by far the dominant component.  The
+normalization for $Wb\bar{b}$, $Wc\bar{c}$, and $Wjj$ includes the
+other MC backgrounds and thus their uncertainties in principle also
+affect $Wbb$, $Wcc$, and $Wjj$.  However, the other MC backgrounds
+only contribute about 3\% to the pretagged yield, which means their
+uncertainties are negligible compared with the other matrix method
+uncertainties and thus we ignore them.
+
+As a further result of the normalization before $b$~tagging, the
+uncertainties for the different $W$+jets samples are anti-correlated
+with the uncertainties for the fake-lepton sample. We take this into
+account in the calculation by computing an overal uncertainty on the
+sum of $W$+jets and fake-lepton. They are listed separately in the row
+``Matrix Method'', but in the calculation, the uncertainty is
+evaluated on the sum of the yields.
+
+Tables~\ref{sys-error-CC-EqOneTag-EqOneJet}--\ref{sys-error-mu-EqTwoTag-EqFourJet}
+show the total uncertainty on each background component separately,
+with the statistical and systematic parts combined in quadrature in
+the final lines. Note, the uncertainties for the zero-tagged channels
+are the same as for the single-tagged ones, so are not shown
+separately. The luminosity, cross section and branching fraction for
+the $tb$ and $tqb$ signals are not used for the signal acceptance
+during the cross section calculation but only when yields are quoted.
+They are presented in parentheses in the following tables.
+
+\clearpage
+
+\begin{center}
+UNCERTAINTIES FOR SINGLE-TAGGED ELECTRON ANALYSES
+\end{center}
+
+\begin{table}[!h!tbp]
+\begin{center}
+\begin{minipage}{5 in}
+\begin{ruledtabular}
+\begin{tabular}{lcccccccc}
+ & \multicolumn{8}{c}
+{\underline{Single-Tagged One-Jet Electron Channel Percentage
+Errors}}\\
+ & $tb$  & $tqb$ & ${\ttbar}lj$ & ${\ttbar}ll$ & $Wbb$ & $Wcc$
+ & $Wjj$ & Mis-ID $e$ \\
+\hline
+\multicolumn{4}{l}
+{\underline{Components for Normalization}}  &  &  &  &    \\
+%%%%%%%%%%%%%%%%%%%%%%% Insert content of syslatex file here
+%
+\input{systematics/systematics_Electron_EqOneTag_EqOneJet}
+%
+%%%%%%%%%%%%%%%%%%%%%%%
+\end{tabular}
+\end{ruledtabular}
+\vspace{-0.15in}
+\caption{Electron channel uncertainties, requiring exactly one tag
+and one jet.}
+\label{sys-error-CC-EqOneTag-EqOneJet}
+\end{minipage}
+\end{center}
+\end{table}
+
+\begin{table}[!h!tbp]
+\begin{center}
+\begin{minipage}{5 in}
+\begin{ruledtabular}
+\begin{tabular}{lcccccccc}
+ & \multicolumn{8}{c}
+{\underline{Single-Tagged Two-Jets Electron Channel Percentage
+Errors}}\\
+ & $tb$  & $tqb$ & ${\ttbar}lj$ & ${\ttbar}ll$ & $Wbb$ & $Wcc$
+ & $Wjj$ & Mis-ID $e$ \\
+\hline
+\multicolumn{4}{l}
+{\underline{Components for Normalization}}  &  &  &  &    \\
+%%%%%%%%%%%%%%%%%%%%%%% Insert content of syslatex file here
+%
+\input{systematics/systematics_Electron_EqOneTag_EqTwoJet}
+%
+%%%%%%%%%%%%%%%%%%%%%%%
+\end{tabular}
+\end{ruledtabular}
+\vspace{-0.15in}
+\caption{Electron channel uncertainties, requiring exactly one tag
+and two jets.}
+\label{sys-error-CC-EqOneTag-EqTwoJet}
+\end{minipage}
+\end{center}
+\end{table}
+
+\clearpage
+
+\begin{center}
+UNCERTAINTIES FOR SINGLE-TAGGED ELECTRON ANALYSES
+\end{center}
+
+\begin{table}[!h!tbp]
+\begin{center}
+\begin{minipage}{5 in}
+\begin{ruledtabular}
+\begin{tabular}{lcccccccc}
+ & \multicolumn{8}{c}
+{\underline{Single-Tagged Three-Jets Electron Channel Percentage
+Errors}}\\
+ & $tb$  & $tqb$ & ${\ttbar}lj$ & ${\ttbar}ll$ & $Wbb$ & $Wcc$
+ & $Wjj$ & Mis-ID $e$ \\
+\hline
+\multicolumn{4}{l}
+{\underline{Components for Normalization}}  &  &  &  &    \\
+%%%%%%%%%%%%%%%%%%%%%%% Insert content of syslatex file here
+%
+\input{systematics/systematics_Electron_EqOneTag_EqThreeJet}
+%
+%%%%%%%%%%%%%%%%%%%%%%%
+\end{tabular}
+\end{ruledtabular}
+\vspace{-0.15in}
+\caption{Electron channel uncertainties, requiring exactly one tag
+and three jets.}
+\label{sys-error-CC-EqOneTag-EqThreeJet}
+\end{minipage}
+\end{center}
+\end{table}
+
+\begin{table}[!h!tbp]
+\begin{center}
+\begin{minipage}{5 in}
+\begin{ruledtabular}
+\begin{tabular}{lcccccccc}
+ & \multicolumn{8}{c}
+{\underline{Single-Tagged Four-Jets Electron Channel Percentage
+Errors}}\\
+ & $tb$  & $tqb$ & ${\ttbar}lj$ & ${\ttbar}ll$ & $Wbb$ & $Wcc$
+ & $Wjj$ & Mis-ID $e$ \\
+\hline
+\multicolumn{4}{l}
+{\underline{Components for Normalization}}  &  &  &  &    \\
+%%%%%%%%%%%%%%%%%%%%%%% Insert content of syslatex file here
+%
+\input{systematics/systematics_Electron_EqOneTag_EqFourJet}
+%
+%%%%%%%%%%%%%%%%%%%%%%%
+\end{tabular}
+\end{ruledtabular}
+\vspace{-0.15in}
+\caption{Electron channel uncertainties, requiring exactly one tag
+and four jets.}
+\label{sys-error-CC-EqOneTag-EqFourJet}
+\end{minipage}
+\end{center}
+\end{table}
+
+\clearpage
+
+\begin{center}
+UNCERTAINTIES FOR SINGLE-TAGGED MUON ANALYSES
+\end{center}
+
+\begin{table}[!h!tbp]
+\begin{center}
+\begin{minipage}{5 in}
+\begin{ruledtabular}
+\begin{tabular}{lcccccccc}
+ & \multicolumn{8}{c}
+{\underline{Single-Tagged One-Jet Muon Channel Percentage Errors}}\\
+ & $tb$  & $tqb$ & ${\ttbar}lj$ & ${\ttbar}ll$ & $Wbb$ & $Wcc$
+ & $Wjj$ & Mis-ID $e$ \\
+\hline
+\multicolumn{4}{l}
+{\underline{Components for Normalization}}  &  &  &  &    \\
+%%%%%%%%%%%%%%%%%%%%%%% Insert content of syslatex file here
+%
+\input{systematics/systematics_Muon_EqOneTag_EqOneJet}
+%
+%%%%%%%%%%%%%%%%%%%%%%%
+\end{tabular}
+\end{ruledtabular}
+\vspace{-0.15in}
+\caption{Muon channel uncertainties, requiring exactly one tag and
+one jet.}
+\label{sys-error-mu-EqOneTag-EqOneJet}
+\end{minipage}
+\end{center}
+\end{table}
+
+\begin{table}[!h!tbp]
+\begin{center}
+\begin{minipage}{5 in}
+\begin{ruledtabular}
+\begin{tabular}{lcccccccc}
+ & \multicolumn{8}{c}
+{\underline{Single-Tagged Two-Jets Muon Channel Percentage Errors}}\\
+ & $tb$  & $tqb$ & ${\ttbar}lj$ & ${\ttbar}ll$ & $Wbb$ & $Wcc$
+ & $Wjj$ & Mis-ID $e$ \\
+\hline
+\multicolumn{4}{l}
+{\underline{Components for Normalization}}  &  &  &  &    \\
+%%%%%%%%%%%%%%%%%%%%%%% Insert content of syslatex file here
+%
+\input{systematics/systematics_Muon_EqOneTag_EqTwoJet}
+%
+%%%%%%%%%%%%%%%%%%%%%%%
+\end{tabular}
+\end{ruledtabular}
+\vspace{-0.15in}
+\caption{Muon channel uncertainties, requiring exactly one tag and
+two jets.}
+\label{sys-error-mu-EqOneTag-EqTwoJet}
+\end{minipage}
+\end{center}
+\end{table}
+
+\clearpage
+
+\begin{center}
+UNCERTAINTIES FOR SINGLE-TAGGED MUON ANALYSES
+\end{center}
+
+\begin{table}[!h!tbp]
+\begin{center}
+\begin{minipage}{5 in}
+\begin{ruledtabular}
+\begin{tabular}{lcccccccc}
+ & \multicolumn{8}{c}
+{\underline{Single-Tagged Three-Jets Muon Channel Percentage
+Errors}}\\
+ & $tb$  & $tqb$ & ${\ttbar}lj$ & ${\ttbar}ll$ & $Wbb$ & $Wcc$
+ & $Wjj$ & Mis-ID $e$ \\
+\hline
+\multicolumn{4}{l}
+{\underline{Components for Normalization}}  &  &  &  &    \\
+%%%%%%%%%%%%%%%%%%%%%%% Insert content of syslatex file here
+%
+\input{systematics/systematics_Muon_EqOneTag_EqThreeJet}
+%
+%%%%%%%%%%%%%%%%%%%%%%%
+\end{tabular}
+\end{ruledtabular}
+\vspace{-0.15in}
+\caption{Muon channel uncertainties, requiring exactly one tag and
+three jets.}
+\label{sys-error-mu-EqOneTag-EqThreeJet}
+\end{minipage}
+\end{center}
+\end{table}
+
+\begin{table}[!h!tbp]
+\begin{center}
+\begin{minipage}{5 in}
+\begin{ruledtabular}
+\begin{tabular}{lcccccccc}
+ & \multicolumn{8}{c}
+{\underline{Single-Tagged Four-Jets Muon Channel Percentage Errors}}\\
+ & $tb$  & $tqb$ & ${\ttbar}lj$ & ${\ttbar}ll$ & $Wbb$ & $Wcc$
+ & $Wjj$ & Mis-ID $e$ \\
+\hline
+\multicolumn{4}{l}
+{\underline{Components for Normalization}}  &  &  &  &    \\
+%%%%%%%%%%%%%%%%%%%%%%% Insert content of syslatex file here
+%
+\input{systematics/systematics_Muon_EqOneTag_EqFourJet}
+%
+%%%%%%%%%%%%%%%%%%%%%%%
+\end{tabular}
+\end{ruledtabular}
+\vspace{-0.15in}
+\caption{Muon channel uncertainties, requiring exactly one tag and
+four jets.}
+\label{sys-error-mu-EqOneTag-EqFourJet}
+\end{minipage}
+\end{center}
+\end{table}
+
+\clearpage
+
+\begin{center}
+UNCERTAINTIES FOR DOUBLE-TAGGED ELECTRON ANALYSES
+\end{center}
+
+\begin{table}[!h!tbp]
+\begin{center}
+\begin{minipage}{5 in}
+\begin{ruledtabular}
+\begin{tabular}{lcccccccc}
+ & \multicolumn{8}{c}
+{\underline{Double-Tagged Two-Jets Electron Channel Percentage
+Errors}}\\
+ & $tb$  & $tqb$ & ${\ttbar}lj$ & ${\ttbar}ll$ & $Wbb$ & $Wcc$
+ & $Wjj$ & Mis-ID $e$ \\
+\hline
+\multicolumn{4}{l}
+{\underline{Components for Normalization}}  &  &  &  &    \\
+%%%%%%%%%%%%%%%%%%%%%%% Insert content of syslatex file here
+%
+\input{systematics/systematics_Electron_EqTwoTag_EqTwoJet}
+%
+%%%%%%%%%%%%%%%%%%%%%%%
+\end{tabular}
+\end{ruledtabular}
+\vspace{-0.15in}
+\caption{Electron channel uncertainties, requiring exactly two tags
+and two jets.}
+\label{sys-error-CC-EqTwoTag-EqTwoJet}
+\end{minipage}
+\end{center}
+\end{table}
+
+\begin{table}[!h!tbp]
+\begin{center}
+\begin{minipage}{5 in}
+\begin{ruledtabular}
+\begin{tabular}{lcccccccc}
+ & \multicolumn{8}{c}
+{\underline{Double-Tagged Three-Jets Electron Channel Percentage
+Errors}}\\
+ & $tb$  & $tqb$ & ${\ttbar}lj$ & ${\ttbar}ll$ & $Wbb$ & $Wcc$
+ & $Wjj$ & Mis-ID $e$ \\
+\hline
+\multicolumn{4}{l}
+{\underline{Components for Normalization}}  &  &  &  &    \\
+%%%%%%%%%%%%%%%%%%%%%%% Insert content of syslatex file here
+%
+\input{systematics/systematics_Electron_EqTwoTag_EqThreeJet}
+%
+%%%%%%%%%%%%%%%%%%%%%%%
+\end{tabular}
+\end{ruledtabular}
+\vspace{-0.15in}
+\caption{Electron channel uncertainties, requiring exactly two tags
+and three jets.}
+\label{sys-error-CC-EqTwoTag-EqThreeJet}
+\end{minipage}
+\end{center}
+\end{table}
+
+\clearpage
+
+\begin{center}
+UNCERTAINTIES FOR DOUBLE-TAGGED ELECTRON ANALYSES
+\end{center}
+
+\begin{table}[!h!tbp]
+\begin{center}
+\begin{minipage}{5 in}
+\begin{ruledtabular}
+\begin{tabular}{lcccccccc}
+ & \multicolumn{8}{c}
+{\underline{Double-Tagged Four-Jets Electron Channel Percentage
+Errors}}\\
+ & $tb$  & $tqb$ & ${\ttbar}lj$ & ${\ttbar}ll$ & $Wbb$ & $Wcc$
+ & $Wjj$ & Mis-ID $e$ \\
+\hline
+\multicolumn{4}{l}
+{\underline{Components for Normalization}}  &  &  &  &    \\
+%%%%%%%%%%%%%%%%%%%%%%% Insert content of syslatex file here
+%
+\input{systematics/systematics_Electron_EqTwoTag_EqFourJet}
+%
+%%%%%%%%%%%%%%%%%%%%%%%
+\end{tabular}
+\end{ruledtabular}
+\vspace{-0.15in}
+\caption{Electron channel uncertainties, requiring exactly two tags
+and four jets.}
+\label{sys-error-CC-EqTwoTag-EqFourJet}
+\end{minipage}
+\end{center}
+\end{table}
+
+\clearpage
+
+\begin{center}
+UNCERTAINTIES FOR DOUBLE-TAGGED MUON ANALYSES
+\end{center}
+
+\begin{table}[!h!tbp]
+\begin{center}
+\begin{minipage}{5 in}
+\begin{ruledtabular}
+\begin{tabular}{lcccccccc}
+ & \multicolumn{8}{c}
+{\underline{Double-Tagged Two-Jets Muon Channel Percentage Errors}}\\
+ & $tb$  & $tqb$ & ${\ttbar}lj$ & ${\ttbar}ll$ & $Wbb$ & $Wcc$
+ & $Wjj$ & Mis-ID $e$ \\
+\hline
+\multicolumn{4}{l}
+{\underline{Components for Normalization}}  &  &  &  &    \\
+%%%%%%%%%%%%%%%%%%%%%%% Insert content of syslatex file here
+%
+\input{systematics/systematics_Muon_EqTwoTag_EqTwoJet}
+%
+%%%%%%%%%%%%%%%%%%%%%%%
+\end{tabular}
+\end{ruledtabular}
+\vspace{-0.15in}
+\caption{Muon channel uncertainties, requiring exactly two tags and
+two jets.}
+\label{sys-error-mu-EqTwoTag-EqTwoJet}
+\end{minipage}
+\end{center}
+\end{table}
+
+\begin{table}[!h!tbp]
+\begin{center}
+\begin{minipage}{5 in}
+\begin{ruledtabular}
+\begin{tabular}{lcccccccc}
+ & \multicolumn{8}{c}
+{\underline{Double-Tagged Three-Jets Muon Channel Percentage
+Errors}}\\
+ & $tb$  & $tqb$ & ${\ttbar}lj$ & ${\ttbar}ll$ & $Wbb$ & $Wcc$
+ & $Wjj$ & Mis-ID $e$ \\
+\hline
+\multicolumn{4}{l}
+{\underline{Components for Normalization}}  &  &  &  &    \\
+%%%%%%%%%%%%%%%%%%%%%%% Insert content of syslatex file here
+%
+\input{systematics/systematics_Muon_EqTwoTag_EqThreeJet}
+%
+%%%%%%%%%%%%%%%%%%%%%%%
+\end{tabular}
+\end{ruledtabular}
+\vspace{-0.15in}
+\caption{Muon channel uncertainties, requiring exactly two tags and
+three jets.}
+\label{sys-error-mu-EqTwoTag-EqThreeJet}
+\end{minipage}
+\end{center}
+\end{table}
+
+\clearpage
+
+\begin{center}
+UNCERTAINTIES FOR DOUBLE-TAGGED MUON ANALYSES
+\end{center}
+
+\begin{table}[!h!tbp]
+\begin{center}
+\begin{minipage}{5 in}
+\begin{ruledtabular}
+\begin{tabular}{lcccccccc}
+ & \multicolumn{8}{c}
+{\underline{Double-Tagged Four-Jets Muon Channel Percentage Errors}}\\
+ & $tb$  & $tqb$ & ${\ttbar}lj$ & ${\ttbar}ll$ & $Wbb$ & $Wcc$
+ & $Wjj$ & Mis-ID $e$ \\
+\hline
+\multicolumn{4}{l}
+{\underline{Components for Normalization}}  &  &  &  &    \\
+%%%%%%%%%%%%%%%%%%%%%%% Insert content of syslatex file here
+%
+\input{systematics/systematics_Muon_EqTwoTag_EqFourJet}
+%
+%%%%%%%%%%%%%%%%%%%%%%%
+\end{tabular}
+\end{ruledtabular}
+\vspace{-0.15in}
+\caption{Muon channel uncertainties, requiring exactly two tags and
+four jets.}
+\label{sys-error-mu-EqTwoTag-EqFourJet}
+\end{minipage}
+\end{center}
+\end{table}
+
+

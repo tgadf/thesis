@@ -1,0 +1,21 @@
+#!/bin/csh
+#
+#
+# shell script to run latex over the single top d0 conference note
+# twice to make sure all references are up to date and then
+# producing a postscript file which is then converted to pdf.
+#
+# 
+# set up the TEXINPUTS path so that the revtex4 files can be found.
+setenv TEXINPUTS ".:tex:tex/reconstruction:`pwd`/../revtex4:"
+
+# run latex twice. latex is called from inside the runme script.
+./runme.sh
+./runme.sh
+# sleeping a little seems to help dvips
+sleep 1
+
+# format the output properly so that it produces nice sharp pdf
+dvips me_note.dvi -Ppdf -j0 -t letter -o me_note.ps
+
+ps2pdf me_note.ps

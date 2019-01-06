@@ -1,0 +1,412 @@
+%---------------------------------------------------------------------
+%  Writeup of the latest and  greatest search of Run II data for
+%  single top quark production at DZero.
+%  Started 08/31/06
+%  Continued 10/14/06
+%  Authors: The Single Top Working Group
+%
+%---------------------------------------------------------------------
+%
+\documentclass[aps]{revtex4}
+
+% Allow figures to be included
+\usepackage{graphicx}
+
+% Allow type to be colored (68 colors)
+\usepackage[usenames]{color}
+
+% Allow rotation of tables, figures, pages
+\usepackage{rotating}
+
+% Add a gray bar to the margin for new text
+\usepackage{changebar}
+
+% Allow sub figures
+\usepackage{subfigure}
+
+% Fix too narrow margins
+\paperheight 11 in
+\paperwidth 8.5 in
+\textwidth 6.5 in
+\oddsidemargin 0 pt
+\marginparsep 0 pt
+\marginparwidth 0 pt
+\voffset 0 in
+\hoffset 0 in
+
+% Fix hard-to-follow section numbering
+\renewcommand{\thesection}
+{\Large\arabic{section}}
+\renewcommand{\thesubsection}
+{\large\arabic{section}.\large\arabic{subsection}}
+\renewcommand{\thesubsubsection}
+{\arabic{section}.\arabic{subsection}.\arabic{subsubsection}}
+\renewcommand{\theparagraph}
+{\arabic{section}.\arabic{subsection}.\arabic{subsubsection}.\arabic{paragraph}}
+
+% Change the table numbering from roman to arabic
+\renewcommand{\thetable}{\arabic{table}}
+
+% Fix problems with font changes after a reference to a section 
+\let\LaTEXref\ref
+\renewcommand{\ref}[1]
+{{\LaTEXref{#1}}}
+
+% Make section titles size match text size
+\makeatletter
+\renewcommand{\section}{\@startsection
+	{section}%
+	{1}%
+	{0pt}%
+	{-\baselineskip}%
+	{1.0\baselineskip}%
+	{\center\bfseries\Large\rmfamily\scshape}}%
+\renewcommand{\subsection}{\@startsection
+	{subsection}%
+	{2}%
+	{0pt}%
+	{-\baselineskip}%
+	{1.0\baselineskip}%
+	{\center\bfseries\large\rmfamily}}%
+\renewcommand{\subsubsection}{\@startsection
+	{subsubsection}%
+	{3}%
+	{0pt}%
+	{-\baselineskip}%
+	{1.0\baselineskip}%
+	{\center\itshape\large\rmfamily}}%
+\renewcommand{\paragraph}{\@startsection
+	{paragraph}%
+	{4}%
+	{0pt}%
+	{-\baselineskip}%
+	{1.0\baselineskip}%
+	{\center\itshape\rmfamily}}%
+
+% Fix references to sections
+\renewcommand{\p@subsection}{}
+\renewcommand{\p@subsubsection}{}
+\renewcommand{\p@paragraph}{}
+\renewcommand{\p@subparagraph}{}
+
+\makeatother
+
+% Put page number at bottom of page
+\pagestyle{plain}
+
+% Avoid too much hyphenation at the ends of lines
+\lefthyphenmin=6
+\righthyphenmin=6
+
+% Allow a figure to occupy most of a column without being
+% placed on a separate page that includes no text
+\renewcommand{\topfraction}      {0.95}
+\renewcommand{\bottomfraction}   {0.95}
+\renewcommand{\floatpagefraction}{0.95}
+\renewcommand{\textfraction}     {0.05}
+
+% Tighten up the itemized lists
+\newenvironment{myitemize}{\begin{itemize}
+                \setlength{\itemsep}{-1 pt}}{\end{itemize}}
+
+% Tighten up the itemized description lists
+\newenvironment{mydescription}{\begin{description}
+                \setlength{\itemsep}{-1 pt}}{\end{description}}
+
+% Tighten up the enumerated lists
+\newenvironment{myenumerate}{\begin{enumerate}
+                \setlength{\itemsep}{-1 pt}}{\end{enumerate}}
+
+% Define some abbreviations
+\newcommand{\dzero}     {D\O}
+\newcommand{\met}       {\mbox{$\not\!\!E_T$}}
+\newcommand{\pt}        {\mbox{$p_{\rm T}$}}
+\newcommand{\deta}      {\mbox{$\eta^{\rm det}$}}
+\newcommand{\meta}      {\mbox{$\left|\eta\right|$}}
+\newcommand{\mdeta}     {\mbox{$\left|\eta^{\rm det}\right|$}}
+\newcommand{\rar}       {\rightarrow}
+\newcommand{\rargap}    {\mbox{ $\rightarrow$ }}
+\newcommand{\tbbar}     {\mbox{$tb$}}
+\newcommand{\tqbbar}    {\mbox{$tqb$}}
+\newcommand{\ttbar}     {\mbox{$t\bar{t}$}}
+\newcommand{\bbbar}     {\mbox{$b\bar{b}$}}
+\newcommand{\ccbar}     {\mbox{$c\bar{c}$}}
+\newcommand{\qqbar}     {\mbox{$q\bar{q}$}}
+\newcommand{\ppbar}     {\mbox{$p\bar{p}$}}
+\newcommand{\lepjets}   {\mbox{${\ttbar}{\rar}\ell$+jets}}
+\newcommand{\dilepton}  {\mbox{${\ttbar}{\rar}\ell\ell$}}
+\newcommand{\comphep}   {\sc{c}\rm{omp}\sc{hep}}
+\newcommand{\singletop} {\sc{s}\rm{ingle}\sc{t}\rm{op}}
+\newcommand{\herwig}    {\sc{herwig}}
+\newcommand{\pythia}    {\sc{pythia}}
+\newcommand{\alpgen}    {\sc{alpgen}}
+\newcommand{\tauola}    {\sc{tauola}}
+\newcommand{\evtgen}    {\sc{e}\rm{vt}\sc{g}\rm{en}}
+\newcommand{\reco}      {\sc{reco}}
+\newcommand{\pderiv}[2]{\frac{\partial #1}{\partial #2}}
+%---------------------------------------------------------------------
+%---------------------------------------------------------------------
+\begin{document}
+
+\begin{table}
+\begin{flushleft}
+\begin{minipage}{5.5 in}
+\begin{tabular}{lr}
+%{\leftline{\includegraphics[scale=0.3]{../figures/d0logo}}}
+& \hspace{-0.5in}{\large{\dzero} Note 5287} \\
+%{\large For Top Group and EB review}
+& \hspace{-0.5in}{\large November 28, 2006} \\
+%{\large Comments to d0-run2eb-024@fnal.gov,}
+& \hspace{-0.5in}{\large Version 1.2} \\
+%{\large Thomas~Gadfort, Aurelio~Juste, Jovan~Mitrevski, John~Parsons,} & \\
+%{\large Gordon~Watts, Ar\'{a}n~Garc\'{\i}a-Bellido, and Ann~Heinson} & \\
+%{\large {\color{red}{Deadline: Monday, November XX, 2006}}} & \\
+\end{tabular}
+\end{minipage}
+\end{flushleft}
+\end{table}
+
+
+
+\title{\LARGE{\vspace{0.35in}Search for Single Top Quark Production
+Using The Matrix Element Analysis Technique in 1~fb$^{-1}$ of Data}\\
+\vspace{0 in}}
+
+%--------
+%  Secret title is something like ``New Mode of Top Quark Production
+%  Observed at the Tevatron''
+%--------
+
+\author{\large{
+E.~Aguil\'{o},$^{2}$
+P.~Baringer$^{10}$
+A.~Bean,$^{10}$
+C.~Belanger-Champagne,$^{11}$
+J.A.~Benitez,$^{12}$
+E.E.~Boos,$^{13}$
+R.~Brock,$^{12}$
+V.~Bunichev, $^{13}$
+K.~Chan,$^{2}$
+L.~Christofek,$^{4}$
+Y.~Coadou,$^{17}$
+L.V.~Dudko,$^{13}$
+M.~Erdmann,$^{1}$
+T.~Gadfort,$^{18}$
+A.~Garc\'{\i}a-Bellido,$^{18}$
+C.~Gerber,$^{9}$
+D.~Gillberg,$^{17}$
+G.~Gutierrez,$^{7}$
+P.~Gutierrez,$^{14}$
+A.P.~Heinson,$^{5}$
+U.~Heintz,$^{3}$
+S.~Herrin,$^{16}$
+S.~Jabeen,$^{3}$
+S.~Jain,$^{14}$
+A.~Juste,$^{7}$
+S.~Kappler,$^{1}$
+D.~Kau,$^{8}$
+G.~Kertzscher,$^{11}$
+M.~Kirsch,$^{1}$
+L.~Li,$^{5}$
+J.~Mitrevski,$^{6}$
+R.~Moore,$^{2}$
+M.~Narain,$^{3,4}$
+D.~O'Neil,$^{17}$
+M.~Pangilinan,$^{3}$
+J.~Parsons,$^{6}$
+M.~Perfilov,$^{13}$
+C.~Potter,$^{11}$
+H.B.~Prosper,$^{8}$
+R.~Schwienhorst,$^{12}$
+E.~Shabalina,$^{9}$
+J.~Steggemann,$^{1}$
+T.~Tim,$^{9}$
+C.~Tully,$^{15}$
+M.~Vetterli,$^{17}$
+B.~Vachon,$^{11}$
+G.~Watts,$^{18}$
+M.~Weber$^{7}$
+}}
+
+\affiliation{\large{\vspace*{0.1in}
+$^{1}$RWTH Aachen University\\
+$^{2}$University of Alberta\\
+$^{3}$Boston University\\
+$^{4}$Brown University\\
+$^{5}$University of California, Riverside\\
+$^{6}$Columbia University\\
+$^{7}$Fermi National Accelerator Laboratory\\
+$^{8}$Florida State University\\
+$^{9}$University of Illinois, Chicago\\
+$^{10}$University of Kansas\\
+$^{11}$McGill University\\
+$^{12}$Michigan State University\\
+$^{13}$Moscow State University\\
+$^{14}$University of Oklahoma\\
+$^{15}$Princeton University\\
+$^{16}$Rice University\\
+$^{17}$Simon Fraser University\\
+$^{18}$University of Washington
+}}
+
+\begin{abstract}
+{\vspace{0.1in}\large{This note describes the application of the
+matrix element analysis technique to the search for single top quark
+production at {\dzero} using nearly 1~fb$^{-1}$ of Run~II data. From a
+comparison of the matrix element discriminants between data and the
+background model, we measure the single top quark production
+cross section:
+$$
+\sigma\left({\ppbar}{\rargap}tb+tqb+X\right)
+= 4.6 ^{+1.8}_{-1.5}~{\rm pb}
+$$ }}
+
+\end{abstract}
+
+\maketitle
+
+%---------------------------------------------------------------------
+%---------------------------------------------------------------------
+%---------------------------------------------------------------------
+%---------------------------------------------------------------------
+\clearpage
+\tableofcontents
+\vfill\eject
+
+\large{
+
+%---------------------------------------------------------------------
+\clearpage
+\input{Introduction}
+
+\clearpage
+\input{MethodDescription}
+
+\clearpage
+\input{DataMC}
+
+\clearpage
+\input{Ensembles}
+
+\clearpage
+\input{ExpectedPerformance}
+
+\clearpage
+\input{Results}
+
+\clearpage
+\input{Summary}
+
+\clearpage
+\appendix
+\input{FullDerivation}
+
+\clearpage
+\input{Channel}
+
+\clearpage
+\input{Integration}
+
+%---------------------------------------------------------------------
+}
+%---------------------------------------------------------------------
+%---------------------------------------------------------------------
+\clearpage
+\bibliographystyle{unsrt}
+\begin{thebibliography}{99.}
+\label{bibliography}
+\vspace{-0.15in}
+
+\bibitem{Abazov:2004cs}
+V.M.~Abazov {\it et al.},({\dzero} Collaboration),
+``A Precision Measurement of the Mass of the Top Quark,''
+Nature {\bf 429}, 638 (2004).
+%%CITATION = HEP-EX 0406031;%%
+
+\bibitem{Abazov:2006bd}
+V.M.~Abazov {\it et al.}, ({\dzero} Collaboration),
+``Measurement of the Top Quark Mass in the Lepton+Jets Final State
+with the Matrix Element Method,''
+hep-ex/0609053.
+%%CITATION = HEP-EX 0609053;%%
+
+\bibitem{Abazov:2004ym}
+V.M.~Abazov {\it et al.}, ({\dzero} Collaboration),
+``Helicity of the $W$ Boson in Lepton+Jets ${\ttbar}$ Events,''
+Phys.\ Lett.\ {\bf B 617}, 1 (2005).
+%%CITATION = HEP-EX 0404040;%%
+
+\bibitem{general-note}
+The Single Top Working Group,
+``Search for Single Top Quark Production in 1~fb$^{-1}$ of Data,''
+{\dzero}~Note~5285 (2006).
+
+\bibitem{GNU}
+The GNU Scientific Library,
+\texttt{http://www.gnu.org/software/gsl/}
+
+\bibitem{Lepage:1980dq}
+G.P.~Lepage,
+``VEGAS: An Adaptive Multidimensional Integration Program,''
+Cornell Laboratory of Nuclear Sciences report CLNS-80/447, (1980).
+
+\bibitem{Pumplin:2005rh}
+J.~Pumplin {\it et al.},
+``Parton Distributions and the Strong Coupling: CTEQ6AB PDFs,''
+JHEP {\bf 0602}, 032 (2006).
+%%CITATION = HEP-PH 0512167;%%
+
+\bibitem{LHAPDF}
+The Les Houches Accord PDF Interface,
+\texttt{http://hepforge.cedar.ac.uk/lhapdf/}
+
+\bibitem{PDG} 
+W.-M. Yao {\it et al.},
+``The Review of Particle Physics,''
+J. Phys. {\bf G 33}, 1 (2006).
+
+\bibitem{Maltoni:2002qb}
+F.~Maltoni and T.~Stelzer,
+``MadEvent: Automatic Event Generation with MadGraph,''
+JHEP {\bf 0302}, 027 (2003).
+%%CITATION = HEP-PH 0208156;%%
+
+\bibitem{JetTF}
+P.~Shiefferdecker and M.~Wang,
+``Jet Transfer Functions Derived From p17 $\ttbar$ Monte Carlo,''
+{\dzero}~Note~5136, (2006).
+
+\bibitem{ElectronTF}
+Private communication with L.~Wang.
+Parametrization found in the file\\
+\texttt{/work/cole-clued0/leiwang/wz\_epmcs/p170303\_sampling/wz\_epmcs/src/pmcsana.cpp}
+
+\bibitem{MuonTF}
+P.~Haefner and F.~Fiedler,
+``Determination of the Muon Transfer Function for Top Mass
+Measurements,''
+{\dzero}~Note~4818, (2005).
+
+\bibitem{MuonTF2}
+P.~Haefner and F.~Fiedler,
+``Muon Transfer Function Parameters for p17 MC,''
+{\dzero}~Note~5214, (2006).
+
+\bibitem{NNbtag}
+M.~Anastasoaie, S.~Robinson, and T.~Scanlon,
+``Performance of the NN $b$-Tagging Tool on p17 Data,''
+{\dzero}~Note~5213, (2006).
+
+%\bibitem{pValue}
+%S.~Jain and H~B.~Prosper,
+%``Defining p-Value with Systematic Effects, and Using Spectral
+%Distributions,''
+%{\dzero}~Note~5258, (2006).
+
+\end{thebibliography}
+
+%---------------------------------------------------------------------
+%---------------------------------------------------------------------
+%---------------------------------------------------------------------
+
+\end{document}

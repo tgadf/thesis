@@ -1,0 +1,228 @@
+%---------------------------------------------------------------------
+%  Writeup of the improved search of Run II data for single top quark
+%  production at DZero.
+%  Started: Oct 2006
+%  Authors: The Single Top Working Group
+%---------------------------------------------------------------------
+%
+
+\section{Systematic Uncertainties}
+\label{systematics}
+
+Systematic uncertainties enter the single top calculations in two
+ways: as uncertainty on the normalization of the background samples;
+and as effects that change the shapes of the distributions of those
+samples and the shapes of the expected signal distributions.
+
+Table~\ref{tab:generalsys} summarises the relative uncertainties on
+each of the sources described below. Detailed tables of uncertainties
+for each individual channel are listed in Appendix~6.
+
+We have considered the following systematic uncertainties in the
+analysis:
+
+\begin{itemize}
+\item {\bf Integrated luminosity} \\ 
+The error on the luminosity estimate affects the signal and $\ttbar$
+yields.
+
+\item {\bf Theoretical cross sections} \\ 
+The uncertainty on the cross section for signal and $\ttbar$ includes
+the theoretical error and the uncertainty from the top quark mass
+uncertainty.
+
+\item {\bf Trigger efficiency} \\
+The trigger efficiency as a function of $\pt$ for each object in an MC
+event is shifted up and down by one standard deviation and the weight
+of the event recalculated. This shift is taken as an overall constant
+systematic error on the MC acceptance.
+
+\item {\bf Primary vertex selection efficiency} \\
+The primary vertex selection efficiency in data and MC are not the
+same. We assign a systematic uncertainty for the difference on the $z$
+position of the primary vertex taking into account the beam profile
+along the longitudinal direction~\cite{beamshifts}.
+
+\item {\bf Jet reconstruction and identification} \\
+The dependence of the efficiency on the number and the $\eta$ of the
+jets is taken into account.
+
+\item {\bf Jet energy scale and jet energy resolution} \\
+The JES correction is raised and lowered by one standard deviation and
+the whole analysis repeated. In the data, the JES uncertaintiy
+contains the jet energy resolution uncertainty. But in the Monte Carlo
+the jet energy resolution uncertainty is not taken into account in the
+JES uncertainty. To account for this, the Monte Carlo energy smearing
+is varied by the size of the jet energy resolution in MC. This
+uncertainty affects the acceptance and the shapes of the
+distributions.
+
+\item {\bf Jet fragmentation} \\
+This systematic error covers the difference in the jet fragmentation
+models of {\sc pythia} and {\sc herwig} as well as the uncertainty in
+the modeling of initial-state and final-state radiation.
+
+\item {\bf Electron reconstruction and identification efficiency} \\
+The electron reconstruction and identification scale factor is
+parametrized as a function of the distance between the electron and
+the closest jet. The dependences on $\phi$ and $\pt$ of the electron
+are included in the systematic error and also the limited statistics
+in each bin of the parametrization.
+
+\item {\bf Electron track matching and likelihood efficiency} \\
+These scale factors are parametrized as a function of $\eta$ and
+$\phi$, and the limited statistics of each bin, as well as the
+dependence on the number of jets are taken as the total systematic
+uncertainty.
+
+\item {\bf Muon reconstruction and identification efficiency} \\
+The MC scale factor uncertainties are estimated by the muon ID group
+as coming from the tag/probe method, background subtraction, and
+limited statistics in the parametrization.
+
+\item {\bf Muon track matching and isolation} \\
+The muon tracking uncertainty, estimated by the muon ID group,
+includes uncertainties from the tag/probe method, background
+substraction, luminosity and timing bias, and averaging over $\phi$
+and the limited statistics in each bin of the scale factor. The muon
+isolation uncertainty was estimated based on the scale factor
+dependence with the number of jets; and covers the dependences not
+taken into account like $\pt$ and $\eta$.
+
+\item {\bf Matrix method normalization} \\
+The determination of the number of real-lepton events in data is
+affected by the uncertainties associated with the determination of the
+probabilities for a loose lepton to be (mis)identified as a (fake)
+real lepton, $\varepsilon_{\rm fake{\mbox{\small -}}{\rm lepton}}$ and
+$\varepsilon_{\rm real{\mbox{\small -}}{\rm lepton}}$. It is also
+affected by the limited statistics of the data sample. See
+Ref.~\cite{matrix-method} for more details.
+
+\item {\bf Heavy flavor ratio} \\
+The error on the scale factor we apply to set the $Wbb$ and $Wcc$
+contributions in the $W$+jets sample, as described in Appendix~3, is
+estimated to cover several effects: dependence on the $b$-quark $\pt$,
+the difference between the zero tag samples where it is estimated and the
+signal samples where it is used, and the intrinsic uncertainty on the value of
+the LO cross section it's being applied on. 
+
+\item {\bf Monte Carlo tag-rate functions}\\
+The uncertainty associated with the tag-rate functions is evaluated by
+raising and lowering the tag rate by one standard deviation for both
+the taggability and the tag rate components and determining the new
+event tagging weight. The TRF uncertainties originate from several
+sources: statistical errors of MC event sets; the assummed fraction of
+heavy flavor in the MC QCD for the mistag rate determination; and the
+parametrizations.
+\end{itemize}
+
+\vspace{-0.1in}
+\begin{table}[h]
+\begin{center}
+\begin{minipage}{5 in}
+\begin{ruledtabular}
+\begin{tabular}{l|c||l|c}
+\multicolumn{4}{c}{\underline{Relative Systematic Uncertainties}}\\
+\hline
+{\ttbar} cross section~~~~~~~~~~~~ & $18\%$  & Primary vertex                    &  $3\%$  \\
+Luminosity                         &  $6\%$  & Electron reco * ID                &  $2\%$  \\
+Electron trigger                   & $3\%$   & Electron trackmatch \& likelihood &  $5\%$  \\
+Muon trigger                       & $6\%$   & Muon reco * ID                    &  $7\%$  \\
+Jet energy scale                   &wide range&Muon trackmatch \& isolation      &  $2\%$  \\
+Jet efficiency                     &  $2\%$  & $\varepsilon_{{\rm real-}e}$      &  $2\%$  \\
+Jet fragmentation                  & 5--7$\%$& $\varepsilon_{{\rm real-}\mu}$    &  $2\%$  \\
+Heavy flavor ratio                 & $30\%$  & $\varepsilon_{{\rm fake-}e}$      &3--40$\%$\\ 
+Tag-rate functions                 &2--16$\%$& $\varepsilon_{{\rm fake-}\mu}$    &2--15$\%$
+\end{tabular}
+\end{ruledtabular}
+\caption[gensys]{A summary of the relative systematic uncertainties
+for each of the applied corrections and efficiencies. The uncertainty
+shown is the error on the correction or the efficiency, before it has
+been applied to the MC or data samples.}
+\label{tab:generalsys}
+\end{minipage}
+\end{center}
+\end{table}
+
+
+%  email from Lisa
+% ======================================
+% Muon channel
+% ==============
+
+% 1. Muon ID SF
+% (a) Systematic uncertainty estimated by muonID group - 0.7%.
+% It includes uncertainties from tag/probe method, background
+% subtraction, binning
+% (b) Systematic uncertainty coming from the limited statistics
+% in each bin of 2D histogram - 7%.
+% Second uncertainty is overestimated because we treat errors in
+% each bin as fully correlated.
+% But we prefer to be concervative for now (if it does not kills
+% the analysis, of course) because we do not have a better way to
+% estimate it.
+% Total - 7%
+
+% 2. Muon tracking SF
+% (a) Systematic uncertainty estimated by muonID group - 0.7%.
+% It includes uncertainties from tag/probe method, background
+% subtraction, binning, lumi and time bias, averaging over phi.
+% (b) Systematic uncertainty coming from the limited statistics
+% in each bin of 1D histogram - 1.3%.
+% Total - 1.5%
+
+% 3. Muon isolation SF
+% This systematic uncertainty was not estimated by muonID group.
+% We estimated it from the plot showing dependence of isolation SF
+% vs # of jets (this is the spc file we are using) and it is 2%.
+% We also double checked that 2% covers the dependences we are not
+% taking into accout (vs eta and pt) which are available in muon
+% certification note.
+
+% Total systematics from all sources on the muon: 7.4% (was 5.1%
+% in p14).
+
+
+% =========================================
+% Electron channel
+% ==============
+% The estimate of the systematic uncertainties from EMID group is
+% not yet available.
+
+% 1. EM preselection SF (includes emid 10,11, isolation, emfraction)
+% (a) Systematic uncertainty coming from the dependencies we do not
+% take into account (phi, pt) - 2%
+% (b) Systematic uncertainty coming from the limited statistics in
+% each bin of 1D histogram - 1%.
+% Total - 2.2%
+
+% 2. EM postselection SF (includes hmatrix, trak-match and LH)
+% (a) Systematic uncertainty coming from the dependence on the
+% number of jets which was not taken into account - 4%
+% (b) Systematic uncertainty coming from the limited statistics
+% in each bin of 2D histogram - 3%.
+% Total - 5%
+
+% Total systematics from all sources on the electron: 5.5% (was 3.2%
+% in p14).
+
+
+% ========================================
+% Primary vertex
+% ==================
+% From D0 note 5142 and p14 SFs we extracted the following
+% uncertainties on PV SF and vertex z position simulation:
+% electron channel - 2.4%
+% muon channel - 3%
+
+% ========================================
+% Uncertainty on the jet reconstruction efficiency SF
+% =====================================
+% Amnon has made a back of the envelope propagation of the new
+% uncertainties he has just released on the ttbar efficiency and
+% obtained 1.8% uncertainty. This number depends on the # of jets
+% and the distribution of the jets vs eta. Given that single top
+% has 2 or 3 jets but they are more forward (ICD and EC regions
+% have higher uncrrtainties) I obtained average uncertainty for
+% single top of 1.5%.
+

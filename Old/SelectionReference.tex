@@ -1,0 +1,85 @@
+ Jets
+ 
+\begin{itemize}
+\item D0 Note Number: 004146
+\item Title: Technical description of the T42 algorithm for the calorimeter noise suppression
+\item Author(s): Jean-Roch Vlimant, Ursula Bassler, Gregorio Bernardi, Sophie Trincaz-Duvoid
+\item Before jet reconstruction, the T42 algorithm is run to remove isolated small energy deposits that are likely due to noise.
+\item Jets are reconstructed using the Run II cone algorithm~\cite{Blazey:2000qt}
+\item D0 Note Number: 004919
+\item Title: jet ID optimization
+\end{itemize}
+
+
+Tracks
+
+SMT Hit clustering
+\begin{itemize}
+\item A hit in the SMT is formed when a group of adjacent silicon strips register enough charge generated from an ionizing charged particle traversing the detector.
+\item The center of the cluster is formed by the charge weighted average of the centers of each silicon strip.
+\item The electrons and holes have a curved path as they drift toward the cathode and anode of the silicon detector.
+\item The Lorentz angle is the angle under which charge carrier are deflected in a magnetic field perpendicular to the electric field. It is proportional to the Hall mobility and the magnetic field. The drift mobility of electrons is about three times larger than the hole mobility, thus the Lorentz angle for holes is considerably smaller than the Lorentz shift for holes.
+\item Previous from: http://www-ekp.physik.uni-karlsruhe.de/cms/lorentz/index.html
+\end{itemize}
+
+CFT Hit clustering
+\begin{itemize}
+\item A hit in the CFT is formed when the two fibers in each layer register scintillation light indicating the presence of the charge particle traversing the fibers.
+\end{itemize}
+
+
+
+Creating tracks
+\begin{itemize}
+\item A track formed by pattern recognition software that takes SMT and CFT hit clusters as input to form a path in three dimensions, which represents the path of the charged particle.
+\item The presence of the magnetic field in the SMT and CFT means that all charged particles will travel in a three dimensional helix motion.
+\item The goal of the track finding software is to combine SMT and CFT hits into possible track candidates and determine the five parameters which fully define the track helix.
+\item Basic track stuff: The trajectory of a track in a uniform magnetic field can be characterized by three parameters ( $\rho$, $d_{0}$, and $\phi$ ). $\rho$~is the curvature of the track defined as $\rho = \frac{qB}{p_{T}}$, $d_{0}$ is the distance of closest approach to the origin in the transverse plane, and $\phi$ is the direction of the track at the distance of closest approach to the origin.
+\item As charge particles leave hits in an (x,y) coordinate, that corresponding track for that particle will have a unique point in the ($\rho$,$\phi$) space.
+\item There are two track finding algorithms employed in the $\dzero$~event reconstruction software.
+\item A Kalman fitter is used with the outputs from the HTF and AA tracking algorithms to create a final list of reconstructed tracks.
+\item D0 Note Number: 004303 -- Title: The D0 Kalman Track Fit
+\end{itemize}
+
+In the presence of a uniform magnetic field, the track can be characterized by three parameters: the curvature ($\rho$), the distance of closest approach to the origin in the transverse plane ($d_{0}$), and the azimuthal direction at the distance of closest approach ($\phi$).
+
+Histogramming Tracking Finding Method (HTF)
+\begin{itemize}
+\item D0 Note Number: 003778
+\item Title: HTF: histogramming method for finding tracks. The algorithm description.
+\item Author(s): Alexander Khanov
+\end{itemize}
+
+AA 
+\begin{itemize}
+\item Ordering a Chaos or ... Technical Details of AA Tracking
+\item ADM Meeting, Feb. 28, 2003, AA Technical Details, G. Borossov
+\end{itemize}
+
+
+
+Primary Vertex
+\begin{itemize}
+\item Main problem in vertex finding: tracks from B decays with small decays lengths and tracks from other primary vertices. The result of these is wide non-Gaussian tails in the vertex resolution distribution.
+\item 3D position of the hard-scatter interaction.
+\item Adaptive primary vertex algorithm. Tracks are combined with weights depending on their first pass $\chi^{2}$ from the vertex fit. The weight each track receives is based on a sigmoidal function. This method allows all tracks to contribute to the vertex fitting instead of making a hard cut on each track's $\chi^{2}$.
+\item Previous algorithms either accepted or rejected tracks with the accepted tracks contributing equal weight to the vertex fit.
+\item Vertex reconstruction consists of two main steps: vertex finding and vertex fitting
+\item The adaptive vertex fitter is an iterative re-weighted Kalman Filter.
+\item All primary vertex track candidates are fitted using the Kalman Filter algorithm. Each track is weighted according to its w($\chi^{2}$). Initially, all track weights are set to 1.0. At iteration k, the weight of a track depends on the distance to the vertex at iteration k$-$1.
+\item For each track used in the fit, re-compute its weight according to the ? 2 distance to the new fitted vertex. If $w_{i}$($\chi^{2}$) $< 1 \times 10^{-6}$, track i is eliminated from the fit ($w_{i}$($\chi^{2}$)) is forced to be 0). 
+\item Repeat the above two steps until convergence of the weights. 
+\item Convergence criteria is that the maximum difference of each track weight be less than $10^{-4}$ from the previous iteration.
+\item Only tracks with p$_{T} > $0.5 and at least two SMT hits if the track path falls within the SMT fiducial region.
+\item The PV reconstruction efficiency is measured on $Z \rightarrow \mu^{+}\mu^{-}$~events and found to be nearly 100$\%$ for primary vertices within the |z| coverage of the SMT.
+\item The vertex resolution is 9.3 $\mu$m as determined on $Z \rightarrow q\bar{q}$ events.
+\item The vertex resolution is 12.8 $\mu$m as determined on $Z \rightarrow b\bar{b}$ events.
+\item The resolution on the beam width is 30 $\mu$m.
+\item Hard scatter vertex chosen from a list of vertices with lowest probability of coming from a minimum bias interaction. The MBPV probability is described in D0 Note Number 4042.
+\item D0 Note Number: 004918
+\item Title: Primary Vertex Reconstruction by Means of Adaptive Vertex Fitting
+\end{itemize}
+
+
+
+

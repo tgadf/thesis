@@ -1,0 +1,157 @@
+%---------------------------------------------------------------------
+%  Writeup of the improved search of Run II data for single top quark
+%  production at DZero.
+%  Started: Oct 2006
+%  Authors: The Single Top Working Group
+%---------------------------------------------------------------------
+%
+
+\appendix
+\section*{Appendix 2 --- Lepton Isolation Probabilities}
+\label{epsilons}
+
+Normalization of the $W$+jets and multijet backgrounds to data is
+performed using the matrix method as explained in
+Section~\ref{matrix-method}. To determine the separate contributions
+from signal-like real-lepton events and background fake-lepton events
+in our data, we rely on the measurement of two probabilities,
+$\varepsilon_{{\rm real-}\ell}$ and $\varepsilon_{{\rm fake-}\ell}$.
+
+$\varepsilon_{{\rm real-}\ell}$ is the probability for a real lepton
+to pass the isolation requirements. It is obtained using a $Z{\rar}
+ee$ sample for the electrons and $Z {\rar} \mu\mu$ sample for the
+muons. One of the leptons is ``tagged'' as \emph{tight}, then the
+$\varepsilon_{{\rm real-}\ell}$ is calculated measuring the
+probability of the other ``probe'' lepton to pass the
+\emph{tight} selection cut.
+
+The $\pt$ and $\eta$ dependence for the electron case is shown in
+Fig.~\ref{cc-eps-signal}. The $\pt$ and jet multiplicity dependence in
+the muon case is shown in Fig.~\ref{mu-eps-signal}. The average values
+for $\varepsilon_{{\rm fake-}e}$ and $\varepsilon_{{\rm fake-}\mu}$ as
+a function of the jet multiplicity are given in
+Table~\ref{eps-signal}. The overall uncertainty for $\varepsilon_{{\rm
+fake-}\ell}$ is $1\%$ statistical and $2\%$ systematic.
+
+\vspace{-0.1in}
+\begin{figure}[!h!tbp]
+\includegraphics[width=0.34\textwidth]
+{figures/eps_sig_el_pt.eps}
+\hspace{0.5in}
+\includegraphics[width=0.34\textwidth]
+{figures/eps_sig_el_eta.eps}
+\vspace{-0.1in}
+\caption[ccepssignal]{Transverse momentum and detector
+pseudorapidity dependence of $\varepsilon_{{\rm real-}e}$.}
+\label{cc-eps-signal}
+\end{figure} 
+
+\vspace{-0.3in}
+\begin{figure}[!h!tbp]
+\includegraphics[width=0.36\textwidth]
+{figures/eps_sig_mu_pt.eps}
+\hspace{0.5in}
+\includegraphics[width=0.36\textwidth]
+{figures/eps_sig_mu_njets.eps}
+\vspace{-0.1in}
+\caption[muepssignal]{Transverse momentum and jet
+multiplicity dependence of $\varepsilon_{{\rm real-}\mu}$.}
+\label{mu-eps-signal}
+\end{figure}
+
+\vspace{-0.2in}
+\begin{table}[!h!tbp]
+\begin{center}
+\begin{minipage}{2.5 in}
+\begin{ruledtabular}
+\begin{tabular}{c||cc}
+\multicolumn{3}{c}{\underline{Real-Lepton Probabilities}}
+\vspace{0.1in}\\
+No. of jets & $\varepsilon_{{\rm real-}e}$
+            & $\varepsilon_{{\rm real-}\mu}$ \\
+\hline
+  1  &  $(87.3 \pm 2.1)\%$  &  $(99.1 \pm 2.2)\%$  \\
+  2  &  $(87.4 \pm 2.1)\%$  &  $(98.9 \pm 2.2)\%$  \\
+  3  &  $(87.4 \pm 2.1)\%$  &  $(98.7 \pm 2.2)\%$  \\
+  4  &  $(87.5 \pm 2.1)\%$  &  $(96.1 \pm 2.1)\%$
+\end{tabular}
+\end{ruledtabular}
+\vspace{-0.1in}
+\caption[epssignal]{Average values for $\varepsilon_{{\rm real-}\ell}$
+in the electron and muon samples for different jet multiplicities.}
+\label{eps-signal}
+\end{minipage}
+\end{center}
+\end{table}
+
+\vspace{-0.2in}
+$\varepsilon_{{\rm fake-}\ell}$ is the probability for a fake lepton
+to pass the isolation requirements. It is obtained using a data
+sample. Assuming that the low $\met$ region ($\met < 10$~GeV) is
+dominated by the multijet background, and that $\varepsilon_{{\rm
+fake-}\ell}$ is independent of the $\met$ cut, then $\varepsilon_{{\rm
+fake-}\ell}$ is determined as the ratio of \emph{tight} over
+\emph{loose} events in the low $\met$ region.
+We studied $\varepsilon_{{\rm fake-}e}$ as a function of several
+parameters, finding no dependence on the lepton $\pt$ or lepton
+$\eta$, but dependence on the trigger version (because the isolation
+requirement in the trigger changed) and jet multiplicity. For
+$\varepsilon_{{\rm fake-}\mu}$, we performed a similar set of studies
+and found no need to parametrize as a function of the trigger version
+as the muon isolation in the trigger did not change during this
+period. However, we did paramterize as a function of the muon
+pseudorapidity where there is a small dependence. Although there is
+also dependence on muon transverse momentum, parametrizing in this as
+well does not change the overall result, so we have not done this.
+Figure~\ref{fig:eps-qcd-e} show the calculation of $\varepsilon_{{\rm
+fake-}e}$ from the ratio of tight to loose events as a function of
+{\met} for each jet multiplicity, with all trigger versions
+combined. Figure~\ref{fig:eps-qcd-mu} shows $\varepsilon_{{\rm
+fake-}\mu}$ as a function of the muon pseudorapidity. A summary of the
+results is presented in Table~\ref{eps-qcd}.
+
+\begin{figure}[!h!tbp]
+\includegraphics[width=0.98\textwidth]
+{figures/eps_qcd_el_alltrigs_met}
+\vspace{-0.1in}
+\caption[figepsqcde]{$\varepsilon_{{\rm fake}e}$ calculated in
+the $0 < {\met} < 10$ GeV region of the distributions of tight/loose
+events, with all trigger versions combined.}
+\label{fig:eps-qcd-e}
+\end{figure}
+
+\begin{figure}[!h!tbp]
+\includegraphics[width=0.98\textwidth]
+{figures/eps_qcd_mu_eta}
+\vspace{-0.1in}
+\caption[figepsqcdmu]{$\varepsilon_{{\rm fake}\mu}$ as a function of
+the muon pseudorapidity.}
+\label{fig:eps-qcd-mu}
+\end{figure}
+
+\begin{table}[!h!tbp]
+\begin{center}
+\begin{minipage}{6.5 in}
+\begin{ruledtabular}
+\begin{tabular}{c||ccccc|c}
+\multicolumn{7}{c}{\hspace{0.8in}\underline{Fake-Lepton Probabilities}}
+\vspace{0.05in}\\
+& \multicolumn{5}{c|}{ $\varepsilon_{{\rm fake-}e}$, Trigger Version} & \\
+No. of jets & v8--v11   &     v12     &     v13a    &     v13b    &     v14     &     $\varepsilon_{{\rm fake-}\mu}$ \\
+\hline 
+ 1 & $(11.2 \pm 0.5)\%$ & $(17.9 \pm 0.6)\%$ & $(18.7 \pm 1.2)\%$ & $(19.1 \pm 0.6)\%$ & $(18.5 \pm 0.6)\%$ & $40.8\%$ \\
+ 2 & $(12.8 \pm 1.0)\%$ & $(19.2 \pm 1.0)\%$ & $(18.8 \pm 2.2)\%$ & $(19.4 \pm 1.1)\%$ & $(22.0 \pm 1.2)\%$ & $35.8\%$ \\
+ 3 & $(13.6 \pm 1.5)\%$ & $(19.5 \pm 1.6)\%$ & $(19.8 \pm 3.4)\%$ & $(19.2 \pm 1.6)\%$ & $(19.4 \pm 1.7)\%$ & $34.2\%$ \\
+ 4 & $(10.0 \pm 2.8)\%$ & $(15.5 \pm 2.9)\%$ & $(20.9 \pm 8.6)\%$ & $(17.7 \pm 3.3)\%$ & $(20.7 \pm 3.7)\%$ & $30.9\%$
+\end{tabular}
+\end{ruledtabular}
+\vspace{-0.1in}
+\caption[epsqcd]{$\varepsilon_{{\rm fake-}e}$ as a function of
+the trigger version and jet multiplicity, and $\varepsilon_{{\rm
+fake-}\mu}$ averaged over $\eta$.}
+\label{eps-qcd}
+\end{minipage}
+\end{center}
+\end{table}
+
+\clearpage

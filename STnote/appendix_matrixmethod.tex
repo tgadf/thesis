@@ -1,0 +1,106 @@
+%---------------------------------------------------------------------
+%  Writeup of the improved search of Run II data for single top quark
+%  production at DZero.
+%  Started: Oct 2006
+%  Authors: The Single Top Working Group
+%---------------------------------------------------------------------
+%
+
+\appendix
+\section*{Appendix 3 --- Normalization of Non-Top Backgrounds to Data}
+\label{appendix-matrixmethod}
+
+We use the matrix method~\cite{mm_explained} to estimate how many
+events in the preseleceted sample contain a fake lepton (originating
+from QCD-multijet production) and how many events have a real isolated
+lepton (like the ones originating from $W$+jets or $\ttbar$). Two
+data samples are defined: the \emph{tight} sample, which is the signal
+sample after all selection cuts have been applied; and the
+\emph{loose} sample, where the same selection has been applied but
+requiring only loose lepton isolation, thus omitting the tight
+requirements in the lepton isolation.
+
+The tight data sample, with $N_{{\rm tight}}$ events, is a subset of
+the loose data sample with $N_{\rm loose}$ events. The loose sample
+contains $N_{\rm loose}^{{\rm real-}\ell}$ events with a real lepton
+(signal-like events, mostly $W$+jets and $\ttbar$) and $N_{\rm
+loose}^{{\rm fake-}\ell}$ fake lepton events, which is the number of
+QCD events in the loose sample. We measure the efficiency for a real
+isolated lepton to pass the tight lepton isolation selection and call
+it $\varepsilon_{{\rm real-}\ell}$; and the efficiency for a fake
+lepton to pass the tight lepton isolation criteria, $\varepsilon_{{\rm
+fake-}\ell}$.
+
+With these definitions, the matrix method is applied by using these
+two equations:
+\begin{eqnarray*}
+N_{\rm loose}   & = & N_{\rm loose}^{{\rm fake-}\ell}
+                      + N_{\rm loose}^{{\rm real-}\ell} \\
+N_{{\rm tight}} & = & N_{{\rm tight}}^{{\rm fake-}\ell}
+                      + N_{{\rm tight}}^{{\rm real-}\ell} 
+                      = \varepsilon_{{\rm fake-}\ell} \;
+                        N_{\rm loose}^{{\rm fake-}\ell}
+                      + \varepsilon_{{\rm real-}\ell} \;
+                        N_{\rm loose}^{{\rm real-}\ell} 
+\end{eqnarray*}
+\noindent to solve for $N_{\rm loose}^{{\rm fake-}\ell}$ and $N_{\rm
+loose}^{{\rm real-}\ell}$ so that the QCD and the $W$-like
+contributions in the tight sample $N_{\rm tight}^{{\rm fake-}\ell}$
+and $N_{\rm tight}^{{\rm real-}\ell}$ can be determined.
+
+The results of the matrix method, which we apply separately in each
+jet multiplicity bin, are shown in Table~\ref{mm-numbers}. The
+pretagged orthogonal sample is scaled to $N_{\rm tight}^{{\rm
+fake-}\ell}$ and the $W$+jets MC samples
+($Wb\bar{b}$+$Wc\bar{c}$+$Wjj$) are scaled to $N_{\rm tight}^{{\rm
+real-}\ell}$, after subtracting the expected $\ttbar$ events in each
+bin of the tight sample.
+
+\vspace{0.2in}
+\begin{table}[!h!tbp]
+\begin{center}
+\begin{minipage}{6.5in}
+\begin{ruledtabular}
+\begin{tabular}{l||ccccc|ccccc}
+\multicolumn{11}{c}{\hspace{1in}\underline{Normalization of $W$+Jets and Multijets to Data}}\vspace{0.1in} \\
+& \multicolumn{5}{c|}{Electron Channel} & \multicolumn{5}{c}{Muon Channel}    \\
+                               & 1 jet  & 2 jets & 3 jets & 4 jets & 5+ jets
+                               & 1 jet  & 2 jets & 3 jets & 4 jets & 5+ jets \\
+\hline
+$N_{{\rm loose}}$              & 38,935 & 15,213 &  7,118 &  2,191 &   654  & 18,714 &  7,092 &  3,054 &   878  &   221 \\
+$N_{{\rm tight}}$              & 27,370 &  8,220 &  3,075 &    874 &   223  & 17,816 &  6,432 &  2,590 &   727  &   173 \\
+$N_{\rm tight}^{{\rm fake-}e}$ &  1,691 &  1,433 &    860 &    256 &    86  &    498 &    329 &    223 &    56  &    10 \\
+$N_{\rm tight}^{{\rm real-}e}$ & 25,679 &  6,787 &  2,215 &    618 &   137  & 17,319 &  6,105 &  2,369 &   669  &   162 \\
+$\varepsilon_{{\rm real-}e}$   &   0.87 &   0.87 &   0.87 &   0.87 &  0.87  &   0.99 &   0.99 &   0.99 &  0.96  &  0.88 \\
+$\varepsilon_{{\rm fake-}e}$   &   0.18 &   0.19 &   0.19 &   0.17 &  0.17  &   0.41 &   0.36 &   0.34 &  0.31  &  0.25
+\end{tabular}
+\end{ruledtabular}
+\vspace{-0.1in}
+\caption[mmnumbers]{Matrix method yields in the electron and muon channels:
+the loose and tight selected events and the expected contribution from
+multijet and $W$-like events.}
+\label{mm-numbers}
+\end{minipage}
+\end{center}
+\end{table}
+
+% from the old muon-only table:
+%$N_{\rm tight}^{{\rm real-}\mu}$($W$+jets) & 17,313 &  6,064 &  2,276 &   563  &   116 \\
+%$N_{\rm tight}^{{\rm real-}\mu}$($\ttbar$) &      6 &     41 &     93 &   106  &    46 \\
+
+
+\begin{figure}[!h!tbp]
+\begin{center}
+\includegraphics[width=0.32\textwidth]{figures/electron/cc_EqOneJet_PreTag_WTransverseMass.eps
+\includegraphics[width=0.32\textwidth]{figures/electron/cc_EqTwoJet_PreTag_WTransverseMass.eps
+\includegraphics[width=0.32\textwidth]{figures/electron/cc_EqThreeJet_PreTag_WTransverseMass.eps
+\includegraphics[width=0.32\textwidth]{figures/muon/mu_EqOneJet_PreTag_WTransverseMass.eps  
+\includegraphics[width=0.32\textwidth]{figures/muon/mu_EqTwoJet_PreTag_WTransverseMass.eps  
+\includegraphics[width=0.32\textwidth]{figures/muon/mu_EqThreeJet_PreTag_WTransverseMass.eps
+\end{center}
+\vspace{-0.1in}
+\caption[mu_2jet]{The leading jet $\pt$, second leading jet $\pt$, the muon
+$\pt$, the $\met$ and the $\Delta R$(jet1,jet2) after selection but before tagging (first column), with 1
+$b$-tag (center column) and with 2 $b$-tags (right column).}
+\label{fig:mu_2jet}
+\end{figure}

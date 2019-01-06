@@ -1,0 +1,87 @@
+%---------------------------------------------------------------------
+%  Writeup of the improved search of Run II data for single top quark
+%  production at DZero.
+%  Started: Oct 2006
+%  Authors: The Single Top Working Group
+%---------------------------------------------------------------------
+%
+\section{Signal Acceptances}
+\label{signal-acceptances}
+
+The signal acceptance is defined as:
+$$
+\cal{A} = \frac{\cal{B}}{N_{\rm initial}}
+\displaystyle \sum_{N_{\rm selected}} \varepsilon_{\rm trigger}
+\varepsilon_{\rm corrections} \varepsilon_{\rm TRF}
+$$
+\noindent where $\cal{B}$ is the branching fraction for the MC
+sample, see Table~\ref{mcstats}, $N_{\rm initial}$ is the initial
+number of events in each MC sample (also shown in
+Table~\ref{mcstats}), $N_{\rm selected}$ is the number of MC events
+remaining after selection, and the $\varepsilon$'s are efficiency
+correction factors to account for differences between data and MC from
+the trigger, particle ID, the $b$-tagging tag-rate functions, and so
+forth (see Section~\ref{mc-modeling}).
+
+Table~\ref{acceptances} shows the percentage of each single top quark
+signal that remain after selection, and after $b$-tagged jets have
+been required. We can compare the acceptances obtained in this
+analysis with the published one~\cite{run2-d0-plb}. In that analysis,
+we kept 2.6\% of the s-channel events before tagging (with 2--4 jets)
+in the electron channel and 2.5\% in the muon channel. In this
+analysis, we keep 2.8\% and 2.2\% in the electron and muon channels
+respectively (2--4 jets). In the t-channel, in the published analysis
+we kept 2.6\% and 2.4\% in the electron and muon channels, and now we
+are keeping 2.5\% and 2.0\%. After $b$~tagging, before we kept 1.3\%
+of the electron events and 1.3\% of the muon events in the s-channel;
+we now keep 1.8\% and 1.4\% respectively. In the t-channel after
+$b$~tagging, we kept before 0.9\% in each of the electron and muon
+channels. We now keep 1.2\% and 0.9\% of these tagged events.  The
+higher acceptances now are from the use of the more efficient neural
+network $b$-tagging algorithm, and probably also from the lower
+reconstruction threshold for jets.
+
+% The following is commented out until the comparison is updated to
+% be for their latest results.
+%
+%We can also compare these acceptances to those obtained by CDF in
+%their most recent analysis. For s-channel and t-channel combined,
+%electron and muon channels combined, and events with exactly two jets
+%with one or both $b$~tagged, they keep 1.4\% of the expected
+%signal. For the same requirements, we also keep 1.4\% of the expected
+%signal. In addition we have available to analyze the acceptances in
+%the 1, 3, and 4-jets channels, and the untagged 2, 3, and 4-jets
+%channels, which CDF have not yet included in their results.
+
+\vspace{0.2in}
+\begin{table}[!h!tbp]
+\begin{center}
+\begin{minipage}{6.5in}
+\begin{ruledtabular}
+\begin{tabular}{l||ccccc|ccccc}
+\multicolumn{11}{c}{\hspace{1in}\underline{Signal Acceptances}}\vspace{0.1in} \\
+& \multicolumn{5}{c|}{Electron Channel} & \multicolumn{5}{c}{Muon Channel} \\
+                     & 1 jet & 2 jets & 3 jets & 4 jets & 5+ jets
+                     & 1 jet & 2 jets & 3 jets & 4 jets & 5 jets \\
+\hline
+Before $b$ tagging   &        &        &        &        &        &        &        &        &        &        \\
+~~$tb$               & 0.55\% & 1.77\% & 0.83\% & 0.23\% & 0.06\% & 0.33\% & 1.36\% & 0.69\% & 0.19\% & 0.05\% \\
+~~$tqb$              & 0.52\% & 1.49\% & 0.79\% & 0.25\% & 0.07\% & 0.36\% & 1.17\% & 0.64\% & 0.20\% & 0.05\% \\
+Zero $b$-tagged jets &        &        &        &        &        &        &        &        &        &        \\
+~~$tb$               & 0.32\% & 0.65\% & 0.31\% & 0.09\% & 0.02\% & 0.18\% & 0.48\% & 0.25\% & 0.07\% & 0.02\% \\
+~~$tqb$              & 0.34\% & 0.86\% & 0.41\% & 0.12\% & 0.03\% & 0.23\% & 0.66\% & 0.32\% & 0.09\% & 0.02\% \\
+One $b$-tagged jet   &        &        &        &        &        &        &        &        &        &        \\
+~~$tb$               & 0.24\% & 0.82\% & 0.39\% & 0.11\% & 0.03\% & 0.15\% & 0.64\% & 0.32\% & 0.09\% & 0.02\% \\
+~~$tqb$              & 0.18\% & 0.61\% & 0.34\% & 0.11\% & 0.03\% & 0.13\% & 0.50\% & 0.28\% & 0.09\% & 0.02\% \\
+Two $b$-tagged jets  &        &        &        &        &        &        &        &        &        &        \\
+~~$tb$               &  ---   & 0.29\% & 0.14\% & 0.04\% & 0.02\% &  ---   & 0.24\% & 0.12\% & 0.03\% & 0.01\% \\
+~~$tqb$              &  ---   & 0.02\% & 0.05\% & 0.02\% & 0.01\% &  ---   & 0.01\% & 0.04\% & 0.02\% & 0.01\%
+\end{tabular}
+\end{ruledtabular}
+\vspace{-0.1in}
+\caption[acceptances]{Acceptances after selection.}
+\label{acceptances}
+\end{minipage}
+\end{center}
+\end{table}
+

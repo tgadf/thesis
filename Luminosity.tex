@@ -1,0 +1,22 @@
+\chapter{Luminosity Calculation}
+\label{lumi} 
+
+
+The probability of n interactions per bunch crossing is ( because a collision is a random process, the distribution will follow Poisson statistics.
+\begin{equation}
+P = \frac{\mu^{N}}{N!} \times e^{-\mu}
+\end{equation}
+The probability of at least one bunch crossing is
+\begin{equation}
+P = 1 -  e^{-\mu}
+\end{equation}
+The average number of bunch crossings, $\mu$, is defined as
+\begin{equation}
+\mu = \frac{\mathcal{L} \times \sigma_{\rm{eff}}}{f_{\rm{beam}}}
+\end{equation}
+Thus, the luminosity can be written as 
+\begin{equation}
+\mathcal{L} = - \frac{f_{\rm{beam}}}{\sigma_{\rm{eff}}} \rm{ln}(1-P(n>0))
+\end{equation}
+By recording the number of bunch crossings without an inelastic collision, the luminosity can be calculated.
+

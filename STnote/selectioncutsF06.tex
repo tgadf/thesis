@@ -1,0 +1,103 @@
+%---------------------------------------------------------------------
+%  Writeup of the improved search of Run II data for single top quark
+%  production at DZero.
+%  Started: Oct 2006
+%  Authors: The Single Top Working Group
+%---------------------------------------------------------------------
+%
+
+\section{Event Selection Cuts}
+\label{selection-cuts}
+
+We apply a loose event selection to find $W$-like events containing an
+isolated lepton, missing transverse energy, and one to four jets with
+high transverse momentum. The samples after this selection, which we
+call ``pretagged,'' are dominated by $W$+jets events, with some
+{\ttbar} contribution which becomes more significant for higher jet
+multiplicities. To be able to extract single top events we also look
+for the presence of one or two $b$-tagged jets.
+
+Common selection for both electron and muon channels:
+\vspace{-0.08in}
+\begin{myitemize}
+\item Good quality~\cite{dataquality} (for data)
+\item Pass trigger: offline electrons and muons in the data are
+matched to the object that fired the appropriate trigger for that
+run period and triggerlist
+\item Good primary vertex: $|z_{\rm PV}| < 60$~cm with at least three
+tracks attached
+\item Missing transverse energy $15 < {\met} < 200$~GeV
+\item One, two, three or four jets with ${\pt} > 15$~GeV and
+$|\deta|<3.4$ 
+\item The leading jet is required to have ${\pt} > 25$~GeV and
+$|\deta| < 2.5$
+\item The second leading jet is required to have ${\pt} > 20$~GeV
+\item There must be fewer than three noise jets
+\item Jet triangle cut $|\Delta\phi({\rm leading~jet,{\met}})|
+{\rm ~vs.~}{\met}$: from 1.5 to $\pi$~radians when ${\met} = 0$~GeV,
+and {\met} from 0 to 35~GeV when $|\Delta\phi| = \pi$~rad
+\end{myitemize}
+
+\vspace{-0.07in}
+The electron channel selection: 
+\vspace{-0.07in}
+\begin{myitemize}
+\item Only one tight electron with $E_T > 15$~GeV and
+$|\deta| < 1.1$
+\item No second loose electron with $E_T > 15$~GeV
+\item No tight muon with ${\pt} > 18$~GeV and $|\deta| < 2.0$ 
+\item Electron coming from the primary vertex:
+$|\Delta z(e,{\rm PV})| < 1$~cm
+\item Electron triangle cuts $|\Delta\phi({\rm e,{\met}})|{\rm ~vs.~}
+{\met}$:
+   \vspace{-0.07in} 
+   \begin{myitemize}
+   \item from 2 to 0~rad when ${\met} = 0$~GeV, and {\met} from 0
+   to 40~GeV when $|\Delta\phi| = 0$~rad
+   \item from 1.5 to 0~rad when ${\met} = 0$~GeV, and {\met} from 0
+   to 50~GeV when $|\Delta\phi| = 0$~rad
+   \item  from 2 to $\pi$~rad when ${\met} = 0$~GeV, and {\met}
+   from 0 to 24~GeV when $|\Delta\phi| = \pi$~rad
+   \end{myitemize}
+\end{myitemize}
+
+\vspace{-0.07in}
+The muon channel selection: 
+\vspace{-0.07in}
+\begin{myitemize}
+\item Only one tight muon with ${\pt} > 18$~GeV and $|\deta| < 2.0$ 
+\item No tight electron with ${\pt} > 15$~GeV and within $|\deta|
+< 2.5$
+\item Muon coming from the primary vertex: $|\Delta z(\mu,{\rm PV})|
+< 1$~cm
+\item Muon triangle cuts $|\Delta\phi(\mu,{\rm {\met}})|{\rm ~vs.~}
+{\met}$: 
+   \vspace{-0.07in}
+   \begin{myitemize}
+   \item  from 1.1 to 0~rad when ${\met} = 0$~GeV, and {\met}
+   from 0 to 80~GeV when $|\Delta\phi| = 0$~rad
+   \item  from 1.5 to 0~rad when ${\met} = 0$~GeV, and {\met}
+   from 0 to 50~GeV when $|\Delta\phi| = 0$~rad
+   \item from 2.5 to $\pi$~rad when ${\met} = 0$~GeV, and {\met}
+   from 0 to 30~GeV when $|\Delta\phi| = \pi$~rad
+   \end{myitemize}
+\end{myitemize}
+
+\vspace{-0.07in}
+Orthogonal samples selection (for measuring the multijet backgrounds):
+\vspace{-0.07in}
+\begin{myitemize}
+\item All the same selection cuts as listed above except for the
+tight lepton requirements
+\item Electron channel --- only one loose-but-not-tight electron
+\item Muon channel --- only one loose-but-not-tight muon
+\end{myitemize}
+\vspace{-0.07in}
+The definitions of loose and tight electrons and muons are given in
+Sections~\ref{electron-id} and \ref{muon-id}.
+
+\noindent We also select two cross-check samples, see Appendix~6 for
+details.
+
+
+

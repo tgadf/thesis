@@ -1,0 +1,151 @@
+%---------------------------------------------------------------------
+%  Writeup of the improved search of Run II data for single top quark
+%  production at DZero.
+%  Started: Oct 2006
+%  Authors: The Single Top Working Group
+%---------------------------------------------------------------------
+%
+
+\appendix
+\section*{Appendix 10 --- Measure of Significance}
+\label{appendix-significance}
+
+The term ``significance'' has different definitions depending on our
+goal. If the goal is to define the single top signal significance,
+then an appropriate definition would be the ratio of the signal cross
+section at the peak of the posterior probability density to the width
+of the posterior, as defined in Appendix~9, which is inversely
+proportional to the uncertainty on the cross section measurement.
+
+However, if the goal is to define the significance of excess in data
+over background, then one possible definition is the
+p-value~\cite{Fisher}. For Poisson data, the p-value is the
+probability to get a count equal to or greater than the count
+observed, assuming that the count is due to background only. The
+background hypothesis, in this context, is the {\em null hypothesis},
+that is, the hypothesis we seek to reject. Fisher, who invented it,
+saw the p-value as a measure of evidence against the null. If the
+p-value is sufficiently small one may well consider rejecting the null
+in favor of the hypothesis that something other than background is
+present. Therefore a significantly small p-value would indicate how
+``significant'' enough the excess of events over background is, to
+claim a discovery.
+
+%The p-value is a well-defined statistical quantity in the so-called
+%frequentist approach. However, it can be computed only if the null
+%hypothesis (in this case, the background) can be stated precisely. In
+%order to take into account the uncertainties in our background
+%estimation, one defines a hybrid approach by doing a Bayesian
+%integration over the background prior. Details of the implementation
+%of the p-value with background uncertainties, and using spectral
+%distributions can be found in~\cite{d0note5258}.
+
+%There are many ways to define ``a'' p-value. 
+%\begin{itemize}
+%\item In a purely frequentist approach, we can generate fake
+%data-sets with no signal and re-run the whole analysis obtaining a
+%result for each one of these ``ensembles''. The number of ensembles
+%that yield a result equal to the observed or higher, divided by the
+%total number of ensembles is the p-value. 
+%\item A hybrid method that starts from the background estimate and
+%takes the uncertainties in to account by integrating over the
+%background prior, as described in ~\cite{d0note5258}.
+%\item Another commonly used method in the field is the modifed
+%frequentist approach.
+%\end{itemize}
+
+We can generate multiple pseudo-datasets containing only background
+events and run them through the analysis exactly as if they were the
+real data events, and obtain a cross section from each one of
+them. The p-value can then be calculated as the number of these
+ensembles that yield a result equal to the observed or higher, divided
+by the total number of ensembles.
+
+To generate these ensembles, we use background events from our model
+and treat the fluctuations of each background source separately. We
+draw random events from each background source separately, as
+indicated by the allowed variation due to systematic and statistical
+uncertainties. The event weights are taken into account such that
+events with a higher weight will be more likely to be picked. The
+variance of the background events is large: we start from 1.34M
+electron events and 1.28M muon events, then only consider the two
+thirds of these that have not been used in the discriminant
+training. The nominal background yields are 755 electron events and
+643 muon events. Thus, each ensemble is generated picking around 700
+events from around 850,000. The source of background most affected by
+oversampling is multijets, since some channels contain very few events
+that will be picked repeatedly. Given that the multijet background is
+very small and the statistical errors dominate, this does not
+introduce a large bias.
+
+The ensemble generation includes a flat (i.e., normalization only, not
+shape changing) 20\% error for the {\ttbar} yield ($N_{\ttbar}$),
+which represents approximately the overall yield uncertainty from all
+systematic effects combined (see Appendix~6). The shift in the
+{\ttbar} yield:
+$$
+N_{\ttbar}^{\prime}
+= N_{\ttbar}\times {\rm Gaussian}({\rm mean=1},{\rm width=0.2})
+$$
+is the same for electrons and muons. The treatment of the $W$+jets and
+multijet backgrounds accounts for the normalization to data from the
+matrix method and for the effect of $b$-tagging. The error from the
+matrix method normalization of $W$+jets and multijet events is
+incorporated in the ensemble generation by letting each sample
+(multijets, $Wc\bar{c}$, $Wb\bar{b}$ and $Wjj$) fluctuate with a
+different random number $r$ sampled from a Gaussian distribution:
+\begin{eqnarray*}
+r_{\rm QCD} = {\rm Gaussian}(1,0.2) \\
+r_{Wjj}     = {\rm Gaussian}(1,0.2) \\
+r_{Wbb}     = {\rm Gaussian}(1,0.2) \\
+r_{Wcc}     = {\rm Gaussian}(1,0.2) 
+\end{eqnarray*}
+
+The background sum of $W$+jets and multijets yields $N_{\rm WQCD}$ is
+fluctuated to become $N_{\rm WQCD}^{\prime}$:
+\begin{eqnarray*}
+N_{\rm WQCD}          &=& N_{\rm QCD} + N_{Wjj} + N_{Wbb} + N_{Wcc} \\
+N_{\rm WQCD}^{\prime} &=& r_{\rm QCD}\times N_{\rm QCD}
+                        + r_{Wjj}    \times N_{Wjj}
+                        + r_{Wbb}    \times N_{Wbb}
+                        + r_{Wcc}    \times N_{Wcc}
+\end{eqnarray*}
+These two expressions fix the normalization to data. What is changed
+here is the composition of each of the subcomponents. Once the
+correlation between multijets and $W$+jets is taken care of, we also
+need to take into account the effect of $b$-tagging. We split the
+summed samples of $W$+jets and multijets into 1-tag and 2-tags
+sets. The average uncertainty on these samples is 5\% and 12\%
+respectively (see Appendix~6), so we form a scale factor $S^{\rm
+tag}_{\rm WQCD}$ that incorporates the different rates for tagging
+single- and double-tagged events in these samples:
+\begin{eqnarray*}
+r_{\rm 1tag} &=& {\rm Gaussian}(1,0.05) \\
+r_{\rm 2tag} &=& {\rm Gaussian}(1,0.12) \\
+S^{\rm tag}_{\rm WQCD}
+             &=& \frac{r_{\rm 1tag} \times N^{\rm 1tag}_{\rm WQCD}
+                    +  r_{\rm 2tag} \times N^{\rm 2tag}_{\rm WQCD}}
+                {N^{\rm 1tag}_{\rm WQCD} + N^{\rm 2tag}_{\rm WQCD}}
+\end{eqnarray*}
+
+Finally, the multijets and $W$+jets event yields are fluctuated to:
+$$
+N_{i}^{\prime} = r_{i} \times \frac{N_{\rm WQCD}}
+                                   {N_{\rm WQCD}^{\prime}}
+                       \times S_{\rm tag}^{\rm WQCD}
+                       \times N_{i} ~;~ i = {\rm QCD}, Wjj, Wbb, Wcc
+$$
+
+Once each background source has been fluctuated, we randomly pick
+events based on a Poisson distribution of the new systematics-shifted
+total background sum:
+$$
+N_{\rm Data}^{\prime} = N_{\rm QCD}^{\prime}
+                      + N_{Wjj}^{\prime}
+                      + N_{Wbb}^{\prime}
+                      + N_{Wcc}^{\prime}
+                      + N_{\ttbar}^{\prime}
+$$
+
+We have generated about 60,000 ensembles of pseudo-data with this
+method that we use to measure the signifince or p-value of our search.

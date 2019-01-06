@@ -1,0 +1,44 @@
+\chapter{Transfer Function Parameters} 
+\section{Jet Transfer Functions}
+\section{Muon Transfer Function}
+\begin{equation}
+W\left(\left( \frac{q}{p_t}\right)_{\mu}, \left( \frac{q}{p_t}\right)_{p}, \eta \right) = 
+\frac{1}{2\pi\sigma}\mathrm{exp}
+\left\{-\frac{\left[\Delta
+\left( \frac{q}{p_t} \right)\right]^2}
+{2\sigma^2}\right\}
+\end{equation}
+
+where the Gaussian width is defined separately for two $\eta$ regions as shown in Eq.~\ref{muonerrortf}. The $\eta$~region dependence is a result of the limited $\eta$ coverage by central fiber tracker in the forward region.
+
+\begin{equation}
+\sigma  =  \left\{ 
+\begin{array} {c@{\quad:\quad}l} \alpha_{1} &
+|\eta| \le 1.6 \\
+\sqrt{\alpha^{2}_{1} + [\alpha_{2}(|\eta| - 1.6)]^2} &
+|\eta| > 1.6 
+\end{array} \right\}
+\end{equation}
+
+The parameters $\alpha_{1}$ and $\alpha_{2}$ in the transfer function parameterization contain a constant term and a term proportional to $\frac{1}{p_{T}}$. 
+
+\begin{table}[!h!tbp]
+\begin{center}
+\begin{tabular}{c|cc|cc|}
+\multicolumn{5}{c}
+{\underline{Muon Smearing Parameters}} \\
+       & \multicolumn{2}{|c|}{$<$~Dec.~2004} & \multicolumn{2}{|c|}{$>$~Dec.~2004} \\
+Muon Type				&	A		&	B		&	A		&	B		\\
+\hline
+$>1$ SMT Hit ($\eta<1.6$)	&	0.00313	&	-0.0563	&	0.00308	&	-0.0370	\\
+$>1$ SMT Hit ($\eta>1.6$)	&	0.00273	&	-0.0491	&	0.00458	&	-0.0550	\\
+$=0$ SMT Hits				&	0.00509	&	-0.0916	&	0.00424	&	-0.0509	\\
+\end{tabular}
+\vspace{-0.1 in}
+\caption{Muon smearing parameters for the function $(A + \frac{B}{p_{T}})$ for two different run periods.}
+\label{muonsmearparam}
+\end{center}
+\end{table} 
+
+
+\section{Electron Transfer Function}

@@ -1,0 +1,71 @@
+%---------------------------------------------------------------------
+%
+
+\appendix
+\section*{Appendix 9 --- Discriminant Optimization Criteria}
+\label{appendix-optimization}
+
+Since the goal of the analysis is to validate the production of single
+top quarks, any optimization criteria should be based on affirming the
+signal+background hypothesis convincingly. We, therefore, define an
+optimal search as one that maximizes the probability of the
+signal+background hypothesis relative to that of the background
+hypothesis. Since we use a Bayesian approach for all our statistical
+analyses, a natural way to do this would be to compute the Bayes
+factor which is the ratio of the posterior probability densities of
+the signal+background hypothesis to the background-only
+hypothesis. The description of the method we use to obtain a posterior
+probability density can be found in Appendix 13 of
+Ref.~\cite{run2-d0-230} and in Ref.~\cite{d0note5123}.
+
+A fundamental principle of Bayesian reasoning is that one should
+integrate over all that is unknown.  In designing an analysis, we do
+not yet know the event count $n$, nor do we know the background and
+signal means $b$ and $s$, respectively. Therefore, in accordance with
+the basic Bayesian principle, we must integrate over $n$, $s$, and $b$,
+constrained by whatever knowledge we have of them.
+
+We are working to develop the methodology to compute Bayes factor as
+discussed above by averaging over all possible value of $n$, $s$ and
+$b$~\cite{d0note5260}. For now we have used an approximation to the
+Bayes factor by considering only one value of $n$ which is set to the
+estimated values of the signal and background yields. The factor is
+then computed as illustrated in Fig.~\ref{fig:bayesfactor} using the
+values of the posterior probability densities at peak and at zero
+signal cross section.
+
+\begin{figure}[!h!tbp]
+\includegraphics[width=0.5\textwidth]{figures/bayesfactor.eps}
+\vspace{-0.1in}
+\begin{minipage}{4in}
+\caption[bayesfactor]{A plot of the posterior probability density
+versus signal cross section that illustrates the calculation of the
+Bayes factor.}
+\label{fig:bayesfactor}
+\end{minipage}
+\end{figure}
+
+We have chosen to use the Bayes ratio to optimize the discriminants'
+performance. It may be noted however that this approximate definition
+may yield unreasonably high values as the posterior density at zero
+signal cross section becomes infinitesimally small. In such a case the
+distribution of the posterior probability density is expected to be a
+near-perfect Gaussian, and a more meaningful quantity for any
+optimization would be a ratio of the signal cross section at the peak
+of the posterior to the width of the posterior as shown in
+Fig.~\ref{fig:measurement}. This essentially defines how significant a
+measurement of the single top cross section would be if the data were
+consistent with the signal+background hypothesis.
+
+\begin{figure}[!h!tbp]
+\includegraphics[width=0.5\textwidth]{figures/measurement.eps}
+\vspace{-0.1in}
+\begin{minipage}{4in}
+\caption[measurement]{A plot of the posterior probability density
+versus signal cross section that illustrates the measurement of the
+cross section and its uncertainty.}
+\label{fig:measurement}
+\end{minipage}
+\end{figure}
+
+

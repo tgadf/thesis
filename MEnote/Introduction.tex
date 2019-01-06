@@ -1,0 +1,74 @@
+%---------------------------------------------------------------------
+\section{Introduction}
+
+The search for single top quark production at the Tevatron has turned
+out to be a significantly more difficult task than anybody
+anticipated. Despite the large production cross section predicted by
+the standard model (about half of that for top quark pairs) and the
+distinct event signature involving a leptonic $W$ boson decay and two
+or more jets (at least one being a $b$~jet), this top quark production
+mode has not yet been observed. The main reason is that signal events
+are overwhelmed by a background from $W$+jets orders of magnitude
+larger. At jet multiplicities above two, even $t\bar{t}$ becomes a
+significant background. Both backgrounds can mimic the signal event
+characteristics in such a way that no cut on a single distribution can
+be used to effectively remove the background while preserving a large
+enough signal fraction. However, the combined information from
+several discriminant variables in a multivariate approach can
+potentially achieve enough sensitivity to unambiguously establish a
+signal. By now this is widely acknowledged as a requirement for any
+viable search for single top production, and all ongoing analyses at
+{\dzero} are of a multivariate nature.
+
+Methods such as neural networks or decision trees are being
+succesfully used at D{\O} to build efficient event discriminants to
+separate signal from background. These methods rely on identifying an
+optimal (and usually very large) set of kinematic and topological
+variables that collectively encode most of the available information
+to classify signal and background events. These methods are ``learning
+machines'' since they adjust to minimize the misclassification rate in
+samples of pseudo-data containing pure signal and background events
+that are presented to them. In this note we describe the so-called
+``Matrix Element-based Single Top Search'' which, as will be explained
+below, is intrinsically different in approach.
+
+First of all, the matrix element (ME) method attempts to maximize the
+sensitivity to the signal by making exhaustive use of the available
+kinematic information in the event, as contained in the four-momenta
+for the reconstructed objects. Information regarding $b$~tagging has
+also been incorporated in the current version of the analysis. This is
+the complete set of variables considered in this analysis. Then,
+starting from these four-momenta, this method uses the matrix elements
+for the different signal and background processes to numerically
+compute the event probability density for each hypothesis (signal and
+background). This method has been developed and successfully applied
+at {\dzero} in the past for parameter estimation such as the top quark
+mass~\cite{Abazov:2004cs,Abazov:2006bd} or the longitudinal $W$~boson
+helicity fraction in top quark decays~\cite{Abazov:2004ym}. In this
+analysis, the computed event probability densities are used to build
+an optimal event discriminant between signal and background,
+representing the first application of this method to a search at
+{\dzero}.
+
+The analysis described in this note is based on the selected
+``lepton+jets'' data samples described in Ref.~\cite{general-note}.
+The current analysis is restricted to two-jet and three-jet events,
+with at least one of the jets $b$~tagged.
+
+This note is organized as follows. Section~\ref{separation-ME}
+presents an overview of the method, from the calculation of the event
+probability density functions, to the construction of the different
+event discriminants. Section~\ref{data-MC} contains comparisons
+between data and the background model for the different event
+discriminant distributions from control and signal samples.
+Section~\ref{sec:ensembles} presents results of the analysis run on a
+number of Monte Carlo ensembles. Section~\ref{exp-performance} is
+devoted to a discussion of the expected performance, both in terms of
+significance and cross section measurement. Section~\ref{results}
+presents the measured results from data, followed by
+Section~\ref{sec:eventcharacteristics} which shows characteristics of
+the events selected according to their values of the signal
+discriminants. Finally, Section~\ref{summary} is devoted to a summary
+and conclusions.
+
+

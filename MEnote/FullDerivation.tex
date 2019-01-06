@@ -1,0 +1,387 @@
+%---------------------------------------------------------------------
+\section{Probability Calculation}
+\label{full}
+
+\subsection{Differential Cross Section at the Parton Level}
+
+The matrix element analysis technique reconstructs each event to the
+final state four-vectors to evaluate the signal and background leading
+order matrix element. The following sections derive the signal and
+background probabilities starting from the final state at the parton
+level and then relating these objects to the physical quantities
+measured in the detector. The following also assumes a lepton,
+neutrino, and two quarks in the final state.
+
+The probability density for a process to occur at a hadron-hadron
+collider is given as an integral of the hard-scatter differential
+cross section over all possible ways of producing the process from the
+quarks and gluons inside the hadron. This probability density, shown
+below, is a convolution of the hard scatter differential cross section
+with a parton distribution function for each of the two partons from
+the hadrons with an integral over all possible momentum fractions
+$x_{i}, x_{j}$ from each initial parton.
+\begin{equation}
+{\cal P}(\vec{y}) = \frac{1}{\sigma} \sum_{i,j}
+\int f_{i}(q_{1}, Q^{2})dq_{1}
+\times f_{j}(q_{2}, Q^{2})dq_{2}
+\times d\sigma_{hs,ij}(\vec{y})
+\end{equation}
+\noindent where the normalization constant $\sigma$ is defined as
+integral of the differential cross section over the initial- and
+final-state phase spac:
+\begin{equation}
+\label{ds}
+\sigma = \int  \sum_{i,j}
+\int f_{i}(q_{1}, Q^{2})dq_{1}
+\times f_{j}(q_{2}, Q^{2})dq_{2}
+\times \pderiv{\sigma_{hs,ij}(\vec{y})}{\vec{y}} d\vec{y}
+\end{equation}
+\noindent and finally, the hard-scatter differential cross section is
+defined as the product of the final state phase space factor, the
+square of the matrix element amplitude and an overall flux factor:
+\begin{equation}
+d\sigma_{hs} = \frac{(2\pi)^4}{4}
+\frac{{|\cal M|}^{2}}
+{\sqrt{(q_{1}q_{2})^2 - m_{1}^2 m_{2}^2}}
+\frac{d^{3}p_{1}}{(2\pi)^3 2E_{1}}
+\frac{d^{3}p_{2}}{(2\pi)^3 2E_{2}}
+\frac{d^{3}p_{\ell}}{(2\pi)^3 2E_{\ell}}
+\frac{d^{3}p_{\nu}}{(2\pi)^3 2E_{\nu}}
+\delta^{4}(q_{1}q_{2};p_{1},p_{2},p_{\ell},p_{\nu})
+\end{equation}
+
+
+\subsection{Evaluating the Hard Scatter Differential Cross Section}
+
+The following section evaluates the differential cross section shown
+in Eq.~\ref{ds} given a set of inital and final state four-vectors.
+
+The first assumption made is that all collisions occur along the beam
+axis with no net transverse momentum. This means the initial state
+four vectors can be written as
+\begin{equation}
+q_{1} = ( E_{beam} x_{1}, 0, 0, E_{beam} x_{1} )
+\end{equation}
+\begin{equation}
+q_{2} = ( E_{beam} x_{2}, 0, 0, -E_{beam} x_{2} )
+\end{equation}
+\noindent The next assumption is that all particle masses are known
+and are negligible compared to their energies and thus can be ignored
+for this calculation. The flux factor (shown below) in the hard
+scatter cross section can now be written in terms in the two momentum
+fractions of the incoming partons:
+\begin{equation}
+\frac{1}{\sqrt{(q_{1}q_{2})^2 - m_{1}^2m_{2}^2}} \rightarrow
+\frac{1}{\sqrt{(q_{1}q_{2})^2}} \rightarrow
+\frac{1}{2E_{beam}x_{1}x_{2}}
+\end{equation}
+\noindent For the remainder of the note, the following notation will
+be used to distinquish quarks, leptons, and neutrinos: $p_{\ell}$ is
+the momemtum of the lepton, $p_{1,2}$ is the momentum of the first and
+second final state partons, and $p_{\nu}$ is the neutrino
+momentum. Because the phase space is written in terms of rectangular
+coordinates, the next step towards the final differential cross
+section equation is to redefine the phase space factors in terms of
+spherical coordiniates. This is done for all final state particles
+except the neutrino for reasons that will be clear later in the
+document.
+\begin{eqnarray}
+d\Phi_{4} = 
+\frac{d^{3}p_{1}}{(2\pi)^3 2E_{1}}
+\frac{d^{3}p_{2}}{(2\pi)^3 2E_{2}}
+\frac{d^{3}p_{\ell}}{(2\pi)^3 2E_{\ell}}
+\frac{d^{3}p_{\nu}}{(2\pi)^3 2E_{\nu}} \delta^{4} 
+\rightarrow \\
+\frac{1}{16(2\pi)^{12}}
+\frac{|p_{1}|^{2}d|p_{1}|d\Omega_{1}}{E_{1}}
+\frac{|p_{2}|^{2}d|p_{2}|d\Omega_{2}}{E_{2}}
+\frac{|p_{\ell}|^{2}d|p_{\ell}|d\Omega_{\ell}}{E_{\ell}}
+\frac{d^{x}_{\nu} d^{y}_{\nu} d^{z}_{\nu}}{E_{\nu}}\delta^{4} 
+%\frac{d^{3}p_{1}}{(2\pi)^3 2E_{1}} \frac{d^{3}p_{2}}{(2\pi)^32E_{2}} \frac{d^{3}p_{\ell}}{(2\pi)^3 2E_{\ell}}
+%\frac{d^{3}p_{\nu}}{(2\pi)^3 2E_{\nu}} \delta^{4} \righarrow 
+%\frac{1}{16(2\pi)^{12}}
+\end{eqnarray}
+\noindent To summarize, the full hard scatter differential cross
+section is now
+\begin{equation}
+\label{dhs}
+d\sigma_{hs} = \frac{1}{128(2\pi)^{8}E_{beam}}
+\frac{{|\cal M|}^{2}}{2x_{1}x_{2}}
+\frac{|p_{1}|^{2}d|p_{1}|d\Omega_{1}}{E_{1}}
+\frac{|p_{2}|^{2}d|p_{2}|d\Omega_{2}}{E_{2}}
+\frac{|p_{\ell}|^{2}d|p_{\ell}|d\Omega_{\ell}}{E_{\ell}}
+\frac{d^{x}_{\nu} d^{y}_{\nu} d^{z}_{\nu}}{E_{\nu}} \delta^{4} 
+\end{equation} 
+
+
+\subsection{Evaluating the Hadron-Hadron Differential Cross Section}
+
+The next step to writing the full hadron-hadron differential cross
+section is to rewrite Eq.~\ref{dhs} such that any integration over the
+phase space will remove the four-dimensional delta function required
+for energy and momentum conservation. The delta function is currently
+written such that it will vanish only over integrations of total
+$p_{x}, p_{y}, p_{z}$, and $E$. Because there was an original
+assumption of no net transverse momentum in the collision, the total
+$p_{x}$ and $p_{y}$ can be solved for the neutrino transverse
+momentum.
+\begin{eqnarray}
+\sum_{i}P^{x}_{i} =
+p^{x}_{1} + p^{x}_{2} + p^{x}_{\ell} + p^{x}_{\nu} = 0
+\rightarrow p^{x}_{\nu} =
+- p^{x}_{1} - p^{x}_{2} - p^{x}_{\ell} \\
+\sum_{i}P^{y}_{i} =
+p^{y}_{1} + p^{y}_{2} + p^{y}_{\ell} + p^{y}_{\nu} = 0
+\rightarrow p^{y}_{\nu} =
+- p^{y}_{1} - p^{y}_{2} - p^{y}_{\ell}
+\end{eqnarray}
+\noindent The total $p_{z}$ and requirement can be rewritten in terms
+of the intial parton's momemtum fraction and the other final state
+partons' $z$ momenta and thus solve for the neutrino $p_{z}$:
+\begin{eqnarray}
+\nonumber
+\sum_{i}P^{z}_{i} =
+p^{z}_{1} + p^{z}_{2} + p^{z}_{\ell} + p^{z}_{\nu} -
+E_{beam}x_{1} + E_{beam}x_{2} = 0 \rightarrow \\
+p^{z}_{\nu} =
+- E_{beam}(x_{1} - x_{2}) - p^{z}_{1} - p^{z}_{2} - p^{z}_{\ell}
+\end{eqnarray}
+\noindent Finally, the total energy delta function implies the
+following:
+\begin{equation}
+E_{beam}x_{1} + E_{beam}x_{2} = E_{1} + E_{2} + E_{\ell} + E_{\nu}
+\end{equation}
+
+At this point, is it useful to rewrite the full differential cross
+section at the parton level:
+\begin{eqnarray}
+\nonumber
+d\sigma(\vec{y}) = \sum_{i,j} \int f_{i}(x_{1}, Q^{2})dx_{1}
+\times f_{j}(x_{2}, Q^{2})dx_{2}
+\times \frac{1}{128(2\pi)^{8}E_{beam}}
+\frac{{|\cal M|}^{2}}{2x_{1}x_{2}} \times \\
+\nonumber
+\frac{|p_{1}|^{2}d|p_{1}|d\Omega_{1}}{E_{1}}
+\frac{|p_{2}|^{2}d|p_{2}|d\Omega_{2}}{E_{2}}
+\frac{|p_{\ell}|^{2}d|p_{\ell}|d\Omega_{\ell}}{E_{\ell}}
+\frac{d^{x}_{\nu} d^{y}_{\nu} d^{z}_{\nu}}{E_{\nu}} \times \\
+\nonumber
+\delta(p^{x}_{\nu} + p^{x}_{1} + p^{x}_{2} + p^{x}_{\ell}) \times \\
+\nonumber
+\delta(p^{y}_{\nu} + p^{y}_{1} + p^{y}_{2} + p^{y}_{\ell}) \times \\
+\nonumber
+\delta(p^{z}_{\nu} + E_{beam}(x_{1} - x_{2}) + p^{z}_{1}
++ p^{z}_{2} + p^{z}_{\ell}) \times \\
+\delta(E_{beam}x_{1} + E_{beam}x_{2} - E_{1} - E_{2}
+- E_{\ell} - E_{\nu})
+\end{eqnarray}
+
+The next step is to rewrite the integrational variables, $x_{1}$ and
+$x_{2}$, in terms of the total energy and total $p_{z}$:
+\begin{eqnarray}
+\label{x1}
+x_{1} = \frac{E_{tot} + p^{z}_{tot}}{2E_{beam}} \\
+\label{x2}
+x_{2} = \frac{E_{tot} - p^{z}_{tot}}{2E_{beam}}
+\end{eqnarray}
+\noindent Now, the integration over $x_{1}$ and $x_{2}$ can be
+rewritten in terms of $E_{tot}$ and $p_{z}$:
+\begin{eqnarray}
+dx_{1}dx_{2} =
+\frac{1}{J(x_{1},x_{2};E_{tot},p^{z}_{tot})}dE_{tot}dp^{z}_{tot} \\
+J(x_{1},x_{2};E_{tot},p^{z}_{tot}) = 2E^{2}_{beam}
+\end{eqnarray}
+\noindent At this point the integration over the total energy and
+$p_{z}$ will constrain the two incoming partons' momentum fractions
+through Eq.~\ref{x1} and \ref{x2}.
+
+The full differential cross section at the parton level can now be
+written as
+\begin{eqnarray}
+\nonumber
+d\sigma(\vec{y}) = \sum_{i,j} \int f_{i}(x_{1}, Q^{2})
+\times 
+f_{j}(x_{2}, Q^{2}) \times \frac{1}{128(2\pi)^{8}E_{beam}}
+\frac{{|\cal M|}^{2}}{2x_{1}x_{2}} \times \\
+\nonumber
+\frac{|p_{1}|^{2}d|p_{1}|d\Omega_{1}}{E_{1}}
+\frac{|p_{2}|^{2}d|p_{2}|d\Omega_{2}}{E_{2}}
+\frac{|p_{\ell}|^{2}d|p_{\ell}|d\Omega_{\ell}}{E_{\ell}}
+\frac{d^{x}_{\nu} d^{y}_{\nu} d^{z}_{\nu}}{E_{\nu}} \times \\
+\int \frac{1}{2E^{2}_{beam}} dp^{z}_{tot}
+\end{eqnarray}
+\noindent where the implicit integration over the four dimensional
+delta function yields the following formulas for the neutrino four
+vector and the incoming partons' momentum fraction in terms of the
+remaining differential variables.
+\begin{eqnarray}
+p^{x}_{\nu} = - p^{x}_{1} - p^{x}_{2} - p^{x}_{\ell} \\
+p^{y}_{\nu} = - p^{y}_{1} - p^{y}_{2} - p^{y}_{\ell} \\
+p^{z}_{\nu} = - p^{z}_{tot} - p^{z}_{1} - p^{z}_{2} - p^{z}_{\ell} \\
+x_{1} = \frac{E_{1} + E_{2} + E_{\ell} + E_{\nu} + p^{z}_{tot}}
+{2E_{beam}} \\
+x_{2} = \frac{E_{1} + E_{2} + E_{\ell} + E_{\nu} - p^{z}_{tot}}
+{2E_{beam}}
+\end{eqnarray}
+
+
+\subsection{Relating Reconstructed Objects to Partons}
+
+The previous sections have calculated the differential cross section
+for a hadron-hadron collision producing a lepton, neutrino, and two
+partons in the final state. These particles are not exactly what is
+measured in the detector and thus it is necessary to relate
+quantities. To do this, the differential cross section is convoluted
+with a function, $W(\vec{x}, \vec{y})$, which is the probability of
+producing a final state, $\vec{y}$, and observed state, $\vec{x}$, in
+the detector. The resulting differential cross section is then
+integrated over the final state phase space, $d\vec{y}$:
+\begin{equation}
+\pderiv{\sigma^{'}(\vec{x})}{\vec{x}} =
+\int \pderiv{\sigma(\vec{y})}{\vec{y}} W(\vec{x}, \vec{y}) d\vec{y}
+\end{equation}
+\noindent where the function $W(\vec{x}, \vec{y})$ is assumed to be
+factorizable for each measured object:
+\begin{equation}
+W(\vec{x}, \vec{y}) = \prod_{i} W_{i}(\vec{x_{i}}, \vec{y_{i}})
+\end{equation}
+
+
+\subsubsection{Jets}
+
+The transfer function for jets measured in the calorimter is assumed
+to only be a function of the relative energy difference between the
+two objects and all angles are assumed to be well measured:
+\begin{equation}
+W_{jet}(\vec{x}_{jet}, \vec{y}_{parton}) = W(E_{jet} -
+E_{parton}) \times \delta(\Omega_{jet} - \Omega_{parton})
+\end{equation}
+\noindent where $W(E_{jet} - E_{parton})$ is parametrized using the
+following functional form:
+\begin{equation}
+W(E_{jet} - E_{parton}) = \frac{e^{-\frac{(E_{jet}
+- E_{parton} - p_{1})^{2}}{2p^{2}_{2}}} + p_{3}e^{-\frac{(E_{jet}
+- E_{parton} - p_{4})^{2}}{2p^{5}_{2}}}}{2\pi(p_{2} + p_{3}p_{5})}
+\end{equation}
+\noindent where $p_{i} = \alpha_{i} + \beta_{i} \times E_{parton}$.
+The five $\alpha$ and five $\beta$ parameters are determined by
+minimizing a likelihood formed by measuring the parton energy in Monte
+Carlo and the matched jet energy also in Monte Carlo. The parameters
+used for this analysis were determined in several regions of the
+calorimeter to account for the resolution differences in the detector.
+
+
+\subsubsection{Electrons}
+
+The transfer function for electrons~\cite{ElectronTF} is assumed to be
+solely a function of the reconstructed energy of the electron,
+$E_{reco}$, the parton energy of the electron, $E_{parton}$, and
+$\theta$, the production angle with respect to the beam axis:
+\begin{equation}
+W_{electron}(\vec{x}_{reco}, \vec{y}_{parton}) = W(E_{reco},
+E_{parton}, \theta) \times \delta(\Omega_{reco} - \Omega_{parton})
+\end{equation}
+\noindent where $W(E_{reco}, E_{parton}, \theta)$ is parametrized
+using the following functional form:
+\begin{eqnarray}
+W(E_{reco}, E_{parton}, \theta) & = &
+\frac{1}{2\pi\sigma}\mathrm{exp}
+[-\frac{(E_{reco} - E_{center})^{2}}{2\sigma^{2}}]\\
+E_{center} & = &
+1.0002 E_{parton} + 0.324\,{GeV}/c^2 \\
+\sigma & = &
+0.028 E_{center} \oplus \textrm{Sampling}(E_{center},
+\eta) E_{center} \oplus 0.4 \\
+\textrm{Sampling}(E, \theta) & = &
+\left[\frac{0.164}{\sqrt{E}} + \frac{0.122}{E}\right]
+\textrm{exp}\left[\frac{\textrm{p1}(E)}
+{\textrm{sin}\theta}-\textrm{p1}(E)\right] \\
+\textrm{p1}(E)& = & 1.35193 - \frac{2.09564}{E} - \frac{6.98578}{E^2}.
+\end{eqnarray}
+
+
+\subsubsection{Muons}
+
+The transfer function for muons~\cite{MuonTF} is assumed to be a
+function of
+\begin{equation}
+\Delta\left( \frac{q}{p_t}\right) =
+\left( \frac{q}{p_t}\right)_{reco} -
+\left( \frac{q}{p_t}\right)_{parton}
+\end{equation}
+\noindent and of $\eta_\mathrm{CFT}$,
+\begin{equation}
+W_{muon}(\vec{x}_{reco}, \vec{y}_{parton}) =
+W\left(\Delta\left( \frac{q}{p_t}\right),
+\eta_\mathrm{CFT}\right) \times 
+\delta(\Omega_{reco} - \Omega_{parton})
+\end{equation}
+\noindent where $W\left(\Delta\left( \frac{q}{p_t}\right),
+\eta_\mathrm{CFT}\right)$ is parametrized using a single Gaussian:
+\begin{equation}
+W\left(\Delta\left( \frac{q}{p_t}\right), \eta_\mathrm{CFT}\right) = 
+\frac{1}{2\pi\sigma}\mathrm{exp}
+\left\{-\frac{\left[\Delta
+\left( \frac{q}{p_t} \right)\right]^2}
+{2\sigma^2}\right\}
+\end{equation}
+\begin{equation}
+\sigma  =  \left\{ 
+\begin{array} {c@{\quad:\quad}l} \sigma_o &
+|\eta_\mathrm{CFT}| \le \eta_o \\
+\sqrt{\sigma^2_o + [c(|\eta_\mathrm{CFT}| - \eta_o)]^2} &
+|\eta_\mathrm{CFT}| > \eta_o 
+\end{array} \right.
+\end{equation}
+
+\noindent There are three fitted parameters in the above equations:
+$\sigma_o$, $c$, and $\eta_o$, each of which is actually fitted by two
+sub-parameters:
+\begin{equation}
+par = par(0) + par(1) \cdot 1/p_t.
+\end{equation}
+\noindent Furthermore, these parameters are derived for four classes
+of events: those that were from before or after the 2004 shutdown,
+when the magnetic field strength changed, and in each run range, those
+that have an SMT hit and those that do not.
+
+As a simplification, we assume $q_{reco} = q_{parton}$, that is, we
+do not consider charge misidentification
+
+
+\subsection{Full Differential Cross Section and Normalization}
+
+The full differential cross section at the detector object level can
+now be written as
+\begin{eqnarray}
+\label{fullds}
+\nonumber
+\pderiv{\sigma^{'}(\vec{x})}{\vec{x}} =
+\int dp^{z}_{tot}dq_{1}dq_{2}dp_{\ell} \sum_{i,j}
+f_{i}(q_{1}, Q^{2}) \times f_{j}(q_{2}, Q^{2}) \\
+\times \frac{1}{256(2\pi)^{8}E^{3}_{beam}}
+\frac{{|\cal M|}^{2}}{2x_{1}x_{2}} \times
+\frac{p_{1}^{2}}{E_{1}} \frac{p_{2}^{2}}{E_{2}} 
+\frac{p_{\ell}^{2}}{E_{\ell}} \frac{1}{E_{\nu}}
+\times W_{Lepton}W_{Jet1}W_{Jet2}
+\end{eqnarray}
+\noindent The final step to evaluating the probability density is to
+properly normalize the differential cross section in
+Eq.~\ref{fullds}. This is done by integration of the differential
+cross section over all possible states in the detector. Since the
+event selection cuts will change the number events due to acceptance
+losses, this must be accounted for in the overall normalization (cross
+section) calculation. The total cross section is then written as
+\begin{eqnarray}
+\label{norm}
+\nonumber
+\sigma = \int \pderiv{\sigma^{'}(\vec{x})}{\vec{x}} d\vec{x} =
+\int d\vec{x}dp^{z}_{tot}dq_{1}dq_{2}dp_{\ell} \sum_{i,j}
+f_{i}(q_{1}, Q^{2}) \times f_{j}(q_{2}, Q^{2}) \\
+\times \frac{1}{256(2\pi)^{8}E^{3}_{beam}}
+\frac{{|\cal M|}^{2}}{2x_{1}x_{2}} \times
+\frac{p_{1}^{2}}{E_{1}} \frac{p_{2}^{2}}{E_{2}} 
+\frac{p_{\ell}^{2}}{E_{\ell}} \frac{1}{E_{\nu}}
+\times W_{Lepton}W_{Jet1}W_{Jet2} \times \Theta_{\rm{Cuts}}(\vec{x})
+\end{eqnarray}
+

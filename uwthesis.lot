@@ -1,0 +1,59 @@
+\addvspace {5\p@ }
+\addvspace {5\p@ }
+\contentsline {table}{\numberline {2.1}{\ignorespaces Properties of the fundamental spin-${\begingroup 1\endgroup \over 2}$ fermions in the Standard Model\nobreakspace {}\cite {Yao:2006px}.}}{5}
+\contentsline {table}{\numberline {2.2}{\ignorespaces Properties of the fundamental spin-1 gauge bosons in the Standard Model\nobreakspace {}\cite {Yao:2006px}.}}{7}
+\contentsline {table}{\numberline {2.3}{\ignorespaces Total cross sections for single top quark production at $\sqrt {s} = 1.96$\nobreakspace {}TeV with $m_t=175$\nobreakspace {}GeV.}}{11}
+\addvspace {5\p@ }
+\addvspace {5\p@ }
+\contentsline {table}{\numberline {4.1}{\ignorespaces Variables used in the neural networks training. The variables are listed in order of relative importance as determined in the training\nobreakspace {}\cite {bid}.}}{54}
+\contentsline {table}{\numberline {4.2}{\ignorespaces Muon smearing parameters for the function $(A + {\begingroup B\endgroup \over p_{T}})$ for two different run periods.}}{59}
+\addvspace {5\p@ }
+\contentsline {table}{\numberline {5.1}{\ignorespaces Summary of limits on $s$-channel, $t$-channel, and combined $s+t$-channel single top quark production from the $\unhbox \voidb@x \hbox {D\O }$ and CDF collaborations.}}{70}
+\contentsline {table}{\numberline {5.2}{\ignorespaces Integrated luminosities by trigger version for the triggers used to record electron single top quark events. The total integrated luminosity is shown in bold.}}{73}
+\contentsline {table}{\numberline {5.3}{\ignorespaces Integrated luminosities by trigger version for the triggers used to record muon single top quark events. The total integrated luminosity is shown in bold.}}{75}
+\contentsline {table}{\numberline {5.4}{\ignorespaces Single acceptances after selection cuts, one, and two $B$-tags. The branching ratio for $W\rightarrow \ell \nu $\nobreakspace {}is included in the acceptance.}}{80}
+\addvspace {5\p@ }
+\contentsline {table}{\numberline {6.1}{\ignorespaces Absolute weights for $W$+light parton ALPGEN Monte Carlo events.}}{86}
+\contentsline {table}{\numberline {6.2}{\ignorespaces Absolute weights for $W$+$c\mathaccent "7016\relax {c}$+light parton ALPGEN Monte Carlo events.}}{86}
+\contentsline {table}{\numberline {6.3}{\ignorespaces Absolute weights for $W$+$b\mathaccent "7016\relax {b}$+light parton ALPGEN Monte Carlo events.}}{87}
+\contentsline {table}{\numberline {6.4}{\ignorespaces Absolute weights for $\unhbox \voidb@x \hbox {$t\mathaccent "7016\relax {t}$} \rightarrow \ell + jets$+light parton ALPGEN Monte Carlo events.}}{87}
+\contentsline {table}{\numberline {6.5}{\ignorespaces Absolute weights for $\unhbox \voidb@x \hbox {$t\mathaccent "7016\relax {t}$} \rightarrow \ell \ell $+light parton ALPGEN Monte Carlo events.}}{88}
+\contentsline {table}{\numberline {6.6}{\ignorespaces Number of loose and tight data events after all selection cuts (top two rows) along with the expected number $W$+jets and multijet events in the tight sample (bottom two rows).}}{90}
+\contentsline {table}{\numberline {6.7}{\ignorespaces Average multijet efficiency: $\varepsilon _{\rm {Multijet}}$}}{91}
+\contentsline {table}{\numberline {6.8}{\ignorespaces Average $W$+jets efficiency: $\varepsilon _{\rm {W+jets}}$}}{91}
+\contentsline {table}{\numberline {6.9}{\ignorespaces Scale factor $\alpha $ for the $Wb\mathaccent "7016\relax {b}$ and $Wc\mathaccent "7016\relax {c}$ yields to match the data in each jet bin, for zero $B$-tags, 1 $B$-tag, and two $B$-tags samples. The uncertainties are statistical only.}}{92}
+\contentsline {table}{\numberline {6.10}{\ignorespaces Event yields after selection and before $B$ tagging.}}{93}
+\contentsline {table}{\numberline {6.11}{\ignorespaces Event yields after selection and one selected $B$-jet.}}{94}
+\contentsline {table}{\numberline {6.12}{\ignorespaces Event yields after selection and two selected $B$-jets.}}{94}
+\addvspace {5\p@ }
+\contentsline {table}{\numberline {7.1}{\ignorespaces Light jet transfer function parameters.}}{107}
+\contentsline {table}{\numberline {7.2}{\ignorespaces $B$ jet transfer function parameters.}}{107}
+\contentsline {table}{\numberline {7.3}{\ignorespaces $B$\nobreakspace {}w/$\mu $ jet transfer function parameters.}}{107}
+\contentsline {table}{\numberline {7.4}{\ignorespaces Electron transfer function parameters.}}{108}
+\contentsline {table}{\numberline {7.5}{\ignorespaces Muon transfer function parameters (Eq.\nobreakspace {}7.11\hbox {}) for muons with and without SMT hits.}}{109}
+\contentsline {table}{\numberline {7.6}{\ignorespaces Cross section times branching fraction for each analysis channel. All cross sections are given in units of femtobarns (fb).}}{113}
+\contentsline {table}{\numberline {7.7}{\ignorespaces Weights for the event differential cross section depending on the $B$-jet tagging status of the jet and jet-parton assignment.}}{114}
+\contentsline {table}{\numberline {7.8}{\ignorespaces Background fractions chosen for each analysis channel in two-jet events.}}{116}
+\addvspace {5\p@ }
+\contentsline {table}{\numberline {8.1}{\ignorespaces A summary of the relative systematic uncertainties for each of the applied corrections and efficiencies. The uncertainty shown is the error on the correction or the efficiency, before it has been applied to the MC or data samples.}}{142}
+\contentsline {table}{\numberline {8.2}{\ignorespaces $\varepsilon _{\rm {Multijet}}$ for electrons as a function of the trigger period and jet multiplicity, and $\varepsilon _{\rm {Multijet}}$ for muons averaged over $\eta $. The definition of the trigger periods is found in Chapter\nobreakspace {}5\hbox {}.}}{146}
+\contentsline {table}{\numberline {8.3}{\ignorespaces Expected $tb$+$tqb$ cross sections, without and with systematic uncertainties, for many combinations of the analysis channels. The final expected result of this analysis are shown in the lower right hand corner in bold type.}}{153}
+\contentsline {table}{\numberline {8.4}{\ignorespaces Relative uncertainties on the expected $tb$+$tqb$ cross section, without and with systematic uncertainties, for many combinations of the analysis channels. The best value from all channels combined, with systematics, is shown in bold type.}}{153}
+\addvspace {5\p@ }
+\contentsline {table}{\numberline {9.1}{\ignorespaces Measured $tb$+$tqb$ cross sections, without and with systematic uncertainties, for many combinations of the analysis channels. The final result of this analysis is shown in the lower right hand corner in bold type.}}{155}
+\contentsline {table}{\numberline {9.2}{\ignorespaces Relative uncertainties on the measured $tb$+$tqb$ cross section, without and with systematic uncertainties, for many combinations of the analysis channels. The best value from all channels combined, with systematics, is shown in bold type.}}{155}
+\contentsline {table}{\numberline {9.3}{\ignorespaces Contribution of each systematic uncertainty to the total systematic uncertainty on the $tb$+$tqb$ cross section.}}{156}
+\addvspace {5\p@ }
+\addvspace {5\p@ }
+\addvspace {5\p@ }
+\addvspace {5\p@ }
+\addvspace {5\p@ }
+\addvspace {5\p@ }
+\contentsline {table}{\numberline {E.1}{\ignorespaces Electron channel uncertainties, requiring exactly one tag and exactly two jets.}}{198}
+\contentsline {table}{\numberline {E.2}{\ignorespaces Electron channel uncertainties, requiring exactly one tag and exactly three jets.}}{199}
+\contentsline {table}{\numberline {E.3}{\ignorespaces Muon channel uncertainties, requiring exactly one tag and exactly two jets.}}{200}
+\contentsline {table}{\numberline {E.4}{\ignorespaces Muon channel uncertainties, requiring exactly one tag and exactly three jets.}}{201}
+\contentsline {table}{\numberline {E.5}{\ignorespaces Electron channel uncertainties, requiring exactly two tags and exactly two jets.}}{202}
+\contentsline {table}{\numberline {E.6}{\ignorespaces Electron channel uncertainties, requiring exactly two tags and exactly three jets.}}{203}
+\contentsline {table}{\numberline {E.7}{\ignorespaces Muon channel uncertainties, requiring exactly two tags and exactly two jets.}}{204}
+\contentsline {table}{\numberline {E.8}{\ignorespaces Muon channel uncertainties, requiring exactly two tags and exactly three jets.}}{205}

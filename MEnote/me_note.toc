@@ -1,0 +1,48 @@
+\tocdepth@munge 
+\contentsline {section}{\numberline {}Contents}{2}{}
+\tocdepth@restore 
+\contentsline {section}{\numberline {\relax \fontsize {14.4}{18pt}\selectfont 1}Introduction}{3}{}
+\contentsline {section}{\numberline {\relax \fontsize {14.4}{18pt}\selectfont 2}Separation of Signal from Background Using Matrix Elements}{4}{}
+\contentsline {subsection}{\numberline {\relax \fontsize {12}{14pt}\selectfont 2.\relax \fontsize {12}{14pt}\selectfont 1}Method Overview}{4}{}
+\contentsline {subsection}{\numberline {\relax \fontsize {12}{14pt}\selectfont 2.\relax \fontsize {12}{14pt}\selectfont 2}Calculation of the Event Probability Density Functions}{5}{}
+\contentsline {subsubsection}{\numberline {2.2.1}Differential Cross Section}{5}{}
+\contentsline {subsubsection}{\numberline {2.2.2}Matrix Element Processes}{7}{}
+\contentsline {subsubsection}{\numberline {2.2.3}Cross Section}{8}{}
+\contentsline {subsubsection}{\numberline {2.2.4}Treatment of Combinatorial Background}{9}{}
+\contentsline {subsection}{\numberline {\relax \fontsize {12}{14pt}\selectfont 2.\relax \fontsize {12}{14pt}\selectfont 3}Single Top Discriminant}{10}{}
+\contentsline {subsubsection}{\numberline {2.3.1}Discriminant Definition}{10}{}
+\contentsline {subsubsection}{\numberline {2.3.2}One-Dimensional Discriminants}{11}{}
+\contentsline {subsubsection}{\numberline {2.3.3}Two-Dimensional Discriminants}{11}{}
+\contentsline {section}{\numberline {\relax \fontsize {14.4}{18pt}\selectfont 3}Cross-Check Samples}{16}{}
+\contentsline {section}{\numberline {\relax \fontsize {14.4}{18pt}\selectfont 4}Ensemble Tests}{19}{}
+\contentsline {subsection}{\numberline {\relax \fontsize {12}{14pt}\selectfont 4.\relax \fontsize {12}{14pt}\selectfont 1}Ensemble Tests with SM Signal}{19}{}
+\contentsline {subsection}{\numberline {\relax \fontsize {12}{14pt}\selectfont 4.\relax \fontsize {12}{14pt}\selectfont 2}Ensemble Tests with Non-SM Signal}{20}{}
+\contentsline {section}{\numberline {\relax \fontsize {14.4}{18pt}\selectfont 5}Expected Results}{22}{}
+\contentsline {subsection}{\numberline {\relax \fontsize {12}{14pt}\selectfont 5.\relax \fontsize {12}{14pt}\selectfont 1}Expected Signal Significance}{23}{}
+\contentsline {subsection}{\numberline {\relax \fontsize {12}{14pt}\selectfont 5.\relax \fontsize {12}{14pt}\selectfont 2}Expected Cross Section}{23}{}
+\contentsline {section}{\numberline {\relax \fontsize {14.4}{18pt}\selectfont 6}Observed Results}{24}{}
+\contentsline {subsection}{\numberline {\relax \fontsize {12}{14pt}\selectfont 6.\relax \fontsize {12}{14pt}\selectfont 1}Measured Cross Section}{25}{}
+\contentsline {section}{\numberline {\relax \fontsize {14.4}{18pt}\selectfont 7}Signal Significance}{27}{}
+\contentsline {section}{\numberline {\relax \fontsize {14.4}{18pt}\selectfont 8}Event Characteristics}{28}{}
+\contentsline {section}{\numberline {\relax \fontsize {14.4}{18pt}\selectfont 9}Summary and Conclusions}{29}{}
+\appendix 
+\contentsline {section}{\numberline {A}Probability Calculation}{30}{}
+\contentsline {subsection}{\numberline {1}Differential Cross Section at the Parton Level}{30}{}
+\contentsline {subsection}{\numberline {2}Evaluating the Hard Scatter Differential Cross Section}{30}{}
+\contentsline {subsection}{\numberline {3}Evaluating the Hadron-Hadron Differential Cross Section}{31}{}
+\contentsline {subsection}{\numberline {4}Relating Reconstructed Objects to Partons}{32}{}
+\contentsline {subsubsection}{\numberline {a}Jets}{33}{}
+\contentsline {subsubsection}{\numberline {b}Electrons}{33}{}
+\contentsline {subsubsection}{\numberline {c}Muons}{33}{}
+\contentsline {subsection}{\numberline {5}Full Differential Cross Section and Normalization}{34}{}
+\contentsline {section}{\numberline {B}Discriminant Output Plots}{35}{}
+\contentsline {section}{\numberline {C}Integration Variable Remapping}{39}{}
+\contentsline {subsection}{\numberline {1}Introduction}{39}{}
+\contentsline {subsection}{\numberline {2}Sampling from a Breit-Wigner mass distribution}{39}{}
+\contentsline {subsection}{\numberline {3}Sampling from a Breit-Wigner $S_{cm}$ distribution}{40}{}
+\contentsline {subsection}{\numberline {4}Jacobian for random sampling of a Breit-Wigner distribution around the W mass squared, $s_{34}$}{40}{}
+\contentsline {subsection}{\numberline {5}Jacobian for random sampling of a Breit-Wigner distribution around the top mass squared, $s_{345}$}{42}{}
+\contentsline {subsection}{\numberline {6}Jacobian for random sampling of two Breit-Wigner distributions around the top mass squared, $s_{345}$ and W mass squared, $s_{34}$}{43}{}
+\contentsline {subsection}{\numberline {7}Sampling from a Polynomial $S_{cm}$ distribution}{44}{}
+\contentsline {subsection}{\numberline {8}Jacobian for random sampling of a polynomial distribution starting at $m_{pole}$}{44}{}
+\contentsline {section}{\numberline {}References}{47}{}

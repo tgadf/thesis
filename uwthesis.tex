@@ -1,0 +1,257 @@
+%  ========================================================================
+%  Copyright (c) 2006 The University of Washington
+%
+%  Licensed under the Apache License, Version 2.0 (the "License");
+%  you may not use this file except in compliance with the License.
+%  You may obtain a copy of the License at
+%
+%      http://www.apache.org/licenses/LICENSE-2.0
+%
+%  Unless required by applicable law or agreed to in writing, software
+%  distributed under the License is distributed on an "AS IS" BASIS,
+%  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+%  See the License for the specific language governing permissions and
+%  limitations under the License.
+%  ========================================================================
+%
+
+% Documentation for UW thesis document style for LaTeX
+% by Jim Fox
+% fox@washington.edu
+%
+%    Revised for version 2006/08/02 of uwthesis.cls
+%
+%    This document is contained in a single file ONLY because
+%    I wanted to be able to distribute it easily.  A real thesis ought
+%    to be contained on many files (e.g., one for each chapter, at least).
+%
+%    To help you identify the files and sections in this large file
+%    I use the string '==========' to identify new files.
+%
+%    To help you ignore the unusual things I do with this sample document
+%    I try to use the notation
+%       
+%    % --- sample stuff only -----
+%    special stuff for my document, but you don't need it in your thesis
+%    % --- end-of-sample-stuff ---
+%    Printed in twoside style now that that's allowed
+%
+% \documentclass [11pt, twoside] {uwthesis}
+ \documentclass [11pt, oneside] {uwthesis}
+ %
+% The following line would print the thesis in a postscript font 
+% \usepackage{newcent}
+\setcounter{tocdepth}{1}  % Print the chapter and sections to the toc
+ % ==========   Local defs and mods
+%
+\usepackage{graphicx}
+\usepackage{latexsym}
+
+% Allow sub figures
+\usepackage{subfigure}
+
+\newcommand{\ppbar} 	{\mbox{$p\bar{p}$}}
+\newcommand{\ttbar} 	{\mbox{$t\bar{t}$}}
+\newcommand{\dilepton} 	{\mbox{$t\bar{t}$} \rightarrow \ell \ell}
+\newcommand{\lepjets} 	{\mbox{$t\bar{t}$} \rightarrow \ell + jets}
+\newcommand{\met}		{\mbox{ME$_{T}$}}
+\newcommand{\dzero} 	{\mbox{D\O}}
+\newcommand{\pderiv}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\rargap}    {\mbox{ $\rightarrow$ }}
+\newcommand{\rar}       	{\rightarrow}
+
+
+\usepackage{alltt}  % 
+\newenvironment{demo}
+  {\begin{alltt}\leftskip3em
+     \def\\{\ttfamily\char`\\}%
+     \def\{{\ttfamily\char`\{}%
+     \def\}{\ttfamily\char`\}}}
+  {\end{alltt}}
+ 
+% metafont font.  If logo not available, use the second form
+%
+% \font\mffont=logosl10 scaled\magstep1
+\let\mffont=\sf
+% --- end-of-sample-stuff ---
+ 
+
+
+
+\begin{document}
+ 
+% ==========   Preliminary pages
+%
+
+\prelimpages
+ 
+%
+% ----- title page
+%
+\Title{Evidence for Electroweak Top Quark Production in Proton-Antiproton~Collisions at sqrt(s)~= 1.96 TeV}
+\Author{Thomas Gadfort}
+\Year{2007}
+\Program{Physics}
+% \titlepage  
+
+% --- sample stuff only -----
+% unusual footnote not found in a real thesis
+{\Degreetext{A dissertation submitted in partial fulfillment of\\
+  the requirements for the degree of}
+ \def\thefootnote{\fnsymbol{footnote}}
+ \let\footnoterule\relax
+ \titlepage
+ }
+\setcounter{footnote}{0}
+% --- end-of-sample-stuff ---
+ 
+%
+% ----- signature page (put real names in these)
+%
+
+\Chair{Gordon Watts}{Professor}{Physics}
+
+\Signature{Gordon Watts}
+%\Signature{Steve Ellis}
+\Signature{Peter Doe}
+\Signature{Henry Lubatti}
+%\Signature{Larry Dalton}
+\signaturepage
+
+% These are the quote slips
+%  \thesisquoteslip
+\doctoralquoteslip
+%  \doctoralabstractquoteslip
+
+% ----- abstract
+\setcounter{page}{-1}
+\abstract{We present the first evidence for electroweak single top quark production using nearly $1$~fb$^{-1}$ of Tevatron Run II data at $\sqrt{s}=1.96$~TeV. We select
+single-top-like data events in the lepton+jets decay channel and separate them from backgrounds using
+the matrix element analysis method. This technique uses leading order matrix elements to compute an event probability for both signal and background hypotheses. Using the expected signal acceptance, background, and observed data we measure the single top quark cross section:
+$$
+\begin{array}{lll}
+\sigma\left({\ppbar}{\rargap}tb+tqb+X\right) = 4.6 ^{+1.8}_{-1.5}~{\rm pb}\\
+\end{array}
+$$
+The probability for the background to have fluctuated up to give at
+least the cross section measured in this analysis is
+$0.21\%$, which corresponds to a Gaussian equivalent significance of
+$2.9\sigma$.}
+
+ 
+%
+% ----- contents & etc.
+%
+\tableofcontents
+\listoffigures
+\listoftables  % I have no tables
+ 
+%
+% ----- glossary 
+%
+%\chapter*{Glossary}      % starred form omits the `chapter x'
+%\addcontentsline{toc}{chapter}{Glossary}
+%\thispagestyle{plain}
+%
+%\begin{glossary}
+%\item[eta] Pseudo rapdity
+%\item[pt] Transverse momentum
+ 
+%\end{glossary}
+ 
+%
+% ----- acknowledgments
+%
+%\acknowledgments{% \vskip2pc
+  % {\narrower\noindent
+%  The author wishes to express sincere appreciation to
+%  University Computing Services, where he has had the opportunity
+%  to work with the \TeX\ formatting system,
+%  and to the author of \TeX, Donald Knuth, {\it il miglior fabbro}.
+  % \par}
+%}
+%
+% end of the preliminary pages
+ 
+ 
+ 
+%
+% ==========      Text pages
+%
+
+\textpages
+ 
+% ========== Chapter 1
+
+\include{Introduction}
+  
+% ========== Chapter 2
+
+\include{Theory} 
+
+% ========== Chapter 3
+
+\include{Detector}
+
+% ========== Chapter 4
+
+\include{RecoSimulation}
+
+% ========== Chapter 5
+
+\include{Analysis} 
+
+% ========== Chapter 6
+
+\include{BackgroundEstimation} 
+
+% ========== Chapter 7
+
+\include{MatrixElement}
+
+% ========== Chapter 8
+ 
+\include{SystematicsCrossSection}
+
+% ========== Chapter 9
+
+\include{Results}
+
+% ========== Chapter 10
+
+\include{Conclusion}
+
+%
+% ==========   Bibliography
+%
+\nocite{*}   % include everything in the uwthesis.bib file
+\bibliographystyle{plain}
+\bibliography{uwthesis}
+%
+% ==========   Appendices
+%
+\appendix
+\raggedbottom\sloppy
+ 
+% ========== Appendix A
+ 
+\include{MatrixElementCalculations}
+
+\include{Channels}
+
+\include{Luminosity}
+
+\include{EnsembleGeneration}
+
+\include{Systematics}
+
+
+
+% ==========   Vita
+\vita{Thomas Gadfort was born in Copenhagen, Denmark, in 1979. He graduated
+from Oak Ridge High School in Oak Ridge, Tennessee in 1997. At The University of Tennessee he earned a B.A. in College Scholars with an emphasis in Physics and Mathematics in 2001. After receiving a M.S. in Physics from the University of Washington in 2003, he
+moved to Chicago, IL, to perform research at Fermilab. He has
+graduated with a Ph.D. in Physics from the University of
+Washington in 2007, and looks forward to continuing research in
+High--Energy Physics.}
+\end{document}

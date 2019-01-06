@@ -1,0 +1,535 @@
+ \section{Integration Variable Remapping}
+
+\subsection{Introduction}
+This section will layout the jacobian needed for the 10 $\rar$ 10 remapping of
+variables for the parton level cross section. The base variables used are shown below.
+
+\begin{myitemize}
+\item $p_{3}$: Absolute momentum of the lepton
+\item $p_{5}$: Absolute momentum of the first quark
+\item $p_{6}$: Absolute momentum of the second quark
+\item $p_{tot}^{z}$: Total $p_{z}$ of the system
+\item $cos(\theta_{3})$: Cosine($\theta$) of the lepton
+\item $\phi_{3}$: $\phi$ of the lepton
+\item $cos(\theta_{5})$: Cosine($\theta$) of the first quark
+\item $\phi_{5}$: $\phi$ of the first quark
+\item $cos(\theta_{6})$: Cosine($\theta$) of the second quark
+\item $\phi_{6}$: $\phi$ of the second quark
+\end{myitemize}
+
+Other variables that are useful for the integration are
+\begin{myitemize}
+\item $m_{34}$: Mass of the lepton and neutrino (W mass)
+\item $m_{345}$: Mass of the lepton, neutrino, and first quark (top mass)
+\item $m_{56}$: Mass of the first and second quark ($b\bar{b}$ mass)
+\end{myitemize}
+
+Since some of these variables are sharp peaks (W and top masses), it is much
+better to sample from the expected distribution rather than make requirements of
+the invariant masses. The W and top masses are expected to follow a Breit-Wigner
+distribution shown below.
+
+\begin{equation}
+\sigma(M_{34}) = \frac{1}{\pi} \left[ \frac{\gamma}{(M_{34} - M_{W})^{2} +
+\gamma^{2}} \right]
+\end{equation}
+
+where $M_{34}$ is the mass of the lepton and neutrino. Similarly, the top mass
+has the following expected distribution.
+
+\begin{equation}
+\sigma(M_{345}) = \frac{1}{\pi} \left[ \frac{\gamma}{(M_{345} - M_{top})^{2} +
+\Gamma^{2}} \right]
+\end{equation}
+
+where  $M_{345}$ is the mass of the lepton, neutrino, and first quark.
+
+\subsection{Sampling from a Breit-Wigner mass distribution}
+
+Sampling from a Breit-Wigner distribution is done by selecting a random point
+between 0 and 1 from the cumulative distribution function of the BW
+function. The cumulative distribution function, of cdf, for the Breit-Wigner
+distribution is shown below.
+
+\begin{equation}
+\label{sample}
+\int \sigma(m;m_{0};\Gamma) = F(m;m_{0},\Gamma) = \frac{1}{\pi} \tan^{-1} \left[
+\frac{m-m_{0}}{\Gamma} \right] + \frac{1}{2}
+\end{equation}
+
+The value of F is taken as a random number between 0 and 1. After selecting a
+value of F, the next step is to solve for m. As a function of F, defined as u for
+the following, the mass is 
+
+
+\begin{equation}
+m = m_{0} + \Gamma \tan \left[ \pi(u - \frac{1}{2}) \right]
+\end{equation}
+
+\subsection{Sampling from a Breit-Wigner $S_{cm}$ distribution}
+
+In the previous example, a distribution was sampled using a random number
+uniformly distributed from 0 to 1. In, this example, a new random number is used
+that is uniformaly samples from 0 to 1, but the maximum and minimum values of
+the variable are taken into account in the Jacobian.
+
+The distribution of the variable $S_{cm}$ is the following
+
+\begin{equation}
+\label{defines}
+s = m_{0}^{2} + m_{0}\Gamma \tan \left[ m_{0} \Gamma r \right]
+\end{equation}
+
+where r is defined in terms of the random variable, u, that is uniformaly
+distributed between 0 and 1.
+
+\begin{equation}
+\label{rtou}
+r = (r_{max} - r_{min}) \times u + r_{min}
+\end{equation}
+
+where $r_{max}$ and $r_{min}$ are defined in terms of the variable $s_{cm}$.
+
+\begin{eqnarray}
+\label{definer}
+r = \frac{1}{m_{0}\Gamma} \tan \left[ \frac{s - m_{0}^{2}}{m_{0}\Gamma} \right] \\
+r_{min} = \frac{1}{m_{0}\Gamma} \tan \left[ \frac{s_{min} -
+m_{0}^{2}}{m_{0}\Gamma} \right] \\
+r_{max} = \frac{1}{m_{0}\Gamma} \tan \left[ \frac{s_{max} - m_{0}^{2}}{m_{0}\Gamma} \right]
+\end{eqnarray}
+
+
+
+\subsection{Jacobian for random sampling of a Breit-Wigner distribution around
+the W mass squared, $s_{34}$}
+
+The first case to consider is the Breit-Wigner sampling around the W mass
+$S_{34}$ distribution and replace the integration variable, $p_{3}$ or the
+lepton momentum.
+
+\begin{equation}
+\label{jacobian1}
+|J(p_{3}, u)| = \left| \pderiv{p_{3}}{u} \right| 
+\end{equation}
+
+Because u is redined in terms of the variable r, we can rewrite ~\ref{jacobian1}
+in terms of r instead of u.
+
+\begin{equation}
+\label{jacobian2}
+|J(p_{3}, u)| = \left| \pderiv{p_{3}}{u} \right| = \left| \pderiv{p_{3}}{r}
+\times \pderiv{r}{u} \right|
+\end{equation}
+
+And since the variable r is sampling the $S_{34}$ distribution it makes sense to
+define the Jacobian in terms of this variable instead of $p_{3}$.
+
+\begin{equation}
+\label{jacobian3}
+|J(p_{3}, u)| = \left| \pderiv{p_{3}}{r} \times \pderiv{r}{u} \right| = \left|
+\pderiv{p_{3}}{s_{34}} \times \pderiv{s_{34}}{r} \times \pderiv{r}{u} \right| =
+\left | \frac{\pderiv{s_{34}}{r} \times
+\pderiv{r}{u}}{\pderiv{s_{34}}{p_{3}}} \right |
+\end{equation}
+
+Equation ~\ref{jacobian3} has three components: $\pderiv{s_{34}}{r}$,
+$\pderiv{r}{u}$, and $\pderiv{s_{34}}{p_{3}}$. From equation ~\ref{rtou}, the
+partial derivative of r with respect to u is 
+
+\begin{equation}
+\label{drdu}
+\pderiv{r}{u} = r_{max} - r_{min} = \Delta r
+\end{equation}
+
+Next, the partial of $s_{34}$ with respect to r can be determined from equation
+~\ref{defines}.
+
+
+\begin{equation}
+\label{ds34dr}
+\pderiv{s_{34}}{r} = (m_{W} \Gamma_{W})^{2} \sec^{2} \left[m_{W} \Gamma_{W} r \right]
+\end{equation}
+
+Inserting the value of r(s) as defined in equation ~\ref{definer}, equation
+~\ref{ds34dr} can be re-written as
+
+\begin{equation}
+\label{ds34dr_2}
+\pderiv{s_{34}}{r} = (m_{W} \Gamma_{W})^{2} \sec^{2} \left[m_{W} \Gamma_{W} r \right] =
+(m_{W} \Gamma_{W})^{2} \sec^{2} \left[\arctan \left[ \frac{s_{34} - m_{W}^{2}}{m_{W}
+\Gamma_{W}}  \right] \right]
+\end{equation}
+
+Equation ~\ref{ds34dr_2} is solved by defining a right triangle where
+
+\begin{eqnarray}
+\nonumber
+\tan(\theta) = \frac{s_{34}-m_{W}^{2}}{m_{W}\Gamma_{W}} \\
+\cos(\theta) = \frac{1}{\sqrt{1+\left[ \frac{s_{34}-m_{W}^{2}}{m_{W}\Gamma_{W}}
+\right]^{2}}}
+\end{eqnarray}
+
+Using these definitions, equation ~\ref{ds34dr_2} is finally defined as
+
+\begin{equation}
+\label{ds34dr_3}
+\pderiv{s_{34}}{r} = (m_{W} \Gamma_{W})^{2} \sec^{2} \left[\arctan \left[ \frac{s_{34} - m_{W}^{2}}{m_{W}
+\Gamma_{W}}  \right] \right] = (m_{W}\Gamma_{W})^{2} + (s_{34} - m_{W}^{2})^{2}
+\end{equation}
+
+Finally, we need the partial derivative of $s_{34}$ with repect to
+$p_{3}$. First, we define $s_{34}$
+
+\begin{equation}
+\label{defines34}
+s_{34} = m_{3}^{2} + m_{4}^{2} + 2E_{3}E_{4} - 2p_{3}^{x}p_{4}^{x} - 2p_{3}^{y}p_{4}^{y} - 2p_{3}^{z}p_{4}^{z}
+\end{equation}
+
+Since the neutino four-vector is defined in terms of all the other particles in
+the event, we need to rewrite equation ~\ref{defines34} to expose all the
+dependences on $p_{3}$. For the following, it is assumed that the lepton and
+neutrino are massless meaning $E_{3} = p_{3}$. 
+
+\begin{eqnarray}
+\label{defines34_2}
+\nonumber
+s_{34} = 2p_{3}\sqrt{(-p_{3}^{x} -p_{5}^{x} -p_{6}^{x})^{2} + (-p_{3}^{y} -p_{5}^{y} -p_{6}^{y})^{2} + (p_{tot}^{z} -p_{3}^{z} -p_{5}^{z} -p_{6}^{z})^{2}} \\
+- 2p_{3}^{x}(-p_{3}^{x} -p_{5}^{x} -p_{6}^{x}) -
+2p_{3}^{y}(-p_{3}^{y} -p_{5}^{y} -p_{6}^{y}) - 2p_{3}^{z}(p_{tot}^{z} -p_{3}^{z} -p_{5}^{z} -p_{6}^{z})
+\end{eqnarray}
+
+After combining like terms, we can evaluate the partial derivative of $s_{34}$
+with respect to $p_{3}$ that yields the relatively
+simple formula
+
+\begin{equation}
+\label{ds34dp3}
+\pderiv{s_{34}}{p_{3}} = 2(p_{3} + p_{4})(1 - \hat{p_{3}} \cdot \hat{p_{4}})
+\end{equation}
+
+Finally, we can rewrite the Jacobian defined in ~\ref{jacobian3} as
+
+\begin{equation}
+\label{jacobian4}
+|J(p_{3}, u)| = \left | \frac{\pderiv{s_{34}}{r} \times
+\pderiv{r}{u}}{\pderiv{s_{34}}{p_{3}}} \right | = \frac{\Delta R \times \left[
+(m_{W}\Gamma_{W})^{2} + (s_{34} - m_{W}^{2})^{2} \right]}{2(p_{3} + p_{4})(1 - \hat{p_{3}} \cdot \hat{p_{4}})}
+\end{equation}
+
+In some cases, it is also common to replace the first quark momentum integration
+with the Breit-Wigner sampling variable. In that case, we need to evaluate
+
+\begin{equation}
+\label{jacobian_5}
+|J(p_{5}, u)| = \left | \frac{\pderiv{s_{34}}{r} \times
+\pderiv{r}{u}}{\pderiv{s_{34}}{p_{5}}} \right |
+\end{equation}
+
+For this substitution, we only need to evaluate the partial derivative of
+$s_{34}$ with respect to $p_{5}$. Assuming a massless quark, the result is
+
+\begin{equation}
+\label{ds34dp5}
+\pderiv{s_{34}}{p_{5}} = 2p_{3}(\hat{p_{3}} \cdot \hat{p_{5}} - \hat{p_{4}} \cdot \hat{p_{5}})
+\end{equation}
+
+Combining equation ~\ref{ds34dp5} with ~\ref{jacobian_5} yields
+
+\begin{equation}
+\label{jacobian_6}
+|J(p_{5}, u)| = \left | \frac{\pderiv{s_{34}}{r} \times
+\pderiv{r}{u}}{\pderiv{s_{34}}{p_{5}}} \right | = \frac{\Delta R \times \left[
+(m_{W}\Gamma_{W})^{2} + (s_{34} - m_{W}^{2})^{2} \right]}{2p_{3}(\hat{p_{3}} \cdot \hat{p_{5}} - \hat{p_{4}} \cdot \hat{p_{5}})}
+\end{equation}
+
+
+
+%
+%-----------------------------------------------------------------------
+%
+
+
+
+\subsection{Jacobian for random sampling of a Breit-Wigner distribution around
+the top mass squared, $s_{345}$}
+
+The next case to consider is the Breit-Wigner sampling around the top mass squared
+$S_{345}$ distribution and replace the integration variable, $p_{3}$ or the
+lepton momentum. As before, we need need to calculate the following
+
+\begin{equation}
+\label{jacobian_1}
+|J(p_{3}, u)| = \left| \pderiv{p_{3}}{r} \times \pderiv{r}{u} \right| = \left|
+\pderiv{p_{3}}{s_{345}} \times \pderiv{s_{345}}{r} \times \pderiv{r}{u} \right| =
+\left | \frac{\pderiv{s_{345}}{r} \times
+\pderiv{r}{u}}{\pderiv{s_{345}}{p_{3}}} \right |
+\end{equation}
+
+Equation ~\ref{jacobian_1} has three components: $\pderiv{s_{345}}{r}$,
+$\pderiv{r}{u}$, and $\pderiv{s_{345}}{p_{3}}$. We know $\pderiv{r}{u}$ from
+equation ~\ref{drdu} where $r_{min}$ and $r_{max}$ are defined by the $s_{345}$
+system instead of the $s_{34}$ system. We also know $\pderiv{s_{345}}{r}$ from ~\ref{ds34dr_3}
+where we replace $s_{34}$ with $s_{345}$.
+
+\begin{equation}
+\label{ds345dr}
+\pderiv{s_{345}}{r} = (m_{t}\Gamma_{t})^{2} + (s_{345} - m_{t}^{2})^{2}
+\end{equation}
+
+We do need the partial derivative of $s_{345}$ with repect to
+$p_{3}$. First, we define $s_{345}$
+
+\begin{eqnarray}
+\label{defines345}
+\nonumber
+s_{345} = m_{3}^{2} + m_{4}^{2} + m_{5}^{2} + 2E_{3}E_{4} + 2E_{3}E_{5} +
+2E_{4}E_{5} - \\
+2p_{3}^{x}p_{4}^{x} - 2p_{3}^{x}p_{5}^{x} - 2p_{4}^{x}p_{5}^{x} -
+2p_{3}^{y}p_{4}^{y} - 2p_{3}^{y}p_{5}^{y} - 2p_{4}^{y}p_{5}^{y} -
+2p_{3}^{z}p_{4}^{z} - 2p_{3}^{z}p_{5}^{z} - 2p_{4}^{z}p_{5}^{z}
+\end{eqnarray}
+
+As before, the neutino four-vector is defined in terms of all the other particles in
+the event so we need to rewrite equation ~\ref{defines345} to expose all the
+dependences on $p_{3}$. For the following, it is assumed that the lepton,
+neutrino, and quark are massless meaning $E_{3} = p_{3}$.
+
+\begin{eqnarray}
+\label{defines345_2}
+\nonumber
+s_{345} = 2p_{3}\sqrt{(-p_{3}^{x} -p_{5}^{x} -p_{6}^{x})^{2} + (-p_{3}^{y}
+-p_{5}^{y} -p_{6}^{y})^{2} + (p_{tot}^{z} -p_{3}^{z} -p_{5}^{z} -p_{6}^{z})^{2}}
++ \\
+\nonumber
+2p_{3}p_{5} + 2\sqrt{(-p_{3}^{x} -p_{5}^{x} -p_{6}^{x})^{2} + (-p_{3}^{y} -p_{5}^{y}
+-p_{6}^{y})^{2} + (p_{tot}^{z} -p_{3}^{z} -p_{5}^{z} -p_{6}^{z})^{2}}p_{5} - \\
+\nonumber
+2p_{3}^{x}(-p_{3}^{x} -p_{5}^{x} -p_{6}^{x}) - 2p_{3}^{x}p_{5}^{x} -
+2(-p_{3}^{x} -p_{5}^{x} -p_{6}^{x})p_{5}^{x} - \\
+\nonumber
+2p_{3}^{y}(-p_{3}^{y} -p_{5}^{y} -p_{6}^{y}) - 2p_{3}^{y}p_{5}^{y} -
+2(-p_{3}^{y} -p_{5}^{y} -p_{6}^{y})p_{5}^{y} - \\
+2p_{3}^{z}(-p_{3}^{z} -p_{5}^{z} -p_{6}^{z}) - 2p_{3}^{z}p_{5}^{z} - 2(-p_{3}^{z} -p_{5}^{z} -p_{6}^{z})p_{5}^{z}
+\end{eqnarray}
+
+After combining like terms, we can evaluate the partial derivative of $s_{345}$
+with respect to $p_{3}$ as
+
+\begin{equation}
+\label{ds345dp3}
+\pderiv{s_{345}}{p_{3}} = 2(p_{3} + p_{4} + p_{5})(1 - \hat{p_{3}} \cdot \hat{p_{4}})
+\end{equation}
+
+Finally, we can rewrite the Jacobian defined in ~\ref{jacobian_1} as
+
+\begin{equation}
+\label{jacobian_2}
+|J(p_{3}, u)| = \left | \frac{\pderiv{s_{345}}{r} \times
+\pderiv{r}{u}}{\pderiv{s_{345}}{p_{3}}} \right | = \frac{\Delta R \times \left[
+(m_{t}\Gamma_{t})^{2} + (s_{345} - m_{t}^{2})^{2} \right]}{2(p_{3} + p_{4} + p_{5})(1 - \hat{p_{3}} \cdot \hat{p_{4}})}
+\end{equation}
+
+
+Instead of replacing the lepton momentum integration variable, it is also common
+to replace the first quark momentum integration variable, $p_{5}$. In that case,
+we need to evaluate the following Jacobian.
+
+\begin{equation}
+\label{jacobian_3}
+|J(p_{5}, u)| = \left| \pderiv{p_{5}}{r} \times \pderiv{r}{u} \right| = \left|
+\pderiv{p_{5}}{s_{345}} \times \pderiv{s_{345}}{r} \times \pderiv{r}{u} \right| =
+\left | \frac{\pderiv{s_{345}}{r} \times
+\pderiv{r}{u}}{\pderiv{s_{345}}{p_{5}}} \right |
+\end{equation}
+
+The only difference is that partial derivative of $s_{345}$ with respect to
+$p_{5}$ instead of $p_{3}$. However, since $s_{345}$ is invariant under a change
+of $p_{3}$ and $p_{5}$ the partial derivatives must be equal. Thus, 
+
+\begin{equation}
+\label{jacobian_4}
+|J(p_{5}, u)| = \left | \frac{\pderiv{s_{345}}{r} \times
+\pderiv{r}{u}}{\pderiv{s_{345}}{p_{5}}} \right | = \frac{\Delta R \times \left[
+(m_{t}\Gamma_{t})^{2} + (s_{345} - m_{t}^{2})^{2} \right]}{2(p_{3} + p_{4} + p_{5})(1 - \hat{p_{4}} \cdot \hat{p_{5}})}
+\end{equation}
+
+
+
+
+
+%
+%-----------------------------------------------------------------------
+%
+
+
+\subsection{Jacobian for random sampling of two Breit-Wigner distributions around
+the top mass squared, $s_{345}$ and W mass squared, $s_{34}$}
+
+
+The next situation is to sample from a Breit-Wigner around the
+top mass squared and the W mass squared, or $s_{345}$ and $s_{34}$. It is common
+to replace the lepton momentum and first quark momentum integration variables
+with the two new variables. Since we are
+replacing two variables, we need to evaluate the following Jacobian
+
+\begin{equation}
+|J(p_{3}, p_{5} ; u_{1}, u_{2})| = \left| \begin{array}{cc}
+\pderiv{p_{3}}{u_{1}}	& \pderiv{p_{3}}{u_{2}} \\
+\pderiv{p_{5}}{u_{1}}	& \pderiv{p_{5}}{u_{2}} \\
+\end{array} \right|
+\end{equation}
+
+where $u_{1}$ and $u_{2}$ are the sampling variables around the top mass squared
+and W mass squared, respectively.
+
+We have already computed the partial derivatives for each of these cases
+in the previous two sections, thus the result is
+
+\begin{eqnarray}
+\nonumber
+|J(p_{3}, p_{5} ; u_{1}, u_{2})| = \left| \begin{array}{cc}
+\pderiv{p_{3}}{u_{1}}	& \pderiv{p_{3}}{u_{2}} \\
+\pderiv{p_{5}}{u_{1}}	& \pderiv{p_{5}}{u_{2}} \\
+\end{array} \right| = 
+\nonumber
+\left| \begin{array}{cc}
+\frac{\pderiv{s_{345}}{r} \times \pderiv{r}{u}}{\pderiv{s_{345}}{p_{3}}}	& \frac{\pderiv{s_{345}}{r} \times
+\pderiv{r}{u}}{\pderiv{s_{345}}{p_{5}}} \\
+\frac{\pderiv{s_{34}}{r} \times \pderiv{r}{u}}{\pderiv{s_{34}}{p_{3}}}	& \frac{\pderiv{s_{34}}{r} \times
+\pderiv{r}{u}}{\pderiv{s_{34}}{p_{5}}}
+\end{array} \right| = \\
+\left| \begin{array}{cc}
+\frac{\Delta R_{345} \times \left[
+(m_{t}\Gamma_{t})^{2} + (s_{345} - m_{t}^{2})^{2} \right]}{2(p_{3} + p_{4} + p_{5})(1 - \hat{p_{3}} \cdot \hat{p_{4}})}	& \frac{\Delta R_{34} \times \left[
+(m_{W}\Gamma_{W})^{2} + (s_{34} - m_{W}^{2})^{2} \right]}{2(p_{3} + p_{4})(1 -
+\hat{p_{3}} \cdot \hat{p_{4}})} \\
+\frac{\Delta R_{345} \times \left[
+(m_{t}\Gamma_{t})^{2} + (s_{345} - m_{t}^{2})^{2} \right]}{2(p_{3} + p_{4} + p_{5})(1 - \hat{p_{4}} \cdot \hat{p_{5}})}	& \frac{\Delta R_{34} \times \left[
+(m_{W}\Gamma_{W})^{2} + (s_{34} - m_{0}^{2})^{2} \right]}{2p_{3}(\hat{p_{3}} \cdot \hat{p_{5}} - \hat{p_{4}} \cdot \hat{p_{5}})}
+\end{array}
+\right|
+\end{eqnarray}
+
+
+\subsection{Sampling from a Polynomial $S_{cm}$ distribution}
+
+*** This is where I am taking a function from Aurelio and I can't seem to derive
+it on my own ***
+
+The distribution of the variable $S_{cm}$ according to a polynomial power
+distribution is
+
+\begin{equation}
+\label{defines_power}
+s = m_{0}^{2} + \left[ (1-\alpha)r \right]^{\frac{-1}{\alpha - 1}}
+\end{equation}
+
+where r is defined in terms of the random variable, u, that is uniformaly
+distributed between 0 and 1.
+
+\begin{equation}
+\label{rtou_power}
+r = (r_{max} - r_{min}) \times u + r_{min}
+\end{equation}
+
+where $r_{max}$ and $r_{min}$ are defined in terms of the variable $s_{cm}$.
+
+\begin{eqnarray}
+\label{definer_power}
+r = \frac{1}{1-\alpha} \times \left[ s - m_{0}^{2} \right]^{1-\alpha} \\
+r_{min} = \frac{1}{1-\alpha} \times \left[ s_{min} - m_{0}^{2}
+\right]^{1-\alpha} \\
+r_{max} = \frac{1}{1-\alpha} \times \left[ s_{max} - m_{0}^{2}
+\right]^{1-\alpha}
+\end{eqnarray}
+
+where alpha can not equal 1.
+
+
+\subsection{Jacobian for random sampling of a polynomial distribution
+starting at $m_{pole}$}
+
+The first case to consider is sampling around a falling polynomial distribution
+for the mass squared of two quarks in the event, $s_{56}$. We need to define the
+Jacobian with respect $p_{5}$ or $p_{6}$. Since $s_{56}$ is invariant under an
+interchange of particle 5 and 6, the Jacobian will be the same for each momentum
+integration. The following assume $p_{5}$ will be replaced with the variable,
+$u$, which is sampled from a polynomial distribution.
+
+\begin{equation}
+\label{jacobian_7}
+|J(p_{5}, u)| = \left| \pderiv{p_{5}}{u} \right| 
+\end{equation}
+
+Because u is redined in terms of the variable r, we can rewrite ~\ref{jacobian_7}
+in terms of r instead of u.
+
+\begin{equation}
+\label{jacobian_8}
+|J(p_{5}, u)| = \left| \pderiv{p_{5}}{u} \right| = \left| \pderiv{p_{5}}{r}
+\times \pderiv{r}{u} \right|
+\end{equation}
+
+And since the variable r is sampling the $S_{56}$ distribution it makes sense to
+define the Jacobian in terms of this variable instead of $p_{5}$.
+
+\begin{equation}
+\label{jacobian_9}
+|J(p_{5}, u)| = \left| \pderiv{p_{5}}{r} \times \pderiv{r}{u} \right| = \left|
+\pderiv{p_{5}}{s_{56}} \times \pderiv{s_{56}}{r} \times \pderiv{r}{u} \right| =
+\left | \frac{\pderiv{s_{56}}{r} \times
+\pderiv{r}{u}}{\pderiv{s_{56}}{p_{5}}} \right |
+\end{equation}
+
+Equation ~\ref{jacobian_9} has three components: $\pderiv{s_{56}}{r}$,
+$\pderiv{r}{u}$, and $\pderiv{s_{56}}{p_{5}}$. From equation ~\ref{rtou_power}, the
+partial derivative of r with respect to u is 
+
+\begin{equation}
+\label{drdu_power}
+\pderiv{r}{u} = r_{max} - r_{min} = \Delta R_{56}
+\end{equation}
+
+Next, the partial of $s_{56}$ with respect to r can be determined from equation ~\ref{defines_power}.
+
+\begin{equation}
+\label{ds56dr_power}
+\pderiv{s_{56}}{r} = \left[ r(1-\alpha) \right]^{\frac{\alpha}{1-\alpha}}
+\end{equation}
+
+Inserting the value of r(s) as defined in equation ~\ref{definer_power}, equation ~\ref{ds56dr_power} can be re-written as
+
+\begin{equation}
+\label{ds56dr_power2}
+\pderiv{s_{56}}{r} = \left[ s_{56} - m_{0}^{2} \right]^{\alpha}
+\end{equation}
+
+Finally, we need the partial derivative of $s_{56}$ with repect to $p_{5}$. First, we define $s_{56}$
+
+\begin{equation}
+\label{defines56_power}
+s_{56} = m_{5}^{2} + m_{6}^{2} + 2E_{5}E_{6} - 2p_{5}^{x}p_{6}^{x} - 2p_{5}^{y}p_{6}^{y} - 2p_{5}^{z}p_{6}^{z}
+\end{equation}
+
+we can evaluate the partial derivative of $s_{56}$ with respect to $p_{5}$.
+
+\begin{equation}
+\label{ds56dp5_power}
+\pderiv{s_{56}}{p_{5}} = 2p_{6}(1 - \hat{p_{5}} \cdot \hat{p_{6}})
+\end{equation}
+
+Finally, we can rewrite the Jacobian defined in ~\ref{jacobian_9} as
+
+\begin{equation}
+\label{jacobian_10}
+|J(p_{5}, u)| = \left | \frac{\pderiv{s_{56}}{r} \times
+\pderiv{r}{u}}{\pderiv{s_{56}}{p_{5}}} \right | = \frac{\Delta R_{56} \times \left[ s_{56}-m_{0}^{2} \right]^{\alpha}}{2p_{6}(1 - \hat{p_{5}} \cdot \hat{p_{6}})}
+\end{equation}
+
+and 
+
+\begin{equation}
+\label{jacobian_11}
+|J(p_{6}, u)| = \left | \frac{\pderiv{s_{56}}{r} \times
+\pderiv{r}{u}}{\pderiv{s_{56}}{p_{6}}} \right | = \frac{\Delta R_{56} \times \left[ s_{56}-m_{0}^{2} \right]^{\alpha}}{2p_{5}(1 - \hat{p_{5}} \cdot \hat{p_{6}})}
+\end{equation}

@@ -1,0 +1,66 @@
+\section{Cross Check Samples}
+
+To test the modeling of the $W$+jets and $\ttbar$ background, two cross check
+samples are created that select regions of phase space where little or no signal
+is expected. 
+
+\subsection{$W$+jets Cross Check Samples}
+
+The first sample selects events with $H_{T}$ less than $175$
+GeV. This sample selects soft $W$+jets and QCD events and almost no top quark
+events. Results of this cross check sample are shown below is Fig~\ref{wjets_cross}.
+
+\vspace{0.1in}
+\begin{figure}[!h!tbp]
+\begin{center}
+\subfigure[]{
+	\includegraphics[width=0.48\textwidth]{figures/cross_check/Wjets_tb_Discriminant_electron.eps}
+}
+\subfigure[]{
+	\includegraphics[width=0.48\textwidth]{figures/cross_check/Wjets_tq_Discriminant_electron.eps}
+}
+\subfigure[]{
+	\includegraphics[width=0.48\textwidth]{figures/cross_check/Wjets_tb_Discriminant_muon.eps}
+}
+\subfigure[]{
+	\includegraphics[width=0.48\textwidth]{figures/cross_check/Wjets_tq_Discriminant_muon.eps}
+}
+\end{center}
+\vspace{-0.1in}
+\label{wjets_cross}
+\caption{$W$+jets cross check plots for (a) $s$-channel discriminant for electrons,
+(b) $t$-channel discriminant for electrons, (c) $s$-channel discriminant for muons,
+and (d) $t$-channel discriminant for muons.}
+\end{figure}
+
+\clearpage
+\subsection{$\ttbar$ and Hard $W$+jets Cross Check Samples}
+
+The second sample selects events with $H_{T}$ greather than $300$
+GeV. This sample selects $\ttbar$ and hard $W$+jets events. Results of this cross check sample are shown below is 
+Fig~\ref{ttbar_cross}.
+\vspace{0.1in}
+\begin{figure}[!h!tbp]
+\begin{center}
+\subfigure[]{
+	\includegraphics[width=0.48\textwidth]{figures/cross_check/TTbar_tb_Discriminant_electron.eps}
+}
+\subfigure[]{
+	\includegraphics[width=0.48\textwidth]{figures/cross_check/TTbar_tq_Discriminant_electron.eps}
+}
+\subfigure[]{
+	\includegraphics[width=0.48\textwidth]{figures/cross_check/TTbar_tb_Discriminant_muon.eps}
+}
+\subfigure[]{
+	\includegraphics[width=0.48\textwidth]{figures/cross_check/TTbar_tq_Discriminant_muon.eps}
+}
+\end{center}
+\vspace{-0.1in}
+\caption{$\ttbar$ and hard $W$+jets cross check plots for (a) $s$-channel discriminant for electrons,
+(b) $t$-channel discriminant for electrons, (c) $s$-channel discriminant for muons,
+and (d) $t$-channel discriminant for muons.}
+\label{ttbar_cross}
+\end{figure}
+
+
+
